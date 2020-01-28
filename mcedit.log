@@ -11,18 +11,18 @@
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                         yellow = (1.0, 1.0, 0.75)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           grey = (0.6, 0.6, 0.6)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                          black = (0.0, 0.0, 0.0)
-[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGL.so => libGL.so.1 <CDLL 'libGL.so.1', handle 55b69c471490 at 7fa949a8a1d0>
+[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGL.so => libGL.so.1 <CDLL 'libGL.so.1', handle 5579c87c6200 at 7ff4ebd951d0>
 [    INFO][OpenGL.acceleratesupport.py:17]:No OpenGL_accelerate module loaded: No module named OpenGL_accelerate
-[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGLU.so => libGLU.so.1 <CDLL 'libGLU.so.1', handle 55b69c9fb850 at 7fa948c3f4d0>
+[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGLU.so => libGLU.so.1 <CDLL 'libGLU.so.1', handle 5579c8d52bf0 at 7ff4eaf4a4d0>
 [   ERROR][          pymclevel.nbt.py:678]:Failed to import Cythonized nbt file. Running on (very slow) pure-python nbt fallback.
 [   ERROR][          pymclevel.nbt.py:679]:(Did you forget to run 'setup.py build_ext --inplace'?)
 [   ERROR][          pymclevel.nbt.py:680]:No module named _nbt
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/minecraft.json', mode 'rb' at 0x7fa94890e540>
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/classic.json', mode 'rb' at 0x7fa94890e540>
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/indev.json', mode 'rb' at 0x7fa94890e540>
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/pocket.json', mode 'rb' at 0x7fa94890e540>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/minecraft.json', mode 'rb' at 0x7ff4eac19540>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/classic.json', mode 'rb' at 0x7ff4eac19540>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/indev.json', mode 'rb' at 0x7ff4eac19540>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/pocket.json', mode 'rb' at 0x7ff4eac19540>
 [    INFO][ pymclevel.leveldbpocket.py:29]:Error while trying to import leveldb_mcpe, starting without PE support (No module named leveldb_mcpe)
-[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libglut.so => libglut.so.3 <CDLL 'libglut.so.3', handle 55b69d9931b0 at 7fa937603ed0>
+[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libglut.so => libglut.so.3 <CDLL 'libglut.so.3', handle 5579c9ce8d40 at 7ff4e991aed0>
 [   DEBUG][      pymclevel.BOParser.py:19]:BO3 block definitions loaded. 199 entries found
 [ WARNING][            mcplatform.py:1276]:Initializing window management...
 [    INFO][            mcplatform.py:1284]:XWindowHandler initialized.
@@ -58,56 +58,56 @@
 [   DEBUG][               mclangres.py:56]:Building Minecraft language resources...
 [   DEBUG][               mclangres.py:74]:Minecraft installation directory is not valid.
 [   DEBUG][               mclangres.py:75]:Impossible to load the game language resources.
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.roughGraphics
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showHiddenOres
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.vertexBufferLimit
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawTileEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawTileTicks
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawTerrainPopulated
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawChunkBorder
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawMonsters
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.drawItems
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showRedraw
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.spaceHeight
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.targetFPS
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.maxViewDistance
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showHiddenOres
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.vertexBufferLimit
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawTileEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawTileTicks
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawTerrainPopulated
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawChunkBorder
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawMonsters
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.drawItems
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showRedraw
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.spaceHeight
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.targetFPS
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.maxViewDistance
 [   DEBUG][                 config.py:194]:Property Change:        Settings                  hiddable ores = [7, 16, 15, 21, 73, 14, 56, 153]
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre7
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre16
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre15
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre21
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre73
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre14
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre56
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fa92b772390>.showOre153
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.drawSky
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.drawFog
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.superSecretSettings
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.showCeiling
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.accelFactor
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.maxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.brakeMaxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.invertMousePitch
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.autobrake
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.swapAxes
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.compassToggle
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fa92b994750>.fovSetting
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.drawSky
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.drawFog
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.superSecretSettings
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.showCeiling
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.accelFactor
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.maxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.brakeMaxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.invertMousePitch
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.autobrake
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.swapAxes
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.compassToggle
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fa92b705910>.fovSetting
-[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7fa92b7722d0>.viewMode
-[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7fa92b7722d0>.undoLimit
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre7
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre16
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre15
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre21
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre73
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre14
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre56
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7ff4dda9f390>.showOre153
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.drawSky
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.drawFog
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.superSecretSettings
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.showCeiling
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.accelFactor
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.maxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.brakeMaxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.invertMousePitch
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.autobrake
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.swapAxes
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.compassToggle
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7ff4ddcc1750>.fovSetting
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.drawSky
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.drawFog
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.superSecretSettings
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.showCeiling
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.accelFactor
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.maxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.brakeMaxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.invertMousePitch
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.autobrake
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.swapAxes
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.compassToggle
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7ff4dda32910>.fovSetting
+[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7ff4dda9f2d0>.viewMode
+[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7ff4dda9f2d0>.undoLimit
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           blue = (0.75, 0.75, 1.0)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           pink = (1.0, 0.75, 1.0)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           grey = (0.6, 0.6, 0.6)
@@ -136,7 +136,7 @@
 [    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
 [    INFO][pymclevel.infiniteworld.py:1446]:Found dimension DIM1
 [    INFO][pymclevel.infiniteworld.py:1446]:Found dimension DIM-1
-[   DEBUG][           leveleditor.py:1197]:Loaded world is <pymclevel.infiniteworld.MCInfdevOldLevel object at 0x7fa92b2dc310>
+[   DEBUG][           leveleditor.py:1197]:Loaded world is <pymclevel.infiniteworld.MCInfdevOldLevel object at 0x7ff4dd609350>
 [    INFO][           leveleditor.py:1238]:Loading world for version 1.12.2.
 [   DEBUG][                   root.py:816]:renderer::ChunkCalculator: Dynamically adding transparent materials.
 [   DEBUG][                   root.py:820]:Adding '<Block Jungle Sapling (Stage 1) (6:11)>'
@@ -1111,51 +1111,47 @@
 [   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 2) (207:2)>'
 [   DEBUG][                   root.py:820]:Adding '<Block Structure Void (217:0)>'
 [   DEBUG][                   root.py:822]:renderer::ChunkCalculator: Transparent materials added: 971
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fa92b7056d0>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fa92b7056d0>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7ff4dda326d0>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7ff4dda326d0>.roughGraphics
 [    INFO][pymclevel.infiniteworld.py:1465]:Scanning for regions...
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 102/102 sectors used and 100 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 27/27 sectors used and 25 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 402/402 sectors used and 400 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 102/102 sectors used and 100 chunks present
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                          black = (0.0, 0.0, 0.0)
-[   DEBUG][                  root.py:1598]:Mouse down 2 @ (547, 567)
-[   DEBUG][                  root.py:1618]:Mouse up   2 @ (548, 720)
-[   DEBUG][                  root.py:1598]:Mouse down 1 @ (335, 353)
-[   DEBUG][                  root.py:1618]:Mouse up   1 @ (792, 724)
-[   DEBUG][                  root.py:1598]:Mouse down 1 @ (340, 351)
-[   DEBUG][                  root.py:1618]:Mouse up   1 @ (316, 368)
-[   DEBUG][                  root.py:1598]:Mouse down 1 @ (160, 161)
-[   DEBUG][                  root.py:1618]:Mouse up   1 @ (1037, 796)
-[   DEBUG][                  root.py:1604]:Mouse left
-[   DEBUG][                  root.py:1609]:Mouse entered
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (709, 611)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (713, 765)
+[   DEBUG][                  root.py:1598]:Mouse down 1 @ (277, 201)
+[   DEBUG][                  root.py:1618]:Mouse up   1 @ (1080, 818)
+[   DEBUG][                  root.py:1598]:Mouse down 1 @ (776, 592)
+[   DEBUG][                  root.py:1618]:Mouse up   1 @ (756, 501)
 [    INFO][     editortools.filter.py:255]:Creating options for <module 'abduction_filter' from '/home/kane0058/Documents/gosling/stock-filters/abduction_filter.py'>
 [   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
 [   DEBUG][    pymclevel.schematic.py:122]:No root tag found, creating a blank schematic.
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.roughGraphics
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showHiddenOres
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.vertexBufferLimit
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawTileEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawTileTicks
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawTerrainPopulated
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawChunkBorder
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawMonsters
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.drawItems
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showRedraw
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.spaceHeight
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.targetFPS
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.maxViewDistance
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showHiddenOres
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.vertexBufferLimit
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawTileEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawTileTicks
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawTerrainPopulated
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawChunkBorder
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawMonsters
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.drawItems
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showRedraw
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.spaceHeight
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.targetFPS
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.maxViewDistance
 [   DEBUG][                 config.py:194]:Property Change:        Settings                  hiddable ores = [7, 16, 15, 21, 73, 14, 56, 153]
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre7
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre16
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre15
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre21
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre73
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre14
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre56
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17590>.showOre153
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre7
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre16
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre15
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre21
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre73
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre14
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre56
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe40ed0>.showOre153
 [   DEBUG][                   root.py:816]:renderer::ChunkCalculator: Dynamically adding transparent materials.
 [   DEBUG][                   root.py:820]:Adding '<Block Jungle Sapling (Stage 1) (6:11)>'
 [   DEBUG][                   root.py:820]:Adding '<Block Birch Sapling (Stage 1) (6:10)>'
@@ -2129,34 +2125,34 @@
 [   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 2) (207:2)>'
 [   DEBUG][                   root.py:820]:Adding '<Block Structure Void (217:0)>'
 [   DEBUG][                   root.py:822]:renderer::ChunkCalculator: Transparent materials added: 971
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fa929b17610>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fa929b17610>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7ff4dbe40f50>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7ff4dbe40f50>.roughGraphics
 [   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
 [   DEBUG][    pymclevel.schematic.py:122]:No root tag found, creating a blank schematic.
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.roughGraphics
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showHiddenOres
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.vertexBufferLimit
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawTileEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawTileTicks
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawTerrainPopulated
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawChunkBorder
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawMonsters
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.drawItems
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showRedraw
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.spaceHeight
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.targetFPS
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.maxViewDistance
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showHiddenOres
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.vertexBufferLimit
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawTileEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawTileTicks
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawTerrainPopulated
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawChunkBorder
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawMonsters
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.drawItems
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showRedraw
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.spaceHeight
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.targetFPS
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.maxViewDistance
 [   DEBUG][                 config.py:194]:Property Change:        Settings                  hiddable ores = [7, 16, 15, 21, 73, 14, 56, 153]
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre7
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre16
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre15
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre21
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre73
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre14
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre56
-[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7fa929b17c50>.showOre153
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre7
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre16
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre15
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre21
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre73
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre14
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre56
+[   DEBUG][                 config.py:210]:Subscribing <renderer.PreviewRenderer object at 0x7ff4dbe45610>.showOre153
 [   DEBUG][                   root.py:816]:renderer::ChunkCalculator: Dynamically adding transparent materials.
 [   DEBUG][                   root.py:820]:Adding '<Block Jungle Sapling (Stage 1) (6:11)>'
 [   DEBUG][                   root.py:820]:Adding '<Block Birch Sapling (Stage 1) (6:10)>'
@@ -3130,21 +3126,19 @@
 [   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 2) (207:2)>'
 [   DEBUG][                   root.py:820]:Adding '<Block Structure Void (217:0)>'
 [   DEBUG][                   root.py:822]:renderer::ChunkCalculator: Transparent materials added: 971
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fa929b17cd0>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fa929b17cd0>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7ff4dbe45690>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7ff4dbe45690>.roughGraphics
 [    INFO][                  root.py:3815]:Skipped chunk (0, 0): boolean index did not match indexed array along dimension 0; dimension is 16 but corresponding boolean dimension is 1
-[   DEBUG][                  root.py:1604]:Mouse left
-[   DEBUG][                  root.py:1609]:Mouse entered
 [    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c48dd0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c48dd0>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf05710>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf05710>
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 2/2 sectors used and 0 chunks present
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,30, growing by 305b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c48a50>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c48a50>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf057d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf057d0>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,31, growing by 303b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
@@ -3158,72 +3152,57 @@
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,2, growing by 267b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,3, growing by 267b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
-[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c3d7d0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c3d7d0>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,30, growing by 304b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,30, growing by 263b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c30550>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c30550>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60410>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60410>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,31, growing by 303b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c301d0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c301d0>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60050>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60050>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,0, growing by 306b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,1, growing by 266b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,2, growing by 266b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,3, growing by 267b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
-[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a603450>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a603450>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,30, growing by 305b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,30, growing by 264b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a6031d0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a6031d0>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc18a810>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc18a810>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,31, growing by 302b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92bcd0c90>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92bcd0c90>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddfea710>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddfea710>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,0, growing by 303b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
-[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c13b10>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c13b10>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,1, growing by 304b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 11
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,1, growing by 264b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,2, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 12
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,3, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 13
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c308d0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c308d0>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60790>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60790>
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 2/2 sectors used and 0 chunks present
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,30, growing by 304b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92b2f1810>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92b2f1810>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dda4a550>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dda4a550>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,31, growing by 302b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a5f36d0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a5f36d0>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc17ae50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc17ae50>
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 2/2 sectors used and 0 chunks present
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,0, growing by 300b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
@@ -3234,32 +3213,24 @@
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,2, growing by 264b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,3, growing by 265b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,30, growing by 265b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92b2f1950>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92b2f1950>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc1b64d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc1b64d0>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,31, growing by 302b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a5f3f90>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a5f3f90>
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc18a750>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc18a750>
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,0, growing by 301b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,1, growing by 263b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
-[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92b71d510>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92b71d510>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,2, growing by 301b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,3, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,2, growing by 264b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,30, growing by 264b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
@@ -3268,133 +3239,98 @@
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,0, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,1, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 11
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,2, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 12
-[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c302d0>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929c302d0>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,3, growing by 302b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 13
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,30, growing by 264b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
 [   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,31, growing by 261b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,1, growing by 264b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,0, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 14
-[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,1, growing by 264b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 15
 [   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a603490>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa92a603490>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,2, growing by 302b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 16
-[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
-[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929bd6b10>
-[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fa929bd6b10>
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,3, growing by 301b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 17
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 10/10 sectors used and 8 chunks present
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 18/18 sectors used and 16 chunks present
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60250>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf60250>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,2, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 8/8 sectors used and 6 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 11/11 sectors used and 9 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 8/8 sectors used and 6 chunks present
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 14/14 sectors used and 12 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 11/11 sectors used and 9 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 2/2 sectors used and 0 chunks present
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,0, growing by 313b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 2/2 sectors used and 0 chunks present
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,3, growing by 311b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,2, growing by 313b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,0, growing by 306b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,0, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,1, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,0, growing by 300b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 2/2 sectors used and 0 chunks present
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,31, growing by 312b
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,31, growing by 303b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,1, growing by 311b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,0, growing by 300b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,2, growing by 314b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,3, growing by 314b
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,30, growing by 312b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,2, growing by 311b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,1, growing by 313b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,3, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,30, growing by 313b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 2/2 sectors used and 0 chunks present
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,31, growing by 302b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,2, growing by 301b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,3, growing by 313b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,1, growing by 313b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,3, growing by 301b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,2, growing by 313b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,31, growing by 302b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,0, growing by 303b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,31, growing by 303b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,30, growing by 305b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,2, growing by 314b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,2, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,1, growing by 310b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,2, growing by 302b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 11
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,30, growing by 314b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,30, growing by 312b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,30, growing by 305b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,1, growing by 310b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,31, growing by 312b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,1, growing by 304b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 11
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,31, growing by 303b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,1, growing by 313b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 12
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,3, growing by 302b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 12
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,30, growing by 304b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,0, growing by 301b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 13
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,1, growing by 310b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 14
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,3, growing by 314b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 13
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,1, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 15
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,30, growing by 304b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 3,30, growing by 314b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,30, growing by 314b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,1, growing by 312b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,0, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 16
-[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,2, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,1, growing by 313b
 [   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,30, growing by 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,0, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,1, growing by 310b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,0, growing by 313b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,0, growing by 311b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
 [   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,2, growing by 311b
-[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 17
-[    INFO][pymclevel.infiniteworld.py:1249]:Saved 42 chunks (dim 0)
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 30 chunks (dim 0)
+[   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
+[   DEBUG][     pymclevel.schematic.py:59]:Using stock-schematics/library/Indrae_Library.schematic
+[   DEBUG][     pymclevel.schematic.py:63]:stock-schematics/library/Indrae_Library.schematic loaded.
+[   DEBUG][     pymclevel.schematic.py:68]:Using named materials.
+[   DEBUG][     pymclevel.schematic.py:76]:Processing materials.
+[   DEBUG][     pymclevel.schematic.py:82]:Processing size.
+[   DEBUG][     pymclevel.schematic.py:87]:Reshaping blocks.
+[   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
+[   DEBUG][     pymclevel.schematic.py:59]:Using stock-schematics/library/farm-wheat.schematic
+[   DEBUG][     pymclevel.schematic.py:63]:stock-schematics/library/farm-wheat.schematic loaded.
+[   DEBUG][     pymclevel.schematic.py:68]:Using named materials.
+[   DEBUG][     pymclevel.schematic.py:76]:Processing materials.
+[   DEBUG][     pymclevel.schematic.py:82]:Processing size.
+[   DEBUG][     pymclevel.schematic.py:87]:Reshaping blocks.
 [   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
 [   DEBUG][     pymclevel.schematic.py:59]:Using stock-schematics/library/flying-saucer-alien.schematic
 [   DEBUG][     pymclevel.schematic.py:63]:stock-schematics/library/flying-saucer-alien.schematic loaded.
@@ -3402,10 +3338,88 @@
 [   DEBUG][     pymclevel.schematic.py:76]:Processing materials.
 [   DEBUG][     pymclevel.schematic.py:82]:Processing size.
 [   DEBUG][     pymclevel.schematic.py:87]:Reshaping blocks.
+[   DEBUG][    pymclevel.block_copy.py:36]:Asked to copy 50986 blocks 
+	from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=53, y=26, z=37)) in MCSchematic(shape=(53, 26, 37), materials=Alpha, filename="stock-schematics/library/Indrae_Library.schematic")
+	to (-48, 3, -25) in MCInfdevOldLevel("Flatlandia")
+[    INFO][    pymclevel.block_copy.py:59]:Copying 50986 blocks from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=53, y=26, z=37)) to (-48, 3, -25)
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[    INFO][   pymclevel.block_copy.py:165]:Duration: 0:00:00.038126
+[    INFO][   pymclevel.block_copy.py:166]:Copied 0 entities and 27 tile entities and 0 tile ticks
+[   DEBUG][    pymclevel.block_copy.py:36]:Asked to copy 468 blocks 
+	from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=13, y=4, z=9)) in MCSchematic(shape=(13, 4, 9), materials=Alpha, filename="stock-schematics/library/farm-wheat.schematic")
+	to (-8, 3, -25) in MCInfdevOldLevel("Flatlandia")
+[    INFO][    pymclevel.block_copy.py:59]:Copying 468 blocks from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=13, y=4, z=9)) to (-8, 3, -25)
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[    INFO][   pymclevel.block_copy.py:165]:Duration: 0:00:00.004469
+[    INFO][   pymclevel.block_copy.py:166]:Copied 0 entities and 1 tile entities and 0 tile ticks
 [   DEBUG][    pymclevel.block_copy.py:36]:Asked to copy 83544 blocks 
 	from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=59, y=24, z=59)) in MCSchematic(shape=(59, 24, 59), materials=Alpha, filename="stock-schematics/library/flying-saucer-alien.schematic")
-	to (-45, 3, -21) in MCInfdevOldLevel("Flatlandia")
-[    INFO][    pymclevel.block_copy.py:59]:Copying 83544 blocks from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=59, y=24, z=59)) to (-45, 3, -21)
+	to (-48, 53, -25) in MCInfdevOldLevel("Flatlandia")
+[    INFO][    pymclevel.block_copy.py:59]:Copying 83544 blocks from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=59, y=24, z=59)) to (-48, 53, -25)
 [   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
 [   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
 [   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
@@ -3502,82 +3516,164 @@
 [   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
 [   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
 [   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
-[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
-[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
-[    INFO][   pymclevel.block_copy.py:165]:Duration: 0:00:00.107075
+[    INFO][   pymclevel.block_copy.py:165]:Duration: 0:00:00.099819
 [    INFO][   pymclevel.block_copy.py:166]:Copied 0 entities and 54 tile entities and 0 tile ticks
-[   DEBUG][                  root.py:1598]:Mouse down 2 @ (751, 528)
-[   DEBUG][                  root.py:1618]:Mouse up   2 @ (1125, 462)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (547, 600)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (559, 475)
+[   DEBUG][                  root.py:1598]:Mouse down 1 @ (866, 681)
+[   DEBUG][                  root.py:1618]:Mouse up   1 @ (866, 681)
+[   DEBUG][                  root.py:1604]:Mouse left
+[   DEBUG][                  root.py:1609]:Mouse entered
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (707, 574)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (711, 623)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (695, 608)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (505, 630)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (891, 582)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (647, 561)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf75dd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbf75dd0>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,30, growing by 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddac3890>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddac3890>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,30, growing by 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc18a750>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc18a750>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,0, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddac3810>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddac3810>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,30, growing by 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddaf6310>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddaf6310>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 29,2, growing by 616b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc17ae50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc17ae50>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,0, growing by 1961b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dda4a550>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dda4a550>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,31, growing by 1558b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddfea710>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddfea710>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,0, growing by 2618b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb63a10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb63a10>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,2, growing by 417b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (952, 472)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (482, 477)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (553, 666)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (426, 652)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (584, 408)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (694, 419)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (592, 391)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (647, 375)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbd29c90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbd29c90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,30 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (570, 395)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce98810>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce98810>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce984d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce984d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,0 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce627d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce627d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,0 rewriting 1961b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce626d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce626d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,31 rewriting 1558b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce62e90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce62e90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,0 rewriting 2618b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb41950>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb41950>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (766, 365)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbc4d810>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbc4d810>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dceccc90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dceccc90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,0 rewriting 2618b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dcf6f910>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dcf6f910>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,2 rewriting 616b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][                  root.py:1604]:Mouse left
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbe05c90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbe05c90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][                  root.py:1609]:Mouse entered
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (979, 581)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (912, 561)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (979, 581)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dceddfd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dceddfd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,2 rewriting 417b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddfea410>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddfea410>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,2 rewriting 616b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb9f650>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb9f650>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,30 rewriting 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbccc850>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbccc850>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,30 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbccc210>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbccc210>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,31 rewriting 1558b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbdb8f50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dbdb8f50>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,0 rewriting 2618b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb30bd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4ddb30bd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,2 rewriting 417b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dcecc2d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dcecc2d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (1113, 569)
+[   DEBUG][                  root.py:1604]:Mouse left
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc1b6890>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dc1b6890>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][                  root.py:1609]:Mouse entered
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (921, 443)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce59ed0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7ff4dce59ed0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 1722b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (924, 450)
 [   DEBUG][                  root.py:1604]:Mouse left
 [   DEBUG][                  root.py:1609]:Mouse entered
 [   DEBUG][                  root.py:1604]:Mouse left

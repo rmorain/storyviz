@@ -18,23 +18,23 @@ def get_immediate_subdirectories(a_dir):
     return [name for name in os.listdir(a_dir)
             if os.path.isdir(os.path.join(a_dir, name))]
 
-def make_schematic(level, box, options, schematic):
+def make_schematic(level, box, options, schematic, offset):
 	newBox = BoundingBox((0,0,0), (schematic.Width,schematic.Height,schematic.Length))
 	b=range(4096)
 	b.remove(0) # @CodeWarrior0 and @Wout12345 explained how to merge schematics			
-	level.copyBlocksFrom(schematic, newBox, (box.minx, box.miny, box.minz ),b)
+	level.copyBlocksFrom(schematic, newBox, (box.minx+offset[0], box.miny+offset[1], box.minz+offset[2]),b)
 	level.markDirtyBox(box)
 
 def perform(level, box, options):
 	path = "stock-schematics/library/"
-	house = path+"farm-house.schematic"
+	house = path+"Indrae_Library.schematic"
 	farm = path+"farm-wheat.schematic"
 	ufo = path+"flying-saucer-alien.schematic"
 	
-	#houseSchematic = MCSchematic(filename=house)
-	#farmSchematic = MCSchematic(filename=farm)
+	houseSchematic = MCSchematic(filename=house)
+	farmSchematic = MCSchematic(filename=farm)
 	ufoSchematic = MCSchematic(filename=ufo)
 
-	#make_schematic(level, box, options, houseSchematic)
-	#make_schematic(level, box, options, farmSchematic)
-	make_schematic(level, box, options, ufoSchematic)
+	make_schematic(level, box, options, houseSchematic, (0,0,0))
+	make_schematic(level, box, options, farmSchematic, (40,0,0))
+	make_schematic(level, box, options, ufoSchematic, (0,50,0))
