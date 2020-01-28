@@ -11,21 +11,21 @@
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                         yellow = (1.0, 1.0, 0.75)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           grey = (0.6, 0.6, 0.6)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                          black = (0.0, 0.0, 0.0)
-[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGL.so => libGL.so.1 <CDLL 'libGL.so.1', handle 55d31d985ce0 at 7f216caab1d0>
+[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGL.so => libGL.so.1 <CDLL 'libGL.so.1', handle 564ecdbb98d0 at 7fb48c5844d0>
 [    INFO][OpenGL.acceleratesupport.py:17]:No OpenGL_accelerate module loaded: No module named OpenGL_accelerate
-[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGLU.so => libGLU.so.1 <CDLL 'libGLU.so.1', handle 55d31df14ba0 at 7f215bc414d0>
+[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libGLU.so => libGLU.so.1 <CDLL 'libGLU.so.1', handle 564ece1499b0 at 7fb4896ee910>
 [   ERROR][          pymclevel.nbt.py:678]:Failed to import Cythonized nbt file. Running on (very slow) pure-python nbt fallback.
 [   ERROR][          pymclevel.nbt.py:679]:(Did you forget to run 'setup.py build_ext --inplace'?)
 [   ERROR][          pymclevel.nbt.py:680]:No module named _nbt
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/minecraft.json', mode 'rb' at 0x7f215b910540>
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/classic.json', mode 'rb' at 0x7f215b910540>
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/indev.json', mode 'rb' at 0x7f215b910540>
-[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/kane0058/Documents/gosling/pymclevel/pocket.json', mode 'rb' at 0x7f215b910540>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/rob/Documents/projects/GDMC/pymclevel/minecraft.json', mode 'rb' at 0x7fb489430780>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/rob/Documents/projects/GDMC/pymclevel/classic.json', mode 'rb' at 0x7fb489430780>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/rob/Documents/projects/GDMC/pymclevel/indev.json', mode 'rb' at 0x7fb489430780>
+[    INFO][    pymclevel.materials.py:329]:Loading block info from <open file '/home/rob/Documents/projects/GDMC/pymclevel/pocket.json', mode 'rb' at 0x7fb489430780>
 [    INFO][ pymclevel.leveldbpocket.py:29]:Error while trying to import leveldb_mcpe, starting without PE support (No module named leveldb_mcpe)
-[   DEBUG][OpenGL.platform.ctypesloader.py:65]:Loaded libglut.so => libglut.so.3 <CDLL 'libglut.so.3', handle 55d31eead2f0 at 7f215a611ed0>
+[    INFO][OpenGL.platform.ctypesloader.py:70]:Failed to load library ( 'libglut.so.0' ): libglut.so.0: cannot open shared object file: No such file or directory
 [   DEBUG][      pymclevel.BOParser.py:19]:BO3 block definitions loaded. 199 entries found
 [ WARNING][            mcplatform.py:1276]:Initializing window management...
-[    INFO][            mcplatform.py:1284]:XWindowHandler initialized.
+[ WARNING][            mcplatform.py:1279]:Your desktop environment could not be determined. The support for window sizing/moving is not availble.
 [   DEBUG][         albow.translate.py:66]:*** Platform information
 [   DEBUG][         albow.translate.py:67]:    System: Linux
 [   DEBUG][         albow.translate.py:68]:    Release: 4.15.0-72-generic
@@ -43,71 +43,71 @@
 [   DEBUG][         albow.translate.py:97]:***
 [   DEBUG][                   root.py:253]:Detected languages: {u'\u010ce\u0161tina (Czech Republic)': u'cs_CZ', u'Korean (Korea)': u'ko_KR', u'Fran\xe7ais (France)': u'fr_FR', u'Traditional Chinese (Taiwan)': u'zh_TW', u'English (US)': 'en_US', u'Simplified Chinese (China)': u'zh_CN', u'Deutsch (Deutschland)': u'de_DE', u'Svenska (Sverige)': u'sv_SE', u'Nederlands (Nederland)': u'nl_NL'}
 [   DEBUG][        albow.translate.py:345]:buildTranslation <<<
-[   DEBUG][        albow.translate.py:354]:fName: /home/kane0058/Documents/gosling/lang/en_US.trn
+[   DEBUG][        albow.translate.py:354]:fName: /home/rob/Documents/projects/GDMC/lang/en_US.trn
 [   DEBUG][        albow.translate.py:440]:fName is not valid beacause:
 [   DEBUG][        albow.translate.py:442]:  * Can't access file.
 [   DEBUG][        albow.translate.py:444]:  * It's not a file.
 [   DEBUG][        albow.translate.py:446]:  * Is not readable.
 [   DEBUG][        albow.translate.py:447]:Default strings will be used.
 [   DEBUG][        albow.translate.py:451]:buildTranslation >>>
-[   DEBUG][         albow.resource.py:180]:Font /home/kane0058/Documents/gosling/fonts/DejaVuSans-Regular.ttf loaded.
+[   DEBUG][         albow.resource.py:180]:Font /home/rob/Documents/projects/GDMC/fonts/DejaVuSans-Regular.ttf loaded.
 [   DEBUG][         albow.resource.py:181]:    Original size: 15. Proportion: 100. Final size: 15.
 [   DEBUG][                   root.py:253]:Detected languages: {u'\u010ce\u0161tina (Czech Republic)': u'cs_CZ', u'Korean (Korea)': u'ko_KR', u'Fran\xe7ais (France)': u'fr_FR', u'Traditional Chinese (Taiwan)': u'zh_TW', u'English (US)': 'en_US', u'Simplified Chinese (China)': u'zh_CN', u'Deutsch (Deutschland)': u'de_DE', u'Svenska (Sverige)': u'sv_SE', u'Nederlands (Nederland)': u'nl_NL'}
-[   DEBUG][         albow.resource.py:180]:Font /home/kane0058/Documents/gosling/fonts/DejaVuSans-Bold.ttf loaded.
+[   DEBUG][         albow.resource.py:180]:Font /home/rob/Documents/projects/GDMC/fonts/DejaVuSans-Bold.ttf loaded.
 [   DEBUG][         albow.resource.py:181]:    Original size: 17. Proportion: 100. Final size: 17.
 [   DEBUG][               mclangres.py:56]:Building Minecraft language resources...
 [   DEBUG][               mclangres.py:74]:Minecraft installation directory is not valid.
 [   DEBUG][               mclangres.py:75]:Impossible to load the game language resources.
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.roughGraphics
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showHiddenOres
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.vertexBufferLimit
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawTileEntities
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawTileTicks
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawTerrainPopulated
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawChunkBorder
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawMonsters
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.drawItems
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showRedraw
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.spaceHeight
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.targetFPS
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.maxViewDistance
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showHiddenOres
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.vertexBufferLimit
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawTileEntities
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawTileTicks
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawTerrainPopulated
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawChunkBorder
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawMonsters
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.drawItems
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showRedraw
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.spaceHeight
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.targetFPS
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.maxViewDistance
 [   DEBUG][                 config.py:194]:Property Change:        Settings                  hiddable ores = [7, 16, 15, 21, 73, 14, 56, 153]
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre7
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre16
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre15
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre21
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre73
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre14
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre56
-[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7f2158485390>.showOre153
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.drawSky
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.drawFog
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.superSecretSettings
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.showCeiling
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.accelFactor
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.maxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.brakeMaxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.invertMousePitch
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.autobrake
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.swapAxes
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.compassToggle
-[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7f21586a7750>.fovSetting
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.drawSky
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.drawFog
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.superSecretSettings
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.showCeiling
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.accelFactor
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.maxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.brakeMaxSpeed
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.invertMousePitch
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.autobrake
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.swapAxes
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.compassToggle
-[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7f2158418910>.fovSetting
-[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7f21584852d0>.viewMode
-[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7f21584852d0>.undoLimit
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre7
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre16
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre15
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre21
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre73
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre14
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre56
+[   DEBUG][                 config.py:210]:Subscribing <renderer.MCRenderer object at 0x7fb47f229fd0>.showOre153
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.drawSky
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.drawFog
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.superSecretSettings
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.showCeiling
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.accelFactor
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.maxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.brakeMaxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.invertMousePitch
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.autobrake
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.swapAxes
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.compassToggle
+[   DEBUG][                 config.py:210]:Subscribing <viewports.camera.CameraViewport object at 0x7fb47f1c1590>.fovSetting
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.drawSky
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.drawFog
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.superSecretSettings
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.showCeiling
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.accelFactor
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.maxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.brakeMaxSpeed
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.invertMousePitch
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.autobrake
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.swapAxes
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.compassToggle
+[   DEBUG][                 config.py:210]:Subscribing <viewports.chunk.ChunkViewport object at 0x7fb47f1c1550>.fovSetting
+[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7fb47f229f10>.viewMode
+[   DEBUG][                 config.py:210]:Subscribing <leveleditor.LevelEditor object at 0x7fb47f229f10>.undoLimit
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           blue = (0.75, 0.75, 1.0)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           pink = (1.0, 0.75, 1.0)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                           grey = (0.6, 0.6, 0.6)
@@ -118,34 +118,31 @@
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                          white = (1.0, 1.0, 1.0)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                            red = (1.0, 0.75, 0.75)
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                          white = (1.0, 1.0, 1.0)
-[   DEBUG][         albow.resource.py:180]:Font /home/kane0058/Documents/gosling/fonts/DejaVuSans-Bold.ttf loaded.
+[   DEBUG][         albow.resource.py:180]:Font /home/rob/Documents/projects/GDMC/fonts/DejaVuSans-Bold.ttf loaded.
 [   DEBUG][         albow.resource.py:181]:    Original size: 18. Proportion: 100. Final size: 18.
+[    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
+[    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
+[    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
+[    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
+[    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
+[    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
+[    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
+[    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
+[    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
 [    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
 [    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
 [    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
 [   DEBUG][                 config.py:194]:Property Change:        Settings             report crashes new = False
 [   DEBUG][                 config.py:194]:Property Change:        Settings           report crashes asked = True
 [   DEBUG][                 config.py:194]:Property Change:         Version                        version = 1.1.2.0
-[   DEBUG][             mcplatform.py:485]:Calling internal file chooser.
-[   DEBUG][             mcplatform.py:486]:'initialDir' is u'/home/kane0058/.minecraft/saves' (<type 'unicode'>)
-[   DEBUG][             mcplatform.py:487]:'defaultName' is u'Untitled World' (<type 'unicode'>)
-[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
-[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
-[    INFO][pymclevel.minecraft_server.py:470]:Generating at (-8, -8)
-[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
-[    INFO][pymclevel.minecraft_server.py:615]:Starting server /home/kane0058/.mcedit/MCEdit/ServerJarStorage/Release 1.12.2/minecraft_server.jar in /home/kane0058/Documents/MinecraftWorlds
-[    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
-[    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
-[    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
-[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
-[    INFO][      pymclevel.mclevel.py:200]:Identifying /home/kane0058/Documents/MinecraftWorlds/Flatlandia
+[    INFO][      pymclevel.mclevel.py:200]:Identifying /home/rob/flat asset placement
 [    INFO][      pymclevel.mclevel.py:217]:Detected Infdev level.dat
 [    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
 [    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
 [    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
 [    INFO][pymclevel.infiniteworld.py:1446]:Found dimension DIM1
 [    INFO][pymclevel.infiniteworld.py:1446]:Found dimension DIM-1
-[   DEBUG][           leveleditor.py:1197]:Loaded world is <pymclevel.infiniteworld.MCInfdevOldLevel object at 0x7f214e30cf90>
+[   DEBUG][           leveleditor.py:1197]:Loaded world is <pymclevel.infiniteworld.MCInfdevOldLevel object at 0x7fb484082510>
 [    INFO][           leveleditor.py:1238]:Loading world for version 1.12.2.
 [   DEBUG][                   root.py:816]:renderer::ChunkCalculator: Dynamically adding transparent materials.
 [   DEBUG][                   root.py:820]:Adding '<Block Jungle Sapling (Stage 1) (6:11)>'
@@ -1120,18 +1117,1667 @@
 [   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 2) (207:2)>'
 [   DEBUG][                   root.py:820]:Adding '<Block Structure Void (217:0)>'
 [   DEBUG][                   root.py:822]:renderer::ChunkCalculator: Transparent materials added: 971
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7f21584186d0>.fastLeaves
-[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7f21584186d0>.roughGraphics
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fb47f1c1310>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fb47f1c1310>.roughGraphics
 [    INFO][pymclevel.infiniteworld.py:1465]:Scanning for regions...
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 402/402 sectors used and 400 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 102/102 sectors used and 100 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 27/27 sectors used and 25 chunks present
-[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 402/402 sectors used and 400 chunks present
 [    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 102/102 sectors used and 100 chunks present
+[   DEBUG][     PIL.PngImagePlugin.py:146]:STREAM 'IHDR' 16 13
+[   DEBUG][     PIL.PngImagePlugin.py:146]:STREAM 'IDAT' 41 1234
 [   DEBUG][                 config.py:194]:Property Change: Selection Colors                          black = (0.0, 0.0, 0.0)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (446, 454)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (433, 647)
+[   DEBUG][                  root.py:1598]:Mouse down 1 @ (315, 183)
+[   DEBUG][                  root.py:1618]:Mouse up   1 @ (769, 585)
+[    INFO][     editortools.filter.py:255]:Creating options for <module 'abode_v8' from '/home/rob/Documents/projects/GDMC/stock-filters/abode_v8.pyc'>
+[    INFO][     editortools.filter.py:255]:Creating options for <module 'farm-filter' from '/home/rob/Documents/projects/GDMC/stock-filters/farm-filter.py'>
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b0d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b0d0>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,31, growing by 303b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,0, growing by 266b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,1, growing by 266b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335cd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335cd0>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,0, growing by 264b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,1, growing by 264b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0d10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0d10>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f3a0b90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f3a0b90>
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,0, growing by 300b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,1, growing by 265b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca081d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca081d0>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335390>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335390>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,0, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:1561]:No chunk loaded. Using world folder.copyChunkFrom
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,1, growing by 263b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b250>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b250>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08090>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08090>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,0, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][pymclevel.infiniteworld.py:1549]:Source chunk loaded. Saving into work folder.
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335d10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335d10>
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,1, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 4/4 sectors used and 2 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 5/5 sectors used and 3 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 8/8 sectors used and 6 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 6/6 sectors used and 4 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,1, growing by 310b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,1, growing by 313b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,0, growing by 300b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,0, growing by 313b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,1, growing by 312b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 2/2 sectors used and 0 chunks present
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 30,31, growing by 303b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,1, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 2,0, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 0,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,0, growing by 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,31, growing by 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 1,1, growing by 310b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][   pymclevel.regionfile.py:284]:REGION SAVE 31,0, growing by 312b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 15 chunks (dim 0)
+[   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
+[   DEBUG][     pymclevel.schematic.py:59]:Using stock-schematics/library/farm-wheat.schematic
+[   DEBUG][     pymclevel.schematic.py:63]:stock-schematics/library/farm-wheat.schematic loaded.
+[   DEBUG][     pymclevel.schematic.py:68]:Using named materials.
+[   DEBUG][     pymclevel.schematic.py:76]:Processing materials.
+[   DEBUG][     pymclevel.schematic.py:82]:Processing size.
+[   DEBUG][     pymclevel.schematic.py:87]:Reshaping blocks.
+[   DEBUG][     pymclevel.schematic.py:57]:Creating scematic.
+[   DEBUG][     pymclevel.schematic.py:59]:Using stock-schematics/library/flying-saucer-alien.schematic
+[   DEBUG][     pymclevel.schematic.py:63]:stock-schematics/library/flying-saucer-alien.schematic loaded.
+[   DEBUG][     pymclevel.schematic.py:68]:Using named materials.
+[   DEBUG][     pymclevel.schematic.py:76]:Processing materials.
+[   DEBUG][     pymclevel.schematic.py:82]:Processing size.
+[   DEBUG][     pymclevel.schematic.py:87]:Reshaping blocks.
+[   DEBUG][    pymclevel.block_copy.py:36]:Asked to copy 468 blocks 
+	from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=13, y=4, z=9)) in MCSchematic(shape=(13, 4, 9), materials=Alpha, filename="stock-schematics/library/farm-wheat.schematic")
+	to (-23, 3, -13) in MCInfdevOldLevel("flat asset placement")
+[    INFO][    pymclevel.block_copy.py:59]:Copying 468 blocks from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=13, y=4, z=9)) to (-23, 3, -13)
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[    INFO][   pymclevel.block_copy.py:165]:Duration: 0:00:00.005588
+[    INFO][   pymclevel.block_copy.py:166]:Copied 0 entities and 1 tile entities and 0 tile ticks
+[   DEBUG][    pymclevel.block_copy.py:36]:Asked to copy 83544 blocks 
+	from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=59, y=24, z=59)) in MCSchematic(shape=(59, 24, 59), materials=Alpha, filename="stock-schematics/library/flying-saucer-alien.schematic")
+	to (-23, 3, -13) in MCInfdevOldLevel("flat asset placement")
+[    INFO][    pymclevel.block_copy.py:59]:Copying 83544 blocks from BoundingBox(_Vector(x=0, y=0, z=0), _Vector(x=59, y=24, z=59)) to (-23, 3, -13)
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[   DEBUG][        pymclevel.level.py:487]:Removed 0 entities
+[   DEBUG][        pymclevel.level.py:506]:Removed 0 tile entities
+[   DEBUG][        pymclevel.level.py:525]:Removed 0 tile tickss
+[    INFO][   pymclevel.block_copy.py:165]:Duration: 0:00:00.115282
+[    INFO][   pymclevel.block_copy.py:166]:Copied 0 entities and 54 tile entities and 0 tile ticks
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (1029, 564)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (932, 501)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (895, 596)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (830, 513)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (397, 591)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (538, 622)
 [   DEBUG][                  root.py:1604]:Mouse left
 [   DEBUG][                  root.py:1609]:Mouse entered
+[   DEBUG][                  root.py:1618]:Mouse up   1 @ (132, 65)
+[   DEBUG][             mcplatform.py:485]:Calling internal file chooser.
+[   DEBUG][             mcplatform.py:486]:'initialDir' is u'/home/rob/.minecraft/saves' (<type 'unicode'>)
+[   DEBUG][             mcplatform.py:487]:'defaultName' is u'Untitled World' (<type 'unicode'>)
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
+[    INFO][pymclevel.minecraft_server.py:470]:Generating at (-8, -8)
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
+[    INFO][pymclevel.minecraft_server.py:615]:Starting server /home/rob/.mcedit/MCEdit/ServerJarStorage/Release 1.12.2/minecraft_server.jar in /home/rob
+[    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
+[    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
+[    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 0)
+[    INFO][pymclevel.infiniteworld.py:558]:Asked to light 0 chunks
+[    INFO][pymclevel.infiniteworld.py:596]:Batch 0/1
+[    INFO][pymclevel.infiniteworld.py:625]:Lighting 0 chunks
+[    INFO][pymclevel.infiniteworld.py:666]:Dispersing light...
+[    INFO][pymclevel.infiniteworld.py:558]:Asked to light 0 chunks
+[    INFO][pymclevel.infiniteworld.py:596]:Batch 0/1
+[    INFO][pymclevel.infiniteworld.py:625]:Lighting 0 chunks
+[    INFO][pymclevel.infiniteworld.py:666]:Dispersing light...
+[    INFO][pymclevel.infiniteworld.py:558]:Asked to light 20 chunks
+[    INFO][pymclevel.infiniteworld.py:596]:Batch 0/1
+[    INFO][pymclevel.infiniteworld.py:625]:Lighting 20 chunks
+[    INFO][pymclevel.infiniteworld.py:666]:Dispersing light...
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 0: 42 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 1: 20 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 2: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 3: 26 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 4: 30 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 5: 33 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 6: 25 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 7: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 8: 20 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 9: 21 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 10: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 11: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 12: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:BlockLight Pass 13: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 0: 42 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 1: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 2: 22 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 3: 21 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 4: 14 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 5: 14 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 6: 12 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 7: 12 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 8: 10 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 9: 12 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 10: 11 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 11: 9 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 12: 7 chunks
+[    INFO][pymclevel.infiniteworld.py:686]:SkyLight Pass 13: 6 chunks
+[    INFO][pymclevel.infiniteworld.py:611]:Completed in 0:00:00.571466, 0:00:00.028573 per chunk
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim 1)
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 0 chunks (dim -1)
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08ead0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08ead0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,0 rewriting 3158b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 62
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f1797d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f1797d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,29 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 53
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fe710>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fe710>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 28,3 rewriting 307b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2fb10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2fb10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,2 rewriting 673b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 64
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08e410>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08e410>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,0 rewriting 3201b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d990>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d990>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,30 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 11
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0710>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0710>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,4 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 18
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2fe90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2fe90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,2 rewriting 364b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08e6d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08e6d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,1 rewriting 3390b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 15
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335d90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335d90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,2 rewriting 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335dd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335dd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,30 rewriting 529b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b0d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b0d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,31 rewriting 818b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 35
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d3d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d3d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,1 rewriting 307b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 78
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d0d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d0d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,29 rewriting 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08e4d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a08e4d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,1 rewriting 3599b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 11
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335bd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335bd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,1 rewriting 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 24
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2f810>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2f810>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,30 rewriting 428b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 253
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1bd10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1bd10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,3 rewriting 422b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 52
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9feb50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9feb50>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 28,1 rewriting 307b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 26
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9e71d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9e71d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,4 rewriting 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9e7790>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9e7790>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,4 rewriting 306b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08bd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08bd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,2 rewriting 1946b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3db50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3db50>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,29 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 58
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335d10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335d10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,1 rewriting 888b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 7
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5890>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5890>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 4,30 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 62
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2f110>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2f110>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,29 rewriting 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 23
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f2f3250>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f2f3250>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,30 rewriting 560b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 24
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08ed0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08ed0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,2 rewriting 311b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 22
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5110>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5110>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 4,0 rewriting 300b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 21
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5390>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5390>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 4,1 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b250>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b250>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,31 rewriting 771b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 25
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a06d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a06d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,30 rewriting 610b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 72
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9e7510>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9e7510>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,4 rewriting 306b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 65
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335390>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335390>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,0 rewriting 3246b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 10
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c90f290>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c90f290>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 28,30 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 217
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d490>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d490>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,0 rewriting 306b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b550>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b550>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,30 rewriting 462b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 60
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f1794d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f1794d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,2 rewriting 2813b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 16
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5490>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5490>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,30 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 9
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2f710>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2f710>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,3 rewriting 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 25
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1bb50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1bb50>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,0 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 3
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fe950>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fe950>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 28,2 rewriting 307b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 57
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fe190>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fe190>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,3 rewriting 310b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 55
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca081d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca081d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,31 rewriting 1666b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 70
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0d10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0d10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,31 rewriting 2771b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 4
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0850>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0850>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,4 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 13
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b3d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1b3d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,3 rewriting 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 12
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2ff90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2ff90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,29 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 204
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335fd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335fd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 4,2 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 20
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fefd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fefd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 28,31 rewriting 303b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 14
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb48204ff10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb48204ff10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,3 rewriting 394b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 14
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335f90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335f90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,4 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 6
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2fc10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca2fc10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,4 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 23
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08090>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08090>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 2,0 rewriting 897b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 26
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1bc10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca1bc10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,31 rewriting 403b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 54
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a05d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a05d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,3 rewriting 464b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 5
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08490>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca08490>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,2 rewriting 1336b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 14
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d310>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d310>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 3,3 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 17
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d450>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47ca3d450>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,31 rewriting 377b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 218
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5c10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d5c10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 4,31 rewriting 302b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 15
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a1772d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a1772d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,1 rewriting 3187b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 76
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0e10>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f0a0e10>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 1,29 rewriting 305b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 73
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f3a0b90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f3a0b90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 0,0 rewriting 3440b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 2
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a1b4a90>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47a1b4a90>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 30,1 rewriting 2926b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 21
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335cd0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f335cd0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 31,31 rewriting 2272b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 220
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fed50>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9fed50>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 28,0 rewriting 306b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 53
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d51d0>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47c9d51d0>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 29,29 rewriting 304b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 208
+[   DEBUG][pymclevel.infiniteworld.py:183]:Saving chunk: <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f2f3150>
+[   DEBUG][pymclevel.infiniteworld.py:220]:Saved chunk <pymclevel.infiniteworld.AnvilChunkData object at 0x7fb47f2f3150>
+[   DEBUG][   pymclevel.regionfile.py:243]:REGION SAVE 4,3 rewriting 301b
+[   DEBUG][   pymclevel.regionfile.py:306]:REGION: Writing sector 8
+[    INFO][pymclevel.infiniteworld.py:1249]:Saved 68 chunks (dim 0)
+[    INFO][      pymclevel.mclevel.py:200]:Identifying /home/rob/spencer's world
+[    INFO][      pymclevel.mclevel.py:217]:Detected Infdev level.dat
+[    INFO][pymclevel.id_definitions.py:84]:Loading resources for MC 1.12.2
+[    INFO][pymclevel.id_definitions.py:143]:MC 1.12.2 resources not found.
+[    INFO][pymclevel.id_definitions.py:147]:Loaded 0 defs and 0 ids
+[    INFO][pymclevel.infiniteworld.py:1446]:Found dimension DIM1
+[    INFO][pymclevel.infiniteworld.py:1446]:Found dimension DIM-1
+[   DEBUG][           leveleditor.py:1197]:Loaded world is <pymclevel.infiniteworld.MCInfdevOldLevel object at 0x7fb48204ff10>
+[    INFO][           leveleditor.py:1238]:Loading world for version 1.12.2.
+[   DEBUG][                   root.py:816]:renderer::ChunkCalculator: Dynamically adding transparent materials.
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Sapling (Stage 1) (6:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Sapling (Stage 1) (6:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Sapling (Stage 1) (6:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Sapling (Stage 1) (6:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Sapling (Stage 0) (6:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Sapling (Stage 0) (6:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Sapling (Stage 0) (6:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Sapling (Stage 0) (6:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Sapling (Stage 0) (6:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Sapling (Stage 0) (6:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Sapling (Stage 1) (6:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Sapling (Stage 1) (6:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 12) (10:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 13) (10:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 10) (10:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 11) (10:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 8) (10:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 9) (10:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 6) (10:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 7 (Source)) (10:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 4) (10:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 5) (10:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 2) (10:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 3) (10:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 0) (10:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 1) (10:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 14) (10:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Flowing, Level 15) (10:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 12) (11:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 13) (11:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 10) (11:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 11) (11:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 8) (11:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 9) (11:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 6) (11:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 7 (Source)) (11:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 4) (11:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 5) (11:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 2) (11:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 3) (11:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 0) (11:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 1) (11:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 14) (11:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lava (Still, Level 15) (11:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Glass (20:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head) (26:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head) (26:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head, Occupied) (26:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head, Occupied) (26:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head, Occupied) (26:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head, Occupied) (26:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Foot) (26:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Foot) (26:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Foot) (26:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Foot) (26:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head) (26:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Bed (Head) (26:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Powered, Ascending, West) (27:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Powered, Ascending, East) (27:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Powered, Ascending, South) (27:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Powered, Ascending, North) (27:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Unpowered, East/West) (27:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Unpowered, North/South) (27:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Unpowered, Ascending, West) (27:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Unpowered, Ascending, East) (27:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Unpowered, Ascending, South) (27:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Unpowered, Ascending, North) (27:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Powered, East/West) (27:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Powered Rail (Powered, North/South) (27:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Powered, Ascending, West) (28:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Powered, Ascending, East) (28:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Powered, Ascending, South) (28:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Powered, Ascending, North) (28:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Unpowered, East/West) (28:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Unpowered, North/South) (28:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Unpowered, Ascending, West) (28:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Unpowered, Ascending, East) (28:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Unpowered, Ascending, South) (28:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Unpowered, Ascending, North) (28:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Powered, East/West) (28:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Detector Rail (Powered, North/South) (28:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Extended, South) (29:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Extended, North) (29:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Extended, East) (29:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Extended, West) (29:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Up) (29:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Down) (29:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (South) (29:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (North) (29:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (East) (29:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (West) (29:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Extended, Up) (29:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sticky Piston (Extended, Down) (29:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Grass (31:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dead Bush (Drops Seeds) (31:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fern (31:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dead Bush (32:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Extended, South) (33:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Extended, North) (33:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Extended, East) (33:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Extended, West) (33:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Up) (33:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Down) (33:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (South) (33:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (North) (33:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (East) (33:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (West) (33:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Extended, Up) (33:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston (Extended, Down) (33:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Sticky, South) (34:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Sticky, North) (34:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Sticky, East) (34:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Sticky, West) (34:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Up) (34:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Down) (34:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (South) (34:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (North) (34:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (East) (34:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (West) (34:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Sticky, Up) (34:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Head (Sticky, Down) (34:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Sticky, South) (36:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Sticky, North) (36:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Sticky, East) (36:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Sticky, West) (36:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Up) (36:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Down) (36:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (South) (36:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (North) (36:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (East) (36:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (West) (36:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Sticky, Up) (36:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Piston Extension (Sticky, Down) (36:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dandelion (37:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Blue Orchid (38:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Poppy (38:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Azure Bluet (38:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Allium (38:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Orange Tulip (38:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Red Tulip (38:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pink Tulip (38:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block White Tulip (38:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oxeye Daisy (38:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mushroom (Brown) (39:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mushroom (Red) (40:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Torch (East) (50:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Torch (South) (50:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Torch (West) (50:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Torch (Up) (50:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Torch (North) (50:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 11) (51:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 10) (51:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 13) (51:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 12) (51:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 15) (51:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 14) (51:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 1) (51:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 0) (51:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 3) (51:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 2) (51:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 5) (51:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 4) (51:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 7) (51:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 6) (51:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 9) (51:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Fire (Age 8) (51:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Monster Spawner (52:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Chest (South) (54:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Chest (North) (54:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Chest (East) (54:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Chest (West) (54:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 11) (55:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 10) (55:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 13) (55:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 12) (55:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 15) (55:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 14) (55:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 1) (55:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 0) (55:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 3) (55:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 2) (55:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 5) (55:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 4) (55:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 7) (55:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 6) (55:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 9) (55:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Dust (Power 8) (55:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 1) (59:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 0) (59:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 3) (59:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 2) (59:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 5) (59:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 4) (59:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 7 (Max)) (59:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wheat (Age 6) (59:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (East-NorthEast) (63:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (NorthEast) (63:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (East-SouthEast) (63:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (East) (63:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (South-SouthEast) (63:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (SouthEast) (63:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (South-SouthWest) (63:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (South) (63:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (West-SouthWest) (63:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (SouthWest) (63:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (West-NorthWest) (63:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (West) (63:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (North-NorthWest) (63:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (NorthWest) (63:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (North-NorthEast) (63:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Sign (North) (63:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Upper, Right Hinge, Powered) (64:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Upper, Left Hinge, Powered) (64:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Unopened, South) (64:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Unopened, East) (64:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Unopened, North) (64:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Unopened, West) (64:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Opened, South) (64:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Opened, East) (64:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Opened, North) (64:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Lower, Opened, West) (64:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Upper, Right Hinge, Unpowered) (64:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Door (Upper, Left Hinge, Unpowered) (64:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ladder (South) (65:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ladder (North) (65:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ladder (East) (65:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ladder (West) (65:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (East/West) (66:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (North/South) (66:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Ascending, West) (66:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Ascending, East) (66:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Ascending, South) (66:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Ascending, North) (66:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Curved, South/West) (66:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Curved, South/East) (66:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Curved, North/East) (66:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rail (Curved, North/West) (66:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Sign (South) (68:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Sign (North) (68:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Sign (East) (68:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Sign (West) (68:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, South) (69:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, West) (69:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, Up_z) (69:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, North) (69:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, Down_z) (69:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, Up_x) (69:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (East) (69:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Down_x) (69:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (South) (69:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (West) (69:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Up_z) (69:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (North) (69:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Down_z) (69:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Up_x) (69:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, East) (69:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lever (Powered, Down_x) (69:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Pressure Plate (Powered) (70:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Pressure Plate (70:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Upper, Right Hinge, Powered) (71:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Upper, Left Hinge, Powered) (71:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Unopened, South) (71:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Unopened, East) (71:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Unopened, North) (71:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Unopened, West) (71:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Opened, South) (71:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Opened, East) (71:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Opened, North) (71:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Lower, Opened, West) (71:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Upper, Right Hinge, Unpowered) (71:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Door (Upper, Left Hinge, Unpowered) (71:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Pressure Plate (Powered) (72:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Pressure Plate (72:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Unlit Redstone Torch (East) (75:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Unlit Redstone Torch (South) (75:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Unlit Redstone Torch (West) (75:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Unlit Redstone Torch (Up) (75:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Unlit Redstone Torch (North) (75:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Torch (East) (76:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Torch (South) (76:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Torch (West) (76:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Torch (Up) (76:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Torch (North) (76:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Powered, South) (77:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Powered, West) (77:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Powered, Up) (77:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Powered, North) (77:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (East) (77:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Down) (77:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (South) (77:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (West) (77:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Up) (77:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (North) (77:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Powered, East) (77:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Stone Button (Powered, Down) (77:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (2) (78:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (1) (78:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (4) (78:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (3) (78:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (6) (78:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (5) (78:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (8) (78:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Snow Layer (7) (78:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 11) (81:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 10) (81:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 13) (81:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 12) (81:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 15) (81:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 14) (81:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 1) (81:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 0) (81:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 3) (81:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 2) (81:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 5) (81:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 4) (81:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 7) (81:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 6) (81:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 9) (81:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cactus (Age 8) (81:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 11) (83:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 10) (83:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 13) (83:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 12) (83:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 15) (83:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 14) (83:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 1) (83:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 0) (83:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 3) (83:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 2) (83:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 5) (83:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 4) (83:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 7) (83:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 6) (83:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 9) (83:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sugar Canes (Age 8) (83:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence (85:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Portal (East/West) (90:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Portal (North/South) (90:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (1 Bites) (92:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (0 Bites) (92:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (3 Bites) (92:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (2 Bites) (92:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (5 Bites) (92:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (4 Bites) (92:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cake (6 Bites) (92:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 3, East) (93:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 3, North) (93:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 4, West) (93:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 4, South) (93:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 4, East) (93:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 4, North) (93:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 1, West) (93:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 1, South) (93:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 1, East) (93:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 1, North) (93:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 2, West) (93:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 2, South) (93:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 2, East) (93:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 2, North) (93:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 3, West) (93:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Unpowered, Delay 3, South) (93:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 3, West) (94:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 3, South) (94:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 4, East) (94:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 4, North) (94:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 4, West) (94:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 4, South) (94:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 1, East) (94:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 1, North) (94:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 1, West) (94:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 1, South) (94:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 2, East) (94:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 2, North) (94:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 2, West) (94:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 2, South) (94:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 3, East) (94:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Repeater (Powered, Delay 3, North) (94:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Blue Stained Glass (95:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Purple Stained Glass (95:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Green Stained Glass (95:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brown Stained Glass (95:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Black Stained Glass (95:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Red Stained Glass (95:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Orange Stained Glass (95:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block White Stained Glass (95:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Blue Stained Glass (95:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Magenta Stained Glass (95:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lime Stained Glass (95:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Yellow Stained Glass (95:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Gray Stained Glass (95:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pink Stained Glass (95:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cyan Stained Glass (95:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Gray Stained Glass (95:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, False, East) (96:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, False, West) (96:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, True, South) (96:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, True, North) (96:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, True, East) (96:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, True, West) (96:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, False, South) (96:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, False, North) (96:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, False, East) (96:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, False, West) (96:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, True, South) (96:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, True, North) (96:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, True, East) (96:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Bottom, True, West) (96:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, False, South) (96:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Trapdoor (Top, False, North) (96:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Bars (101:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Glass Pane (102:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 1) (104:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 0) (104:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 3) (104:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 2) (104:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 5) (104:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 4) (104:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 7 (Max)) (104:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pumpkin Stem (Age 6) (104:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 1) (105:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 0) (105:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 3) (105:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 2) (105:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 5) (105:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 4) (105:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 7 (Max)) (105:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Melon Stem (Age 6) (105:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/South/West) (106:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/West) (106:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/North/South) (106:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/North) (106:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/North/South/West) (106:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/North/West) (106:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (South) (106:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (None) (106:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (South/West) (106:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (West) (106:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (North/South) (106:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (North) (106:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (North/South/West) (106:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (North/West) (106:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East/South) (106:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Vines (East) (106:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Closed, East) (107:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Closed, North) (107:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Open, West) (107:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Open, South) (107:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Open, East) (107:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Open, North) (107:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Closed, West) (107:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Closed, South) (107:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Closed, East) (107:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Closed, North) (107:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Open, West) (107:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Open, South) (107:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Open, East) (107:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Open, North) (107:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Closed, West) (107:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Oak Fence Gate (Powered, Closed, South) (107:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lily Pad (111:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Brick Fence (113:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Wart (Age 1) (115:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Wart (Age 0) (115:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Wart (Age 3) (115:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Nether Wart (Age 2) (115:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Enchantment Table (116:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 0) (117:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Empty) (117:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 0&1) (117:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 1) (117:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 0&2) (117:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 2) (117:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 0&1&2) (117:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brewing Stand (Has Bottle 1&2) (117:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cauldron (Level 1) (118:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cauldron (Level 0) (118:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cauldron (Level 3) (118:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cauldron (Level 2) (118:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal (119:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (No Eye, West) (120:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (No Eye, South) (120:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (No Eye, East) (120:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (No Eye, North) (120:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (Eye, West) (120:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (Eye, South) (120:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (Eye, East) (120:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block End Portal Frame (Eye, North) (120:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dragon Egg (122:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 2, East) (127:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 2, North) (127:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 0, West) (127:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 0, South) (127:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 0, East) (127:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 0, North) (127:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 1, West) (127:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 1, South) (127:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 1, East) (127:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 1, North) (127:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 2, West) (127:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cocoa (Age 2, South) (127:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ender Chest (South) (130:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ender Chest (North) (130:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ender Chest (East) (130:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Ender Chest (West) (130:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Powered, East) (131:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Powered, North) (131:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Powered, West) (131:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Powered, South) (131:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Powered, East) (131:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Powered, North) (131:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Unpowered, West) (131:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Unpowered, South) (131:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Unpowered, East) (131:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Unpowered, North) (131:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Unpowered, West) (131:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Unpowered, South) (131:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Unpowered, East) (131:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Attached, Unpowered, North) (131:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Powered, West) (131:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire Hook (Unattached, Powered, South) (131:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Disarmed, Powered, Suspended) (132:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Disarmed, Unpowered, Suspended) (132:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Disarmed, Powered, Unsuspended) (132:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Disarmed, Unpowered, Unsuspended) (132:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Disarmed, Powered, Suspended) (132:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Disarmed, Unpowered, Suspended) (132:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Armed, Powered, Unsuspended) (132:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Armed, Unpowered, Unsuspended) (132:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Armed, Powered, Suspended) (132:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Armed, Unpowered, Suspended) (132:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Armed, Powered, Unsuspended) (132:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Armed, Unpowered, Unsuspended) (132:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Armed, Powered, Suspended) (132:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Attached, Armed, Unpowered, Suspended) (132:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Disarmed, Powered, Unsuspended) (132:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Tripwire (Unattached, Disarmed, Unpowered, Unsuspended) (132:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Beacon (138:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cobblestone Wall (Mossy) (139:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cobblestone Wall (139:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 11) (140:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 10) (140:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 13) (140:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 12) (140:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 15) (140:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 14) (140:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 1) (140:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 0) (140:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 3) (140:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 2) (140:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 5) (140:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 4) (140:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 7) (140:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 6) (140:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 9) (140:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Flower Pot (Legacy Data 8) (140:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 1) (141:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 0) (141:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 3) (141:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 2) (141:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 5) (141:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 4) (141:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 7) (141:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Carrots (Age 6) (141:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 1) (142:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 0) (142:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 3) (142:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 2) (142:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 5) (142:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 4) (142:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 7) (142:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Potatoes (Age 6) (142:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Powered, South) (143:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Powered, West) (143:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Powered, Up) (143:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Powered, North) (143:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (East) (143:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Down) (143:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (South) (143:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (West) (143:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Up) (143:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (North) (143:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Powered, East) (143:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wooden Button (Powered, Down) (143:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (No Drop, South) (144:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (No Drop, North) (144:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (No Drop, East) (144:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (No Drop, West) (144:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (Drop, Up) (144:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (Drop, Down) (144:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (Drop, South) (144:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (Drop, North) (144:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (Drop, East) (144:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (Drop, West) (144:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (No Drop, Up) (144:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Mob Head (No Drop, Down) (144:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Very Damaged, East) (145:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Very Damaged, North) (145:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (West) (145:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (South) (145:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (East) (145:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (North) (145:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Damaged, West) (145:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Damaged, South) (145:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Damaged, East) (145:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Damaged, North) (145:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Very Damaged, West) (145:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Anvil (Very Damaged, South) (145:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Trapped Chest (South) (146:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Trapped Chest (North) (146:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Trapped Chest (East) (146:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Trapped Chest (West) (146:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 11) (147:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 10) (147:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 13) (147:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 12) (147:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 15) (147:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 14) (147:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 1) (147:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 0) (147:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 3) (147:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 2) (147:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 5) (147:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 4) (147:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 7) (147:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 6) (147:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 9) (147:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Weighted Pressure Plate (Power 8) (147:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 11) (148:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 10) (148:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 13) (148:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 12) (148:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 15) (148:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 14) (148:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 1) (148:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 0) (148:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 3) (148:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 2) (148:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 5) (148:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 4) (148:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 7) (148:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 6) (148:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 9) (148:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Heavy Weighted Pressure Plate (Power 8) (148:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Compare, East) (149:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Compare, North) (149:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Subtract, West) (149:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Subtract, South) (149:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Subtract, East) (149:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Subtract, North) (149:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Compare, West) (149:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Compare, South) (149:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Compare, East) (149:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Compare, North) (149:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Subtract, West) (149:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Subtract, South) (149:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Subtract, East) (149:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (Off, Subtract, North) (149:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Compare, West) (149:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Redstone Comparator (On, Compare, South) (149:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Compare, West) (150:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Compare, South) (150:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Subtract, East) (150:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Subtract, North) (150:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Subtract, West) (150:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Subtract, South) (150:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Compare, West) (150:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Compare, North) (150:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Compare, West) (150:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Compare, South) (150:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Subtract, East) (150:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Subtract, North) (150:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Subtract, West) (150:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (Off, Subtract, South) (150:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Compare, East) (150:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block OLD/Redstone Comparator (On, Compare, North) (150:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 11) (151:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 10) (151:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 13) (151:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 12) (151:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 15) (151:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 14) (151:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 1) (151:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 0) (151:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 3) (151:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 2) (151:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 5) (151:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 4) (151:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 7) (151:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 6) (151:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 9) (151:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor (Power 8) (151:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (Disabled, South) (154:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (Disabled, North) (154:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (Disabled, East) (154:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (Disabled, West) (154:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (Down) (154:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (South) (154:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (North) (154:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (East) (154:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (West) (154:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Hopper (Disabled, Down) (154:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Powered, Ascending, West) (157:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Powered, Ascending, East) (157:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Powered, Ascending, South) (157:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Powered, Ascending, North) (157:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Unpowered, East/West) (157:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Unpowered, North/South) (157:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Unpowered, Ascending, West) (157:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Unpowered, Ascending, East) (157:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Unpowered, Ascending, South) (157:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Unpowered, Ascending, North) (157:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Powered, East/West) (157:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Activator Rail (Powered, North/South) (157:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (On, South) (158:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (On, North) (158:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (On, East) (158:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (On, West) (158:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (Up) (158:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (Down) (158:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (South) (158:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (North) (158:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (East) (158:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (West) (158:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (On, Up) (158:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dropper (On, Down) (158:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Blue Stained Glass Pane (160:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Purple Stained Glass Pane (160:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Green Stained Glass Pane (160:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brown Stained Glass Pane (160:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Black Stained Glass Pane (160:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Red Stained Glass Pane (160:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Orange Stained Glass Pane (160:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block White Stained Glass Pane (160:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Blue Stained Glass Pane (160:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Magenta Stained Glass Pane (160:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lime Stained Glass Pane (160:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Yellow Stained Glass Pane (160:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Gray Stained Glass Pane (160:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pink Stained Glass Pane (160:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cyan Stained Glass Pane (160:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Gray Stained Glass Pane (160:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Slime Block (165:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Barrier (166:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, False, East) (167:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, False, West) (167:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, True, South) (167:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, True, North) (167:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, True, East) (167:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, True, West) (167:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, False, South) (167:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, False, North) (167:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, False, East) (167:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, False, West) (167:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, True, South) (167:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, True, North) (167:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, True, East) (167:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Bottom, True, West) (167:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, False, South) (167:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Iron Trapdoor (Top, False, North) (167:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Blue Carpet (171:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Purple Carpet (171:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Green Carpet (171:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Brown Carpet (171:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Black Carpet (171:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Red Carpet (171:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Orange Carpet (171:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block White Carpet (171:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Blue Carpet (171:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Magenta Carpet (171:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lime Carpet (171:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Yellow Carpet (171:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Gray Carpet (171:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Pink Carpet (171:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Cyan Carpet (171:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Light Gray Carpet (171:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Double Plant (Upper Half, East) (175:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Double Plant (Upper Half, North) (175:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Lilac (Lower Half) (175:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Sunflower (Lower Half) (175:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Large Fern (Lower Half) (175:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Double Tallgrass (Lower Half) (175:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Peony (Lower Half) (175:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Rose Bush (Lower Half) (175:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Double Plant (Upper Half, West) (175:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Double Plant (Upper Half, South) (175:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (East-NorthEast) (176:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (NorthEast) (176:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (East-SouthEast) (176:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (East) (176:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (South-SouthEast) (176:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (SouthEast) (176:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (South-SouthWest) (176:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (South) (176:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (West-SouthWest) (176:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (SouthWest) (176:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (West-NorthWest) (176:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (West) (176:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (North-NorthWest) (176:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (NorthWest) (176:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (North-NorthEast) (176:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Standing Banner (North) (176:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Banner (South) (177:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Banner (North) (177:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Banner (East) (177:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Wall Banner (West) (177:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 11) (178:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 10) (178:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 13) (178:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 12) (178:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 15) (178:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 14) (178:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 1) (178:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 0) (178:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 3) (178:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 2) (178:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 5) (178:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 4) (178:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 7) (178:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 6) (178:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 9) (178:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Daylight Sensor Inverted (Power 8) (178:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Closed, East) (183:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Closed, North) (183:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Open, West) (183:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Open, South) (183:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Open, East) (183:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Open, North) (183:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Closed, West) (183:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Closed, South) (183:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Closed, East) (183:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Closed, North) (183:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Open, West) (183:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Open, South) (183:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Open, East) (183:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Open, North) (183:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Closed, West) (183:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence Gate (Powered, Closed, South) (183:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Closed, East) (184:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Closed, North) (184:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Open, West) (184:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Open, South) (184:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Open, East) (184:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Open, North) (184:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Closed, West) (184:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Closed, South) (184:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Closed, East) (184:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Closed, North) (184:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Open, West) (184:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Open, South) (184:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Open, East) (184:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Open, North) (184:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Closed, West) (184:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence Gate (Powered, Closed, South) (184:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Closed, East) (185:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Closed, North) (185:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Open, West) (185:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Open, South) (185:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Open, East) (185:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Open, North) (185:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Closed, West) (185:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Closed, South) (185:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Closed, East) (185:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Closed, North) (185:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Open, West) (185:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Open, South) (185:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Open, East) (185:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Open, North) (185:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Closed, West) (185:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence Gate (Powered, Closed, South) (185:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Closed, East) (186:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Closed, North) (186:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Open, West) (186:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Open, South) (186:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Open, East) (186:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Open, North) (186:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Closed, West) (186:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Closed, South) (186:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Closed, East) (186:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Closed, North) (186:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Open, West) (186:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Open, South) (186:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Open, East) (186:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Open, North) (186:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Closed, West) (186:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence Gate (Powered, Closed, South) (186:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Closed, East) (187:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Closed, North) (187:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Open, West) (187:13)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Open, South) (187:12)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Open, East) (187:15)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Open, North) (187:14)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Closed, West) (187:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Closed, South) (187:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Closed, East) (187:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Closed, North) (187:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Open, West) (187:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Open, South) (187:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Open, East) (187:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Open, North) (187:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Closed, West) (187:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence Gate (Powered, Closed, South) (187:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Fence (188:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Fence (189:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Fence (190:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Fence (191:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Fence (192:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Upper, Right Hinge, Powered) (193:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Upper, Left Hinge, Powered) (193:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Unopened, South) (193:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Unopened, East) (193:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Unopened, North) (193:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Unopened, West) (193:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Opened, South) (193:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Opened, East) (193:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Opened, North) (193:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Lower, Opened, West) (193:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Upper, Right Hinge, Unpowered) (193:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Spruce Door (Upper, Left Hinge, Unpowered) (193:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Upper, Right Hinge, Powered) (194:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Upper, Left Hinge, Powered) (194:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Unopened, South) (194:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Unopened, East) (194:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Unopened, North) (194:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Unopened, West) (194:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Opened, South) (194:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Opened, East) (194:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Opened, North) (194:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Lower, Opened, West) (194:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Upper, Right Hinge, Unpowered) (194:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Birch Door (Upper, Left Hinge, Unpowered) (194:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Upper, Right Hinge, Powered) (195:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Upper, Left Hinge, Powered) (195:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Unopened, South) (195:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Unopened, East) (195:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Unopened, North) (195:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Unopened, West) (195:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Opened, South) (195:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Opened, East) (195:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Opened, North) (195:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Lower, Opened, West) (195:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Upper, Right Hinge, Unpowered) (195:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Jungle Door (Upper, Left Hinge, Unpowered) (195:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Upper, Right Hinge, Powered) (196:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Upper, Left Hinge, Powered) (196:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Unopened, South) (196:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Unopened, East) (196:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Unopened, North) (196:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Unopened, West) (196:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Opened, South) (196:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Opened, East) (196:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Opened, North) (196:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Lower, Opened, West) (196:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Upper, Right Hinge, Unpowered) (196:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Acacia Door (Upper, Left Hinge, Unpowered) (196:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Upper, Right Hinge, Powered) (197:11)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Upper, Left Hinge, Powered) (197:10)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Unopened, South) (197:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Unopened, East) (197:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Unopened, North) (197:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Unopened, West) (197:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Opened, South) (197:5)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Opened, East) (197:4)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Opened, North) (197:7)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Lower, Opened, West) (197:6)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Upper, Right Hinge, Unpowered) (197:9)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Dark Oak Door (Upper, Left Hinge, Unpowered) (197:8)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 1) (207:1)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 0) (207:0)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 3) (207:3)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Beetroot (Age 2) (207:2)>'
+[   DEBUG][                   root.py:820]:Adding '<Block Structure Void (217:0)>'
+[   DEBUG][                   root.py:822]:renderer::ChunkCalculator: Transparent materials added: 971
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fb47f1c1310>.fastLeaves
+[   DEBUG][                 config.py:210]:Subscribing <renderer.ChunkCalculator object at 0x7fb47f1c1310>.roughGraphics
+[    INFO][pymclevel.infiniteworld.py:1465]:Scanning for regions...
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.-1.mca with 421/421 sectors used and 400 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.-1.mca with 106/106 sectors used and 100 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.0.0.mca with 28/28 sectors used and 25 chunks present
+[    INFO][    pymclevel.regionfile.py:93]:Found region file r.-1.0.mca with 107/107 sectors used and 100 chunks present
+[   DEBUG][                 config.py:194]:Property Change: Selection Colors                          black = (0.0, 0.0, 0.0)
+[   DEBUG][                  root.py:1618]:Mouse up   1 @ (991, 552)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (391, 466)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (180, 463)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (342, 674)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (0, 668)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (408, 640)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (529, 684)
+[   DEBUG][                  root.py:1598]:Mouse down 2 @ (641, 613)
+[   DEBUG][                  root.py:1618]:Mouse up   2 @ (496, 597)
 [   DEBUG][                  root.py:1604]:Mouse left
-[   DEBUG][                  root.py:1609]:Mouse entered
-[   DEBUG][                  root.py:1604]:Mouse left
-[   DEBUG][                  root.py:1609]:Mouse entered
-[   DEBUG][                  root.py:1604]:Mouse left
+[   DEBUG][                  root.py:1114]:MCEdit is exiting normally.
+[   DEBUG][                  root.py:1115]:Lines below this one are pure Python output.
+[   DEBUG][     PIL.PngImagePlugin.py:146]:STREAM 'IHDR' 16 13
+[   DEBUG][     PIL.PngImagePlugin.py:146]:STREAM 'IDAT' 41 1234
