@@ -1,5 +1,3 @@
-
-
 from pymclevel import  MCSchematic
 
 class StorySchematics:
