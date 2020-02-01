@@ -1,2 +1,4 @@
 *.log
 
+#Remove Jack's PyCharm .idea folder
+.idea
