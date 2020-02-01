@@ -31,8 +31,8 @@ from story_schematic_placer import StorySchematicPlacer
 
 inputs = (
 	("Story Viz", "label"),
-	("Story", "label"), # the material we want to use to build the mass of the structures
-	("Creator: Robert Morain, Jack Demke, Connor Wilhelm", "label"),
+	("Story", "string"), # the material we want to use to build the mass of the structures
+	("Creators: Robert Morain, Jack Demke, Connor Wilhelm", "label"),
 	)
 
 def perform(level, box, options):
