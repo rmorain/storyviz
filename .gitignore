@@ -1,4 +1,11 @@
+# Remove pyc
+__pycache__/
+
+
+# Remove logs
 *.log
 
 #Remove Jack's PyCharm .idea folder
 .idea
+
+
