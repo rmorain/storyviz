@@ -24,7 +24,7 @@ import utilityFunctions as utilityFunctions
 
 # Import files you want
 from classes import *
-from schematic_manager import SchematicManager 
+from schematic_manager import SchematicManager
 from general_schematic_placer import GeneralSchematicPlacer 
 from story_schematic_placer import StorySchematicPlacer
 
@@ -36,7 +36,7 @@ inputs = (
 	)
 
 def perform(level, box, options):
-    story = options['Story'] # When we
+    story = options['Story']
     if story.isspace() or story is '':
         story = "On a farm there was a house when out of nowhere a ufo abducted the cow"
     sch_man = SchematicManager()
