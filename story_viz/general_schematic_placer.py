@@ -12,21 +12,29 @@ from mcplatform import *
 
 import utilityFunctions as utilityFunctions
 import numpy as np
+from classes import StorySchematics
 
 class GeneralSchematicPlacer:
     def __init__(self):
         pass
 
     def place(self, level, box, options, schematics, land_allocation_grid):
-        print(box)
         land_allocation_grid = np.zeros((box.width, box.length))
-        self.get_village_grid(land_allocation_grid, level, box)
+        #self.get_village_grid(land_allocation_grid, level, box)
+        s = StorySchematics(['house'], ['small-convenient-house'])
+        schematics = s.get_schematics()
+        yards = self.get_yards(land_allocation_grid, level, box)
+        for yard in yards:
+            buildFence(level, yard)
+            #m.copyBlocksFrom(schematics['house'], level, yard, )
+            source_box = BoundingBox((0,0,0), (schematics['house'].Width,schematics['house'].Height,schematics['house'].Length))
+            level.copyBlocksFrom(schematics['house'], source_box, (yard.minx+1, yard.miny-5, yard.minz+1))
+            # TODO: We are using yard.miny-5 because some schematics come with their own grass which way have to deal with.
 
-        pass
 
-    def get_village_grid(self, land_allocation_grid, level, box):
+    def get_yards(self, land_allocation_grid, level, box):
         yard_boxes = []
-        house_size = (10, 10)
+        house_size = (15, 15)
         max_width, max_length = land_allocation_grid.shape
         for width in range(max_width//house_size[0]):
             for length in range(max_length//house_size[1]):
@@ -37,9 +45,7 @@ class GeneralSchematicPlacer:
                                            (house_size[0], box.maxy, house_size[1]))
                     yard_boxes.append(yard_box)
                 land_allocation_grid[width*house_size[0], length*house_size[1]] = 1
-
-        for yard_box in yard_boxes:
-            buildFence(level, yard_box)
+        return yard_boxes
 
 # builds a wooden fence around the perimeter of this box, like this photo
 #			  Top - zmax
