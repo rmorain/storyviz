@@ -24,19 +24,21 @@ import utilityFunctions as utilityFunctions
 
 # Import files you want
 from classes import *
-from schematic_manager import SchematicManager 
+from schematic_manager import SchematicManager
 from general_schematic_placer import GeneralSchematicPlacer 
 from story_schematic_placer import StorySchematicPlacer
 
 
 inputs = (
 	("Story Viz", "label"),
-	("Story", "label"), # the material we want to use to build the mass of the structures
-	("Creator: Robert Morain, Jack Demke, Connor Wilhelm", "label"),
+	("Story", "string"), # the material we want to use to build the mass of the structures
+	("Creators: Robert Morain, Jack Demke, Connor Wilhelm", "label"),
 	)
 
 def perform(level, box, options):
-    story = "On a farm there was a house when out of nowhere a ufo abducted the cow"
+    story = options['Story']
+    if story.isspace() or story is '':
+        story = "On a farm there was a house when out of nowhere a ufo abducted the cow"
     sch_man = SchematicManager()
     GSP = GeneralSchematicPlacer()
     SSP = StorySchematicPlacer()

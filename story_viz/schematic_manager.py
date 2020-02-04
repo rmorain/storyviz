@@ -9,7 +9,8 @@ from costume_dresser import CostumeDresser
 
 class SchematicManager:
     def __init__(self):
-        pass
+        self.story_interp = StoryInterpreter()
+	self.costume_dress = CostumeDresser()
 
     def get_schematics(self, story):
-        return []
+        return self.costume_dress.get_schematics(self.story_interp.get_keywords(story))

@@ -9,7 +9,7 @@ from classes import StorySchematics
 
 class CostumeDresser:
     def __init__(self):
-        self.__PATH__TO__SCHEMATICS = "../stock-schematics/library/"
+        self.__PATH__TO__SCHEMATICS = "stock-schematics/library/"
         self.__FILE__TYPE = ".schematic"
 
     def get_schematics(self, keywords):
