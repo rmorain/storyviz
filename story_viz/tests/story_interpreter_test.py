@@ -10,4 +10,4 @@ s = StoryInterpreter()
 
 story = "Once upon a time, there was a gay little fish named Reed. He was very sad and he lived underwater. Then one day he had a million friends and he was happy. The End."
 
-s.get_keywords(story)
+print(s.get_keywords(story))
