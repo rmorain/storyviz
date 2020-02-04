@@ -14,4 +14,4 @@ class StoryInterpreter:
     def get_keywords(self, story):
         print(story)
         keywords_list = self.r.extract_keywords_from_text(story)
-        return r.get_ranked_phrases()
+        return self.r.get_ranked_phrases()

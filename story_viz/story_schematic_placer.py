@@ -34,7 +34,7 @@ class StorySchematicPlacer:
         return placements
 
     def place(self, level, box, options, schematics):
-        placements = _get_placement(level, box, options, schematics)
+        placements = self._get_placement(level, box, options, schematics)
         placed = [False for _ in schematics]
         for z, row in enumerate(placements):
             for x, val in enumerate(row):
