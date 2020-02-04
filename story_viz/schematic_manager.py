@@ -13,4 +13,6 @@ class SchematicManager:
 	self.costume_dress = CostumeDresser()
 
     def get_schematics(self, story):
+        keywords = self.story_interp.get_keywords(story)
+        print('got keywords')
         return self.costume_dress.get_schematics(self.story_interp.get_keywords(story))

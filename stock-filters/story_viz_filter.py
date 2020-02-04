@@ -42,8 +42,11 @@ def perform(level, box, options):
     sch_man = SchematicManager()
     GSP = GeneralSchematicPlacer()
     SSP = StorySchematicPlacer()
+    print('before')
     schematics = sch_man.get_schematics(story)
+    print('got schem')
     land_allocation_grid = SSP.place(level, box, options, schematics)
+    print('finished ssp')
     GSP.place(level, box, options, schematics, land_allocation_grid)
-
+    print('finished gps')
     # 

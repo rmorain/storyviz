@@ -8,6 +8,6 @@ from story_interpreter import StoryInterpreter
 
 s = StoryInterpreter()
 
-story = "Once upon a time, there was a gay little fish named Reed. He was very sad and he lived underwater. Then one day he had a million friends and he was happy. The End."
+story = "On a farm there was a house when out of nowhere a ufo abducted the cow"
 
 print(s.get_keywords(story))

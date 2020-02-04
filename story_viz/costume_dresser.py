@@ -26,5 +26,7 @@ class CostumeDresser:
                     found_schematic = schem.replace(self.__FILE__TYPE, "")
                     break
             # What to do if keyword is not found?
-            found_schematics.append(found_schematic)
+            if found_schematic is not None:
+                found_schematics.append(found_schematic)
+        print('returning schem from CostumeDresser')
         return [StorySchematics(keywords, found_schematics)] # takes in array of labels and array of schematics
