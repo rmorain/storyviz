@@ -19,6 +19,7 @@ class CostumeDresser:
 
     # keywords should be a list of strings, each string will contain a keyword and supporting positional words
     def get_schematics(self, keywords):
+        # Get schematics from keywords
         found_schematics = []
         for keyword in keywords:
             keyword = keyword.lower().split()[0]
@@ -26,7 +27,8 @@ class CostumeDresser:
             # Predict average similarity between keyword and each word in schematics relative path
             schem_scores = np.array([kw_token.similarity(self.lang_model(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' '))) for schem in self.schematic_paths])
             found_schematics.append(self.schematic_paths[np.argmax(schem_scores)])
-        print('returning schem from CostumeDresser')
+            # TODO: Normalize later keywords to known positional info
+
         return [StorySchematics(keywords, found_schematics)] # takes in array of labels and array of schematics
 
     # returns the relative paths to all schematics individually
