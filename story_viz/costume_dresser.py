@@ -27,22 +27,20 @@ class CostumeDresser:
             # Predict average similarity between keyword and each word in schematics relative path
             schem_scores = np.array([kw_token.similarity(self.lang_model(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' '))) for schem in self.schematic_paths])
             found_schematics.append(self.schematic_paths[np.argmax(schem_scores)])
-            # TODO: Normalize later keywords to known positional info
+            # Normalize later keywords to known positional info
             if len(keyword_parts) > 1:
                 for i,kw in enumerate(keyword_parts[1:]):
                     norm = self.normalize_pos_word(kw)
                     keyword_parts[i+1] = norm
             normalized_keywords.append(keyword_parts)
-        return normalized_keywords, found_schematics#[StorySchematics(keywords, found_schematics)] # takes in array of labels and array of schematics
+        return [StorySchematics(keywords, found_schematics)] # takes in array of labels and array of schematics
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):
-        # TODO
-        # Predict similarity, perhaps
         """
-        Potential normalized terms:
-        relative: up, down, left, right, next_to, far_from
-        absolute: north, south, east, west
-        terrain-relative: high, low
+        Normalized Terms
+        relative: up, down, left, right, next, far
+        cardinal: north, south, east, west
+        terrain-relative: high, low, level
         """
         terms = "up down left right next far across north south east west high low".split()
         pos_word = pos_word.lower()
