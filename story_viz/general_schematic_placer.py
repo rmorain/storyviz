@@ -19,7 +19,7 @@ class GeneralSchematicPlacer:
         pass
 
     def place(self, level, box, options, schematics, land_allocation_grid):
-        land_allocation_grid = np.zeros((box.width, box.length))
+        #land_allocation_grid = np.zeros((box.width, box.length))
         #self.get_village_grid(land_allocation_grid, level, box)
         s = StorySchematics(['house'], ['small-convenient-house'])
         schematics = s.get_schematics()
@@ -40,7 +40,7 @@ class GeneralSchematicPlacer:
             for length in range(max_length//house_size[1]):
                 yard = land_allocation_grid[width*house_size[0]:width*house_size[0]+house_size[0],
                                             length*house_size[1]:length*house_size[1]+house_size[1]]
-                if not np.any(yard==1):
+                if not np.any(yard!=0):
                     yard_box = BoundingBox((box.minx+width*house_size[0], box.miny, box.minz+length*house_size[1]),
                                            (house_size[0], box.maxy, house_size[1]))
                     yard_boxes.append(yard_box)

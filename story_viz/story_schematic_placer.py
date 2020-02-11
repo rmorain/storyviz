@@ -28,7 +28,9 @@ class StorySchematicPlacer:
             height, width, length = schematic._Blocks.shape
             total_width += width + self.spacing
             total_length += length + self.spacing
-        placements = np.zeros((total_length, total_width))
+        #placements = np.zeros((total_length, total_width))
+        #TODO: Handle potential Infinite loop if box isn't big enough
+        placements = np.zeros((box.width, box.length))
         # always place the first schematic in the center
         # schematics are 1-indexed, 0 represents and empty space
         for i, schematic in enumerate(schematics):
