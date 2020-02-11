@@ -38,11 +38,11 @@ class CostumeDresser:
     def normalize_pos_word(self, pos_word):
         """
         Normalized Terms
-        relative: up, down, left, right, next, far
+        relative: above, left, right, next, far
         cardinal: north, south, east, west
         terrain-relative: high, low, level
         """
-        terms = "up down left right next far across north south east west high low".split()
+        terms = "above left right next far across north south east west high low".split()
         pos_word = pos_word.lower()
         pos_token = self.lang_model(pos_word)
         scores = [pos_token.similarity(self.lang_model(term)) for term in terms]

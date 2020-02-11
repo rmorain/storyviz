@@ -2,6 +2,7 @@
 Places StorySchematic object in environment.
 Returns 2D grid of placements. 
 Height will be factored in separately
+Look up keywords in an ontology database (wordnet?) to find if there is a "natural placement" for the schematic
 """
 
 import random
