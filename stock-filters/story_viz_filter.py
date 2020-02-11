@@ -38,7 +38,8 @@ inputs = (
 def perform(level, box, options):
     story = options['Story']
     if story.isspace() or story is '':
-        story = "On a farm there was a house when out of nowhere a ufo abducted the cow"
+        story = "On a farm in the west there was a house when out of nowhere a hovering ufo abducted the cow"
+    
     sch_man = SchematicManager()
     GSP = GeneralSchematicPlacer()
     SSP = StorySchematicPlacer()

@@ -10,10 +10,11 @@ from rake_nltk import Rake
 import spacy
 from spacy import displacy
 import unicodedata
+from spacy.lang.en.stop_words import STOP_WORDS
 
 spacy.prefer_gpu()
 
-class StoryInterpreter:
+class StoryInterpreterRake:
     def __init__(self):
         self.r = Rake()
 
@@ -24,7 +25,7 @@ class StoryInterpreter:
         return self.r.get_ranked_phrases()
 
         
-class StoryInterpreterPositional:
+class StoryInterpreter:
     def __init__(self):
         self.nlp = spacy.load("en_core_web_sm")
 
@@ -38,16 +39,26 @@ class StoryInterpreterPositional:
                 pps.append(pp)
         return pps
 
+    def remove_duplicates(self, keywords):
+        for i, w in enumerate(keywords):
+            for j, k in enumerate(keywords):
+                if i != j and k in w:
+                    print(k)
+                    keywords.pop(j)
+
     def clean_keywords(self, keywords):
         clean_keys = []
         for i, k in enumerate(keywords):
-            doc = self.nlp(keywords[i])
-            for w in doc.noun_chunks:
+            doc = self.nlp(k)
+            for token in doc:
+                if token.is_stop == True:
+                    print(token)
+                    continue
                 if len(clean_keys) <= i:
-                    clean_keys.append(w.root.text)
+                        clean_keys.append(str(token))
                 else:
-                    clean_keys[i] += " " + w.root.text
-
+                    clean_keys[i] += " " + str(token)
+        self.remove_duplicates(clean_keys)
         return clean_keys
 
     def get_keywords(self, story):
@@ -64,6 +75,5 @@ class StoryInterpreterPositional:
             for pp in pps:
                 if noun in pp:
                     nouns[i] = pp
-        
         clean_keys = self.clean_keywords(nouns)
         return map(str, clean_keys)
