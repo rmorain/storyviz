@@ -19,10 +19,8 @@ class StorySchematics:
 
     def get_schematics(self):
         assert self.schematics is not None and self.labels is not None
-        print('here')
         for i, filename in enumerate(self.schematics):
             print(filename)
             if self.labels[i] not in self.schematics_dict.keys():
-                print(self.labels[i])
                 self.schematics_dict[self.labels[i]] = MCSchematic(filename=self.__PATH__TO__SCHEMATICS + filename + self.__FILE__TYPE)
         return self.schematics_dict

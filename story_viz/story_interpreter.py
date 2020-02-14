@@ -62,6 +62,7 @@ class StoryInterpreter:
         return clean_keys
 
     def get_keywords(self, story):
+        story = unicode(story)
         print(story)
         doc = self.nlp(story)
         pps = self.get_pps(doc)
