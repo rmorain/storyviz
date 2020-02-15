@@ -19,26 +19,31 @@ class SimpleRoadPlacer:
 
     # box.width = x
     # box.length = z
-    def place(self, level, box, options):
+    def place(self, level, box, options, start_point=None, end_point=None):
         road_placement = np.zeros((box.length, box.width))
         z, x = road_placement.shape
-        start_point = (random.randint(0, z-1), 0)
-        end_point = (random.randint(0, z-1), x-1)
+        if start_point is None or not is_valid_point(start_point, box.length, box.width):
+            start_point = (random.randint(0, z-1), 0)
+        if end_point is None or not is_valid_point(end_point, box.length, box.width):
+            end_point = (random.randint(0, z-1), x-1)
         # for offset_x in range(x):
         #     road_placement[z//2][offset_x] = 1
         #     utilityFunctions.setBlock(level, (1, 0), box.minx+offset_x, box.miny, box.minz+(z//2))
         # utilityFunctions.setBlock(level, (1, 0), box.minx, box.miny, box.minz)
         points = get_grid_cells_btw(start_point, end_point)
-        print(road_placement.shape)
-        print(start_point, end_point)
 
         for pt_idx in range(len(points)):
             pt = tuple(points[pt_idx])
-            print(pt)
             road_placement[pt] = 1
             connect_neighboring_points(road_placement, points, pt_idx)
         print(road_placement)
         return road_placement
+
+def is_valid_point(start_point, box_length, box_width):
+    z, x = start_point
+    if z >= 0 and z < box_length and x >= 0 and x < box_width:
+        return True
+    return False
 
 def connect_neighboring_points(road_placement, points, pt_idx):
     if pt_idx == len(points)-1:
