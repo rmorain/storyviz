@@ -19,24 +19,19 @@ class SimpleRoadPlacer:
 
     # box.width = x
     # box.length = z
-    def place(self, level, box, options, start_point=None, end_point=None):
+    def place(self, level, box, options, start_point=None, end_point=None, width=3):
         road_placement = np.zeros((box.length, box.width))
         z, x = road_placement.shape
         if start_point is None or not is_valid_point(start_point, box.length, box.width):
             start_point = (random.randint(0, z-1), 0)
         if end_point is None or not is_valid_point(end_point, box.length, box.width):
             end_point = (random.randint(0, z-1), x-1)
-        # for offset_x in range(x):
-        #     road_placement[z//2][offset_x] = 1
-        #     utilityFunctions.setBlock(level, (1, 0), box.minx+offset_x, box.miny, box.minz+(z//2))
-        # utilityFunctions.setBlock(level, (1, 0), box.minx, box.miny, box.minz)
-        points = get_grid_cells_btw(start_point, end_point)
 
-        for pt_idx in range(len(points)):
-            pt = tuple(points[pt_idx])
-            road_placement[pt] = 1
-            connect_neighboring_points(road_placement, points, pt_idx)
-        print(road_placement)
+        points = get_grid_cells_btw(start_point, end_point)
+        points = connect_neighboring_points(points)
+        width_offset = width//2
+        points = expand_road(points, width_offset, start_point, end_point, box.length, box.width)
+        build_road(level, box, np.zeros((box.length, box.width)), points)
         return road_placement
 
 def is_valid_point(start_point, box_length, box_width):
@@ -45,18 +40,48 @@ def is_valid_point(start_point, box_length, box_width):
         return True
     return False
 
-def connect_neighboring_points(road_placement, points, pt_idx):
-    if pt_idx == len(points)-1:
-        return
-    z_i, x_i = points[pt_idx]
-    z_j, x_j = points[pt_idx+1]
-    dz = z_j - z_i
-    dx = x_j - x_i
-    if dz != 0 and dx != 0:
-        if random.random() > 0.5:
-            road_placement[z_i][x_i+1] = 1
-        else:
-            road_placement[z_i+1][x_i] = 1
+def build_road(level, box, road_placement, points):
+    for pt in points:
+        road_placement[pt] = 1
+        utilityFunctions.setBlock(level, (1, 0), box.minx+pt[1], box.miny, box.minz+pt[0])
+
+def get_road_expansion(start_point, end_point, width_offset):
+    dz = abs(start_point[0] - end_point[0])
+    dx = abs(start_point[0] - end_point[0])
+    offsets = range(-width_offset, width_offset + 1)
+    if dz > dx:
+        return [(0, x) for x in offsets]
+    else:
+        return [(z, 0) for z in offsets]
+
+def expand_road(points, width_offset, start_point, end_point, box_length, box_width):
+    expanded_points = set()
+    if width_offset > 0:
+        road_expansion = get_road_expansion(start_point, end_point, width_offset)
+        for z, x in points:
+            for offset in road_expansion:
+                if z + offset[0] < box_length and z + offset[0] >= 0:
+                    if x + offset[1] < box_width and x + offset[0] >= 0:
+                        expanded_points.add((z+offset[0], x+offset[1]))
+    return expanded_points
+
+def connect_neighboring_points(points):
+    connected_points = []
+    for pt_idx in range(len(points)):
+        connected_points.append(tuple(points[pt_idx]))
+        if pt_idx == len(points) - 1:
+            break
+        z_i, x_i = points[pt_idx]
+        z_j, x_j = points[pt_idx+1]
+        dz = z_j - z_i
+        dx = x_j - x_i
+        if dz != 0 and dx != 0:
+            if random.random() > 0.5:
+                x_i = x_i + dx
+            else:
+                z_i = z_i + dz
+            connected_points.append((z_i, x_i))
+    return connected_points
 
 def remove_np_duplicates(data):
   # Perform lex sort and get sorted data
