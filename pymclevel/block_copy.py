@@ -123,10 +123,11 @@ def copyBlocksFromIter(destLevel, sourceLevel, sourceBox, destinationPoint, bloc
                 destChunk.Data[destSlices][mask] = convertedSourceData[mask]
 
             def copy(p):
+                p_int = [int(i) for i in p]
                 return p in sourceChunkBoxInDestLevel and (blocksToCopy is None or mask[
-                    p[0] - sourceChunkBoxInDestLevel.minx,
-                    p[2] - sourceChunkBoxInDestLevel.minz,
-                    p[1] - sourceChunkBoxInDestLevel.miny,
+                    p_int[0] - sourceChunkBoxInDestLevel.minx,
+                    p_int[2] - sourceChunkBoxInDestLevel.minz,
+                    p_int[1] - sourceChunkBoxInDestLevel.miny,
                 ])
 
             if entities:
