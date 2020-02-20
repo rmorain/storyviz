@@ -24,6 +24,22 @@ class StorySchematicPlacer:
                 schematics.append(schematic)
         return keywords, schematics
 
+    def _expand_box(self, level, box, placements):
+        z, x = placements.shape
+        origin_x, origin_y, origin_z = box.origin
+        level_box = level.bounds
+        offset_x = level_box.maxx - (origin_x + x)
+        offset_z = level_box.maxz - (origin_z + z)
+        if offset_z < 0 and offset_x < 0:
+            new_z = origin_z
+            new_x = origin_x
+            if offset_z < 0:
+                new_z += offset_z
+            if offset_x < 0:
+                new_x += offset_x
+            return BoundingBox((new_x, origin_y, new_z), (x, box.maxy, z))
+        return box
+
     def _get_placement(self, level, box, options, schematics, keywords):
         total_width, total_length, max_height = 0,0,0
         print('schematics', schematics)
@@ -104,14 +120,18 @@ class StorySchematicPlacer:
     def place(self, level, box, options, schematics):
         keywords, schematics = self.convert_StorySchematic(schematics) 
         placements = self._get_placement(level, box, options, schematics, keywords)
+        box = self._expand_box(level, box, placements)
         # TODO: Find a way to build things in the air
         placements = placements.astype(int)
         placed = [False for _ in schematics]
         for z, row in enumerate(placements):
             for x, val in enumerate(row):
                 if val != 0 and not placed[val-1]:
-                    make_schematic(level, box, options, schematics[val-1], (x,0,z))
+                    # make_schematic(level, box, options, schematics[val-1], (x,0,z))
+                    make_schematic(level, box, options, schematics[val-1], (z,0,x))
                     placed[val-1] = True
+        print('Expand Box')
+        self._expand_box(level, box, placements)
         return placements
 
     def _expand_placements(self, placement, height, width, length):
@@ -122,8 +142,12 @@ class StorySchematicPlacer:
 
 
 def make_schematic(level, box, options, schematic, offset):
-	newBox = BoundingBox((0,0,0), (schematic.Width,schematic.Height,schematic.Length))
-	b=range(4096)
-	b.remove(0) # @CodeWarrior0 and @Wout12345 explained how to merge schematics			
-	level.copyBlocksFrom(schematic, newBox, (box.minx+offset[0], box.miny+offset[1], box.minz+offset[2]),b)
-	level.markDirtyBox(box)
+	# newBox = BoundingBox((0,0,0), (schematic.Width,schematic.Height,schematic.Length))
+	# b=range(4096)
+	# b.remove(0) # @CodeWarrior0 and @Wout12345 explained how to merge schematics
+	# level.copyBlocksFrom(schematic, newBox, (box.minx+offset[0], box.miny+offset[1], box.minz+offset[2]),b)
+	# level.markDirtyBox(box)
+
+
+    source_box = BoundingBox((0, 0, 0), (schematic.Width, schematic.Height, schematic.Length))
+    level.copyBlocksFrom(schematic, source_box, (box.minx + offset[0], box.miny + offset[1], box.minz + offset[2]))
