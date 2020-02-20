@@ -36,14 +36,14 @@ class GeneralSchematicPlacer:
     def get_yards(self, land_allocation_grid, level, box):
         yard_boxes = []
         house_size = (20, 20)
-        max_width, max_length = land_allocation_grid.shape
-        for width in range(max_width//house_size[0]):
-            for length in range(max_length//house_size[1]):
-                yard = land_allocation_grid[width*house_size[0]:width*house_size[0]+house_size[0],
-                                            length*house_size[1]:length*house_size[1]+house_size[1]]
+        max_length, max_width = land_allocation_grid.shape
+        for length in range(max_length // house_size[0]):
+            for width in range(max_width//house_size[1]):
+                yard = land_allocation_grid[length * house_size[0]:length * house_size[0] + house_size[0],
+                                            width * house_size[1]:width * house_size[1] + house_size[1]]
                 if not np.any(yard!=0):
-                    yard_box = BoundingBox((box.minx+width*house_size[0], box.miny, box.minz+length*house_size[1]),
-                                           (house_size[0], box.maxy, house_size[1]))
+                    yard_box = BoundingBox((box.minx+width*house_size[1], box.miny, box.minz+length*house_size[0]),
+                                           (house_size[1], box.maxy, house_size[0]))
                     yard_boxes.append(yard_box)
                 land_allocation_grid[width*house_size[0], length*house_size[1]] = 1
         return yard_boxes
@@ -80,39 +80,3 @@ def buildFence(level, box):
         utilityFunctions.setBlock(level, (85, 0), box.maxx-1, box.miny + 1, z)
         utilityFunctions.setBlock(level, (85, 0), box.minx+1, box.miny + 1, z)
 
-    # # add top fence blocks
-    # for x in range(box.minx, box.maxx):
-    #     for z in xrange(box.maxz-1, box.minz+1, -1):
-    #             # get this block
-    #             tempBlock = level.blockAt(x, box.miny, box.maxz)
-    #             if tempBlock != 0:
-    #                 newValue = 0
-    #                 utilityFunctions.setBlock(level, (85, newValue), x, box.miny+1, box.maxz)
-    #                 break;
-    # # add bottom fence blocks (don't double count corner)
-    # for x in range(box.minx, box.maxx):
-    #     for z in xrange(box.maxz, box.minz+1, -1):
-    #             # get this block
-    #             tempBlock = level.blockAt(x, box.miny, box.minz)
-    #             if tempBlock != 0:
-    #                 newValue = 0
-    #                 utilityFunctions.setBlock(level, (85, newValue), x, box.miny+1, box.minz)
-    #                 break;
-    # # add left fence blocks (don't double count corner)
-    # for z in range(box.minz+1, box.maxz):
-    #     for x in xrange(box.maxx, box.minx, -1):
-    #             # get this block
-    #             tempBlock = level.blockAt(box.minx, box.miny, z)
-    #             if tempBlock != 0:
-    #                 newValue = 0
-    #                 utilityFunctions.setBlock(level, (85, newValue), box.minx, box.miny+1, z)
-    #                 break;
-    # # add right fence blocks
-    # for z in range(box.minz, box.maxz+1):
-    #     for x in xrange(box.maxx, box.minx, -1):
-    #             # get this block
-    #             tempBlock = level.blockAt(box.maxx, box.miny, z)
-    #             if tempBlock != 0:
-    #                 newValue = 0
-    #                 utilityFunctions.setBlock(level, (85, newValue), box.maxx, box.miny+1, z)
-    #                 break;

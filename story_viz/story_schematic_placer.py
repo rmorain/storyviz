@@ -8,6 +8,7 @@ Look up keywords in an ontology database (wordnet?) to find if there is a "natur
 import random
 import numpy as np
 from pymclevel import alphaMaterials, MCSchematic, MCLevel, BoundingBox
+import matplotlib.pyplot as plt
 
 class StorySchematicPlacer:
     def __init__(self, spacing=5, height_spacing=15):
@@ -34,9 +35,9 @@ class StorySchematicPlacer:
             new_z = origin_z
             new_x = origin_x
             if offset_z < 0:
-                new_z += offset_z
+                new_z += offset_z - 1
             if offset_x < 0:
-                new_x += offset_x
+                new_x += offset_x - 1
             return BoundingBox((new_x, origin_y, new_z), (x, box.maxy, z))
         return box
 
@@ -57,7 +58,7 @@ class StorySchematicPlacer:
         placements = np.zeros((total_length, total_width))
         # schematics are 1-indexed, 0 represents and empty space
         for i, schematic in enumerate(schematics):
-            height, width, length = schematic._Blocks.shape
+            height, length, width = schematic._Blocks.shape # y,z,x = _Blocks.shape
             
             ### ORIGINAL PLACEMENT ###
 
@@ -129,6 +130,10 @@ class StorySchematicPlacer:
                 if val != 0 and not placed[val-1]:
                     make_schematic(level, box, options, schematics[val-1], (x,0,z))
                     placed[val-1] = True
+
+        # plt.imshow(np.flipud(np.fliplr(placements)), cmap='hot', interpolation='nearest')
+        # plt.show()
+
         return box, placements
 
     def _expand_placements(self, placement, height, width, length):
@@ -145,6 +150,7 @@ def make_schematic(level, box, options, schematic, offset):
 	# level.copyBlocksFrom(schematic, newBox, (box.minx+offset[0], box.miny+offset[1], box.minz+offset[2]),b)
 	# level.markDirtyBox(box)
 
+    print('Schematic size', (schematic.Width, schematic.Height, schematic.Length))
 
     source_box = BoundingBox((0, 0, 0), (schematic.Width, schematic.Height, schematic.Length))
     level.copyBlocksFrom(schematic, source_box, (box.minx + offset[0], box.miny + offset[1], box.minz + offset[2]))
