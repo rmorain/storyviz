@@ -13,6 +13,7 @@ from mcplatform import *
 import utilityFunctions as utilityFunctions
 import numpy as np
 from classes import StorySchematics
+import matplotlib.pyplot as plt
 
 class GeneralSchematicPlacer:
     def __init__(self):
@@ -31,9 +32,12 @@ class GeneralSchematicPlacer:
             source_box = BoundingBox((0,0,0), (schematics['house'].Width,schematics['house'].Height,schematics['house'].Length))
             level.copyBlocksFrom(schematics['house'], source_box, (yard.minx+2, yard.miny-5, yard.minz+2))
             # TODO: We are using yard.miny-5 because some schematics come with their own grass which way have to deal with.
+        # plt.imshow(np.flipud(np.fliplr(land_allocation_grid)), cmap='hot', interpolation='nearest')
+        # plt.show()
 
 
     def get_yards(self, land_allocation_grid, level, box):
+        yard_val = np.max(land_allocation_grid) + 1
         yard_boxes = []
         house_size = (20, 20)
         max_length, max_width = land_allocation_grid.shape
@@ -41,11 +45,14 @@ class GeneralSchematicPlacer:
             for width in range(max_width//house_size[1]):
                 yard = land_allocation_grid[length * house_size[0]:length * house_size[0] + house_size[0],
                                             width * house_size[1]:width * house_size[1] + house_size[1]]
+
                 if not np.any(yard!=0):
                     yard_box = BoundingBox((box.minx+width*house_size[1], box.miny, box.minz+length*house_size[0]),
                                            (house_size[1], box.maxy, house_size[0]))
                     yard_boxes.append(yard_box)
-                land_allocation_grid[width*house_size[0], length*house_size[1]] = 1
+                    land_allocation_grid[length * house_size[0]:length * house_size[0] + house_size[0],
+                                        width * house_size[1]:width * house_size[1] + house_size[1]] = yard_val
+                #land_allocation_grid[width*house_size[0], length*house_size[1]] = 1
         return yard_boxes
 
 # builds a wooden fence around the perimeter of this box, like this photo
