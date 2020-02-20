@@ -127,12 +127,9 @@ class StorySchematicPlacer:
         for z, row in enumerate(placements):
             for x, val in enumerate(row):
                 if val != 0 and not placed[val-1]:
-                    # make_schematic(level, box, options, schematics[val-1], (x,0,z))
-                    make_schematic(level, box, options, schematics[val-1], (z,0,x))
+                    make_schematic(level, box, options, schematics[val-1], (x,0,z))
                     placed[val-1] = True
-        print('Expand Box')
-        self._expand_box(level, box, placements)
-        return placements
+        return box, placements
 
     def _expand_placements(self, placement, height, width, length):
         h, w, l = placement.shape
