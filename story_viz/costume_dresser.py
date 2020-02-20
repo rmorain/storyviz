@@ -29,6 +29,8 @@ class CostumeDresser:
                 if part.pos_ == "NOUN":
                     break
                 key_i += 1
+            if key_i == len(tokens):
+                key_i = 0
             key = keyword_parts[key_i]
 
             rest_of_keywords = keyword_parts[:key_i]
