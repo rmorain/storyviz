@@ -2,6 +2,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 from scipy.stats import skewnorm
+import math
 
 class Building: # Should this be a namedtuple ???
     def __init__(self, type):
@@ -44,21 +45,47 @@ def generate_building(terrain, village_skeleton, building):
     coord = random.randint(0, z-1), random.randint(0, x-1)
     get_local_interest(terrain, village_skeleton, building, coord)
 
-def close_distance():
-    pass
+def fit_to_range(x, minx, maxx, min_range, max_range):
+    normalized_x = (x - minx) / (maxx - minx)
+    return (normalized_x * (max_range - min_range)) + min_range
 
-def balance(x):
+def tanh_distance(x, minx=-4, maxx=4):
+    min_range, max_range = -4, 4
+    range_x = fit_to_range(x, minx, maxx, min_range, max_range)
+    return -math.tanh(range_x)
+
+def close_distance(x, minx=-4, maxx=4):
+    if x <= minx:
+        return -1
+    elif x >= maxx:
+        return -1
+    else:
+        return tanh_distance(x, minx, maxx)
+
+def open_distance(x, minx=-4, maxx=4):
+    if x <= minx:
+        return 1
+    elif x >= maxx:
+        return -1
+    else:
+        return tanh_distance(x, minx, maxx)
+
+def balance(x, minx, maxx):
+    min_range, max_range = -.25, 1.25
+    range_x = fit_to_range(x, minx, maxx, min_range, max_range)
     a = 3
     loc = 0
     scale = .33
     rv = skewnorm(a, loc, scale)
-    return rv.pdf(x)
+    return rv.pdf(range_x)
 
 # Attraction - Repulsion
-def LJ_potential(r):
-    sigma = 1.03
+def LJ_potential(x, minx, maxx):
+    min_range, max_range = 1, 3
+    range_x = fit_to_range(x, minx, maxx, min_range, max_range)
+    sigma = 1.032
     e = 1
-    return -4*e*((sigma/r)**12 - (sigma/r)**6)
+    return -4*e*((sigma/range_x)**12 - (sigma/range_x)**6)
 
 def main():
     terrain = np.zeros((100,100))
@@ -68,14 +95,34 @@ def main():
     # plt.imshow(terrain, cmap='hot', interpolation='nearest')
 
     # Attraction-Repulsion Interest Function Graph
-    # x = np.linspace(1,3,1000)
-    # y = [LJ_potential(r) for r in x]
+    # minx = 10
+    # maxx = 50
+    # x = np.linspace(minx,maxx,1000)
+    # y = [LJ_potential(r, minx, maxx) for r in x]
     # plt.plot(x, y)
     # plt.show()
 
     # Balance
-    # x = np.linspace(-.25, 1.25, 1000)
-    # y = [balance(i) for i in x]
+    # minx = 10
+    # maxx = 50
+    # x = np.linspace(minx, maxx, 1000)
+    # y = [balance(i, minx, maxx) for i in x]
+    # plt.plot(x, y)
+    # plt.show()
+
+    # Close Distance
+    # minx = 10
+    # maxx = 50
+    # x = np.linspace(minx - ((maxx-minx)//4), maxx, 1000)
+    # y = [close_distance(i, minx=minx, maxx=maxx) for i in x]
+    # plt.plot(x, y)
+    # plt.show()
+
+    # Open Distance
+    # minx = 10
+    # maxx = 50
+    # x = np.linspace(minx - ((maxx-minx)//4), maxx, 1000)
+    # y = [open_distance(i, minx=minx, maxx=maxx) for i in x]
     # plt.plot(x, y)
     # plt.show()
 
