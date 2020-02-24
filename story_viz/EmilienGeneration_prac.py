@@ -4,11 +4,68 @@ import matplotlib.pyplot as plt
 from scipy.stats import skewnorm
 import math
 
-class Building: # Should this be a namedtuple ???
-    def __init__(self, type):
-        self.type = "house"
-        self.position = (0,0)
+class Building(object): # Should this be a namedtuple ???
+    def __init__(self, type, position, dim):
+        self.type = type
+        self.position = position
+        self.dim = dim
+    # def __init__(self, type, position, dim, f_att_param, f_bal_param, f_close_param, f_open_param):
+    #     self.type = type
+    #     self.position = position
+    #     self.dim = dim
+    #     self.f_att_param = f_att_param
+    #     self.f_bal_param = f_bal_param
+    #     self.f_close_param = f_close_param
+    #     self.f_open_param = f_open_param
 
+    def get_interest(self, village_skeleton, terrain, p):
+        pass
+
+    def build(self, terrain):
+        z_range = [self.position[0], self.position[0] + self.dim[0]]
+        x_range = [self.position[1], self.position[1] + self.dim[1]]
+        building_id = np.max(terrain)
+        terrain[z_range[0] : z_range[1], x_range[0] : x_range[1]] = building_id
+
+class House(Building):
+    def __init__(self):
+        super(House, self).__init__("house", (0,0), (10,10))
+
+    def get_interest(self, village_skeleton, terrain, p):
+        social_max = 40
+        diff = lambda p1, p2, i : abs(p1[i] - p2[i])
+        a = 1
+        a_s = []
+        #print('get_interest')
+        for building in village_skeleton:
+            if diff(building.position, p, 0) < (social_max * 3) or diff(building.position, p, 1) < (social_max * 3):
+                new_a = LJ_potential(manhattan_distance(building.position, p), 10, social_max)
+                #print(new_a, manhattan_distance(building.position, p))
+                if new_a <= -1:
+                    a = -1
+                    break
+                else:
+                    a_s.append(new_a)
+        if len(a_s) > 0:
+            a = np.average(a_s)
+
+        # a = LJ_potential(p, 10, social_max)
+        d_slope = abs(get_slope_range(terrain, p, max(self.dim)))
+        b = balance(d_slope, -.25, 1.5)
+        return [a,b], [.75, .25]
+
+def manhattan_distance(p1, p2):
+    distance = 0
+    for i in range(len(p1)):
+        distance += abs(p1[i] - p2[i])
+    return distance
+
+def get_slope_range(terrain, position, max_dim):
+    z, x = terrain.shape
+    range_z = [position[0], min(position[0] + max_dim, z-1)]
+    range_x = [position[1], min(position[1] + max_dim, x-1)]
+    return np.max(terrain[range_z[0] : range_z[1], range_x[0]: range_x[1]])\
+           - np.min(terrain[range_z[0] : range_z[1], range_x[0] : range_x[1]])
 
 def get_coord_offset(coord, offset, scale):
     scaled_offset = tuple(scale*x for x in offset)
@@ -37,13 +94,18 @@ def generate_hill(terrain, peak_max):
                 point = (point[0] + dz, point[1] + dx)
                 modify_terrain(terrain, point, terrain_height - distance)
 
-def get_local_interest():
-    pass
+def get_local_interest(village_skeleton, terrain, building, position):
+    interests, weights = building.get_interest(village_skeleton, terrain, position)
+    for i, interest in enumerate(interests):
+        if interest <= -.95:
+            return -1
+        interests[i] = max(0, interest) / len(interests) * weights[i]
+    return sum(interests)
 
-def generate_building(terrain, village_skeleton, building):
-    z, x = terrain.shape
-    coord = random.randint(0, z-1), random.randint(0, x-1)
-    get_local_interest(terrain, village_skeleton, building, coord)
+# def generate_building(terrain, village_skeleton, building):
+#     z, x = terrain.shape
+#     coord = random.randint(0, z-1), random.randint(0, x-1)
+#     get_local_interest(terrain, village_skeleton, building, coord)
 
 def fit_to_range(x, minx, maxx, min_range, max_range):
     normalized_x = (x - minx) / (maxx - minx)
@@ -81,18 +143,58 @@ def balance(x, minx, maxx):
 
 # Attraction - Repulsion
 def LJ_potential(x, minx, maxx):
+    if x > maxx or x < minx:
+        return -1
     min_range, max_range = 1, 3
     range_x = fit_to_range(x, minx, maxx, min_range, max_range)
     sigma = 1.032
     e = 1
     return -4*e*((sigma/range_x)**12 - (sigma/range_x)**6)
 
+def place_house(village_skeleton, terrain):
+    num_segments = 10
+    h = House()
+    z, x = terrain.shape
+    placed = False
+    while not placed:
+        for z_i in range(num_segments):
+            for x_i in range(num_segments):
+                z_min, z_max = (z // num_segments) * z_i, (z // num_segments) * (z_i + 1)
+                x_min, x_max = (x // num_segments) * x_i, (x // num_segments) * (x_i + 1)
+
+                #position = random.randint(0, z - max(h.dim) -1), random.randint(0, x - max(h.dim) -1)
+                position = random.randint(z_min, min(z_max, z - max(h.dim) -1)), random.randint(x_min, min(x_max, x - max(h.dim) -1))
+                local_interest = get_local_interest(village_skeleton, terrain, h, position)
+                if random.random() <= local_interest:
+                    #print(local_interest)
+                    h.position = position
+                    village_skeleton.append(h)
+                    placed = True
+                    return
+
+def build_village(terrain, num_houses):
+    village_skeleton = []
+    # for _ in range(random.randint(3, 5)):
+    for i in range(num_houses):
+        place_house(village_skeleton, terrain)
+        print('house', i)
+
+    for building in village_skeleton:
+        building.build(terrain)
+
+
+
 def main():
-    terrain = np.zeros((100,100))
-    for _ in range(random.randint(1,5)):
-        generate_hill(terrain, 30)
+    num_houses = 45
+    num_hills = 6
+    max_hill_height = 100
+    terrain = np.zeros((500,500))
+    for _ in range(num_hills):
+        generate_hill(terrain, max_hill_height)
     #print(terrain)
-    # plt.imshow(terrain, cmap='hot', interpolation='nearest')
+    build_village(terrain, num_houses)
+    plt.imshow(terrain, cmap='hot', interpolation='nearest')
+    plt.show()
 
     # Attraction-Repulsion Interest Function Graph
     # minx = 10
