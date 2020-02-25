@@ -35,12 +35,17 @@ class House(Building):
         self.dim = np.array([7,10])
         self.social_agents = ["house"]
 
-    def get_interest(self, village_skeleton, terrain, knn=8, attraction=40, repulsion=10):
+    def get_interest(self, village_skeleton, terrain, knn=10, attraction=40, repulsion=10):
         social_vector = sociability(village_skeleton, self, knn, attraction, repulsion)
         slope_vector = slope(self, terrain)
         print('social', social_vector)
         print('slope', slope_vector)
-        return social_vector * .5 + slope_vector * .5
+        return social_vector * .5 + slope_vector * .5 + self.get_noise(10)
+
+    def get_noise(self, scale=1):
+        noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
+        noise_vector = noise_vector / np.linalg.norm(noise_vector)
+        return noise_vector * scale
 
 class MultiAgentPositioningSystem:
     def __init__(self):
@@ -53,7 +58,7 @@ def get_vector(building, neighbor, distance, scale):
         idx = random.randint(0,3)
         return unit_directions[idx]
     else:
-        return ((neighbor.position - building.position) / distance) * scale
+        return ((neighbor.position - building.position) / distance) * min(20, scale) #TODO: Magic number
 
 def sociability(village_skeleton, building, knn, attraction, repulsion):
     distances = dict()
@@ -70,12 +75,12 @@ def sociability(village_skeleton, building, knn, attraction, repulsion):
 
         print((neighbor.position - building.position), (neighbor.position - building.position) / distance)
         if distance > attraction:
-            #knn_vector += ((neighbor.position - building.position) / distance) * (distance - attraction) * -1
             knn_vector += get_vector(building, neighbor, distance, (distance - attraction) * -1)
+            # knn_vector += get_vector(building, neighbor, distance, 1)
+
         elif distance < repulsion:
-            #knn_vector += ((neighbor.position - building.position) / distance) * (repulsion - distance)
             knn_vector += get_vector(building, neighbor, distance, repulsion - distance)
-            # knn_vector.append(((neighbor.position - building.position) / distance) * (repulsion - distance))
+            # knn_vector += get_vector(building, neighbor, distance, 1)
     return np.sum(knn_vector, axis=1)
 
 def slope(building, terrain):
