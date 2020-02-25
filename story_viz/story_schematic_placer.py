@@ -81,7 +81,7 @@ class StorySchematicPlacer:
             y = 0
 
             # Position terms: above next far north south east west center
-            if pos_word == 'above':
+            if pos_word == 'above' or pos_word=='floating':
                 # TODO: Add a way to build something in the air
                 start_x = random.randint(0, total_width-width-1)
                 start_z = random.randint(0, total_length-length-1)

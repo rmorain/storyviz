@@ -18,6 +18,7 @@ class CostumeDresser:
         self.lang_model = spacy.load('en_core_web_sm')
     # keywords should be a list of strings, each string will contain a keyword and supporting positional words
     def get_schematics(self, keywords):
+        print(keywords)
         # Get schematics from keywords
         found_schematics = []
         normalized_keywords = []
@@ -32,21 +33,24 @@ class CostumeDresser:
             if key_i == len(tokens):
                 key_i = 0
             key = keyword_parts[key_i]
-
-            rest_of_keywords = keyword_parts[:key_i]
-            rest_of_keywords.extend(keyword_parts[key_i+1:])
+            # rest_of_keywords = keyword_parts[:key_i]
+            # rest_of_keywords.extend(keyword_parts[key_i+1:])
             kw_token = self.lang_model(unicode(key))
             # Predict average similarity between keyword and each word in schematics relative path
-            schem_scores = np.array([kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' ')))) for schem in self.schematic_paths])
+            schem_scores = np.array([1 if key in schem
+                else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' ')))) for schem in self.schematic_paths])
             found_schematics.append(self.schematic_paths[np.argmax(schem_scores)].replace(self.__FILE__TYPE, ''))
-            # Normalize later keywords to known positional info
-            if len(rest_of_keywords) > 1:
-                for i,kw in enumerate(rest_of_keywords):
-                    norm = self.normalize_pos_word(kw)
-                    rest_of_keywords[i] = norm
-            keys = [key]
-            keys.extend(rest_of_keywords)
-            normalized_keywords.append(" ".join(keys))
+            normalized_keywords.append("{} {}".format(key, self.select_pos_word(keyword)))
+            # # Normalize later keywords to known positional info
+            # if len(rest_of_keywords) > 1:
+            #     for i,kw in enumerate(rest_of_keywords):
+            #         norm = self.normalize_pos_word(kw)
+            #         rest_of_keywords[i] = norm
+            # keys = [key]
+            # keys.extend(rest_of_keywords)
+            # normalized_keywords.append(" ".join(keys))
+        print("Extracted keywords:", normalized_keywords)
+        print("Found schematics:", found_schematics)
         return [StorySchematics(normalized_keywords, found_schematics)] # takes in array of labels and array of schematics
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):
@@ -56,11 +60,18 @@ class CostumeDresser:
         cardinal: north, south, east, west, center
         terrain-relative: high, low, level
         """
-        terms = "above next far north south east west, center".split()
+        terms = "above next far north south east west center".split()
         pos_word = pos_word.lower()
         pos_token = self.lang_model(unicode(pos_word))
         scores = [pos_token.similarity(self.lang_model(unicode(term))) for term in terms]
         return terms[np.argmax(scores)]
+    # Selects a normalized pos word for every schematic. If none are close to normalized pos words, place randomly
+    def select_pos_word(self, keyword):
+        terms = "above next far north south east west center floating".split()
+        scores = [self.lang_model(unicode(t)).similarity(self.lang_model(unicode(keyword))) for t in terms]
+        threshold = .1
+        top_i = np.argmax(scores)
+        return terms[top_i] if scores[top_i] > threshold else "random"
     # returns the relative paths to all schematics individually
     def get_schematic_paths(self):
         schematic_paths = []
