@@ -27,7 +27,16 @@ class Building(object):
         elif position[1] + max(self.dim) > x-1:
             new_x = x-1 - max(self.dim)
 
+        print('id', self.id, 'old pos', self.position, 'new pos', np.round([new_z, new_x]).astype(int))
         self.position = np.round([new_z, new_x]).astype(int)
+
+def normalize_vector(vector, only_greater_than=False):
+    distance = np.linalg.norm(vector)
+    if distance != 0:
+        if not only_greater_than or distance > 1:
+            return vector / distance
+    return vector
+
 
 class House(Building):
     def __init__(self, id):
@@ -40,7 +49,10 @@ class House(Building):
         slope_vector = slope(self, terrain)
         print('social', social_vector)
         print('slope', slope_vector)
-        return social_vector * .5 + slope_vector * .5 + self.get_noise(10)
+        #return social_vector * .5 + slope_vector * .5 + self.get_noise(10)
+        # print(normalize_vector(social_vector, True) + normalize_vector(slope_vector, True) * .3)
+
+        return normalize_vector(social_vector, True) + normalize_vector(slope_vector, True) * .3
 
     def get_noise(self, scale=1):
         noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
@@ -58,7 +70,7 @@ def get_vector(building, neighbor, distance, scale):
         idx = random.randint(0,3)
         return unit_directions[idx]
     else:
-        return ((neighbor.position - building.position) / distance) * min(20, scale) #TODO: Magic number
+        return ((neighbor.position - building.position) / distance) * scale #min(20, scale) #TODO: Magic number
 
 def sociability(village_skeleton, building, knn, attraction, repulsion):
     distances = dict()
@@ -68,20 +80,20 @@ def sociability(village_skeleton, building, knn, attraction, repulsion):
                 distance = euclidean_distance(building.position, neighbor.position)
                 distances[neighbor] = distance
     knn_neighbors = sorted(distances.items(), key = lambda kv : kv[1])[:knn]
-    knn_vector = np.array([[0.,0.]])
+    knn_vector = np.array([0.,0.])
     for neighbor, distance in knn_neighbors:
-        if distance == 0:
-            print('jakdefjslkjflksajfklsajdfklsajflk;sdajflksafd')
+        # print('knn', building.id, knn_vector)
 
-        print((neighbor.position - building.position), (neighbor.position - building.position) / distance)
+        # print((neighbor.position - building.position), (neighbor.position - building.position) / distance)
         if distance > attraction:
-            knn_vector += get_vector(building, neighbor, distance, (distance - attraction) * -1)
+            knn_vector += get_vector(building, neighbor, distance, distance - attraction)
             # knn_vector += get_vector(building, neighbor, distance, 1)
 
         elif distance < repulsion:
-            knn_vector += get_vector(building, neighbor, distance, repulsion - distance)
+            knn_vector += get_vector(building, neighbor, distance, (repulsion - distance) * -1)
             # knn_vector += get_vector(building, neighbor, distance, 1)
-    return np.sum(knn_vector, axis=1)
+    return knn_vector
+    #return np.sum(knn_vector, axis=1)
 
 def slope(building, terrain):
     building_center = building.position + (max(building.dim) // 2) # TODO: This is 2d
@@ -154,24 +166,26 @@ def init_village(terrain, num_houses):
         village_skeleton.append(h)
     return village_skeleton
 
-def position_village(village_skeleton, terrain, plot=False): #TODO: DOn't overwrite the terrain
+def position_village(village_skeleton, terrain, terrain_copy, plot=False): #TODO: DOn't overwrite the terrain
     z, x = terrain.shape
     for building in village_skeleton:
-        terrain[building.position[0], building.position[1]] = 0
+        terrain_copy[building.position[0], building.position[1]] = 50
 
-    building_heat = np.max(terrain)
+    # building_heat = np.max(terrain)
+    building_heat = 75
     for building in village_skeleton:
         interest_vector = building.get_interest(village_skeleton, terrain)
+        print('interest_vector', interest_vector)
         building.set_position(building.position + interest_vector, z, x)
-        terrain[building.position[0], building.position[1]] = building_heat
+        terrain_copy[building.position[0], building.position[1]] = building_heat
 
     if plot:
-        plt.imshow(terrain, cmap='hot', interpolation='nearest')
+        plt.imshow(terrain_copy, cmap='hot', interpolation='nearest')
         plt.show()
 
 
 def main():
-    num_houses = 70
+    num_houses = 2
     num_hills = 10
     max_hill_height = 80
     terrain = np.zeros((500,500))
@@ -179,15 +193,20 @@ def main():
         generate_hill(terrain, max_hill_height)
     #print(terrain)
     village_skeleton = init_village(terrain, num_houses)
+    terrain_copy = np.copy(terrain)
+    plt.ion()
+    for i in range(100):
+        # plot = False
+        # if i % 30 == 0:
+        #     plot = True
+        position_village(village_skeleton, terrain, terrain_copy)
+        plt.imshow(terrain_copy, cmap='hot', interpolation='nearest')
+        plt.draw()
+        plt.pause(.1)
+        plt.clf()
 
-    for i in range(300):
-        plot = False
-        if i % 30 == 0:
-            plot = True
-        position_village(village_skeleton, terrain, plot)
-
-    plt.imshow(terrain, cmap='hot', interpolation='nearest')
-    plt.show()
+    # plt.imshow(terrain, cmap='hot', interpolation='nearest')
+    # plt.show()
 
 if __name__=='__main__':
     main()
