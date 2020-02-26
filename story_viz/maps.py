@@ -185,7 +185,7 @@ def position_village(village_skeleton, terrain, terrain_copy, plot=False): #TODO
 
 
 def main():
-    num_houses = 2
+    num_houses = 70
     num_hills = 10
     max_hill_height = 80
     terrain = np.zeros((500,500))
@@ -194,19 +194,22 @@ def main():
     #print(terrain)
     village_skeleton = init_village(terrain, num_houses)
     terrain_copy = np.copy(terrain)
-    plt.ion()
-    for i in range(100):
-        # plot = False
-        # if i % 30 == 0:
-        #     plot = True
-        position_village(village_skeleton, terrain, terrain_copy)
-        plt.imshow(terrain_copy, cmap='hot', interpolation='nearest')
-        plt.draw()
-        plt.pause(.1)
-        plt.clf()
 
-    # plt.imshow(terrain, cmap='hot', interpolation='nearest')
-    # plt.show()
+    # plt.ion()
+    for i in range(100):
+        plot = False
+        # if i % 10 == 0:
+        #     plot = True
+        position_village(village_skeleton, terrain, terrain_copy, plot)
+        plt.imshow(terrain_copy, cmap='hot', interpolation='nearest')
+        # plt.draw()
+        # plt.pause(.1)
+        # plt.clf()
+
+    for building in village_skeleton:
+        terrain[building.position[0], building.position[1]] = 50
+    plt.imshow(terrain, cmap='hot', interpolation='nearest')
+    plt.show()
 
 if __name__=='__main__':
     main()
