@@ -49,8 +49,6 @@ class CostumeDresser:
             # keys = [key]
             # keys.extend(rest_of_keywords)
             # normalized_keywords.append(" ".join(keys))
-        print("Extracted keywords:", normalized_keywords)
-        print("Found schematics:", found_schematics)
         return [StorySchematics(normalized_keywords, found_schematics)] # takes in array of labels and array of schematics
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):

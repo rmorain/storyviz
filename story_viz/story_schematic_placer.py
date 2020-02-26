@@ -43,7 +43,6 @@ class StorySchematicPlacer:
 
     def _get_placement(self, level, box, options, schematics, keywords):
         total_width, total_length, max_height = 0,0,0
-        print('schematics', schematics)
         for schematic in schematics:
             height, width, length = schematic._Blocks.shape
             total_width += width + self.spacing
@@ -56,27 +55,13 @@ class StorySchematicPlacer:
         # The following line ensures all placements must be within the selection box
         # placements = np.zeros((total_height, total_length, total_width))
         placements = np.zeros((total_length, total_width))
+        schematic_heights = np.zeros(len(schematics))
         # schematics are 1-indexed, 0 represents and empty space
         for i, schematic in enumerate(schematics):
             height, length, width = schematic._Blocks.shape # y,z,x = _Blocks.shape
-            
-            ### ORIGINAL PLACEMENT ###
-
-            # start_x = 0
-            # start_z = 0
-            # if i != 0:
-            #     valid_placement = False
-            #     while not valid_placement:
-            #         start_x = random.randint(self.spacing, total_width-1-width-self.spacing)
-            #         start_z = random.randint(self.spacing, total_length-1-length-self.spacing)
-            #         print('startx', start_x)
-            #         print('startz', start_z)
-            #         print('placements', placements[start_z-self.spacing:start_z+length+self.spacing, start_x-self.spacing:start_x+width+self.spacing]!=0)
-            #         valid_placement = np.any(placements[start_z-self.spacing:start_z+length+self.spacing, start_x-self.spacing:start_x+width+self.spacing]!=0)
-            
-            ### POSITION WORD PLACEMENT ###
+ 
             # TODO: Prevent overlap
-            keyword_parts = keywords[i]
+            keyword_parts = keywords[i].split()
             pos_word = 'any' if len(keyword_parts) <= 1 else keyword_parts[1]
             y = 0
 
@@ -115,12 +100,13 @@ class StorySchematicPlacer:
                 start_z = random.randint(0, total_length-length-1)
                 
             placements[start_z:start_z+length, start_x:start_x+width] = i+1
+            schematic_heights[i] = y
             # placements[y:y+height, start_z:start_z+length, start_x:start_x+width] = i+1
-        return placements
+        return placements, schematic_heights
 
     def place(self, level, box, options, schematics):
         keywords, schematics = self.convert_StorySchematic(schematics) 
-        placements = self._get_placement(level, box, options, schematics, keywords)
+        placements, schematic_heights = self._get_placement(level, box, options, schematics, keywords)
         box = self._expand_box(level, box, placements)
         # TODO: Find a way to build things in the air
         placements = placements.astype(int)
@@ -128,7 +114,7 @@ class StorySchematicPlacer:
         for z, row in enumerate(placements):
             for x, val in enumerate(row):
                 if val != 0 and not placed[val-1]:
-                    make_schematic(level, box, options, schematics[val-1], (x,0,z))
+                    make_schematic(level, box, options, schematics[val-1], (x,schematic_heights[val-1],z))
                     placed[val-1] = True
 
         # plt.imshow(np.flipud(np.fliplr(placements)), cmap='hot', interpolation='nearest')
