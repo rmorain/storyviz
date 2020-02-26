@@ -52,7 +52,7 @@ class House(Building):
         #return social_vector * .5 + slope_vector * .5 + self.get_noise(10)
         # print(normalize_vector(social_vector, True) + normalize_vector(slope_vector, True) * .3)
 
-        return normalize_vector(social_vector, True) + normalize_vector(slope_vector, True) * .3
+        return normalize_vector(social_vector, True) * 5 + normalize_vector(slope_vector, True) * 2
 
     def get_noise(self, scale=1):
         noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
