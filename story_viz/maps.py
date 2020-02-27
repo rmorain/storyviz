@@ -39,8 +39,6 @@ def main():
     num_houses = 70
     terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
 
-    maps_viz.plot(material_terrain)
-
     #print(terrain)
     village_skeleton = init_village(terrain, num_houses)
     terrain_copy = np.copy(terrain)
