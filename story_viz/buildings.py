@@ -32,6 +32,10 @@ def normalize_vector(vector, only_greater_than=False):
             return vector / distance
     return vector
 
+# class Rural(Building):
+#
+# class
+
 
 class House(Building):
     def __init__(self, id):

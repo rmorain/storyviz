@@ -5,37 +5,13 @@ from scipy.stats import skewnorm
 import math
 from buildings import *
 import maps_viz
+from terrain_generator import generate_terrain
 
 class MultiAgentPositioningSystem:
     def __init__(self):
         self.author = "Dr. Robert Morain"
 
-def get_coord_offset(coord, offset, scale):
-    scaled_offset = tuple(scale*x for x in offset)
-    return tuple(coord[i]+scaled_offset[i] for i in range(len(coord)))
 
-def modify_terrain(terrain, coord, value):
-    z, x = terrain.shape
-    if coord[0] >= 0 and coord[0] < z and coord[1] >= 0 and coord[1] < x:
-        if value > terrain[coord]:
-            terrain[coord] = value
-
-def generate_hill(terrain, peak_max):
-    z, x = terrain.shape
-    hill_center = random.randint(0, z-1), random.randint(0, x-1)
-    terrain_height = random.randint(peak_max//3, peak_max)
-    terrain[hill_center] = terrain_height
-    neighbors = [(1,0),(0,1),(-1,0),(0,-1)]
-    for distance in range(1, terrain_height):
-        for neighbor_idx in range(len(neighbors)):
-            sz, sx = get_coord_offset(hill_center, neighbors[neighbor_idx], distance)
-            modify_terrain(terrain, (sz, sx), terrain_height - distance)
-            dz = neighbors[(neighbor_idx+1)%len(neighbors)][0] - neighbors[neighbor_idx][0]
-            dx = neighbors[(neighbor_idx+1)%len(neighbors)][1] - neighbors[neighbor_idx][1]
-            point = (sz, sx)
-            for _ in range(distance-1):
-                point = (point[0] + dz, point[1] + dx)
-                modify_terrain(terrain, point, terrain_height - distance)
 
 def init_village(terrain, num_houses):
     village_skeleton = []
@@ -61,11 +37,10 @@ def position_village(village_skeleton, terrain, terrain_copy, plot=False): #TODO
 
 def main():
     num_houses = 70
-    num_hills = 10
-    max_hill_height = 80
-    terrain = np.zeros((500,500))
-    for _ in range(num_hills):
-        generate_hill(terrain, max_hill_height)
+    terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
+
+    maps_viz.plot(material_terrain)
+
     #print(terrain)
     village_skeleton = init_village(terrain, num_houses)
     terrain_copy = np.copy(terrain)

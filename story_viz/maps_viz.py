@@ -10,3 +10,5 @@ def plot(terrain):
     # plt.draw()
     # plt.pause(.1)
     # plt.clf()
+
+# def animation() ????
