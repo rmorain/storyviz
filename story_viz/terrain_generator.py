@@ -43,12 +43,12 @@ def generate_river(material_terrain, max_width):
         material_terrain[point] = still_water_id
 
 def generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width):
-    terrain = np.zeros((z, x))
+    elevation_terrain = np.zeros((z, x))
     material_terrain = np.zeros((z, x))
     for _ in range(num_hills):
-        generate_hill(terrain, max_hill_height)
+        generate_hill(elevation_terrain, max_hill_height)
 
     for _ in range(num_rivers):
         generate_river(material_terrain, max_river_width)
 
-    return terrain, material_terrain
+    return elevation_terrain, material_terrain

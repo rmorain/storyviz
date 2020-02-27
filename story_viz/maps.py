@@ -22,37 +22,24 @@ def init_village(terrain, num_houses):
         village_skeleton.append(h)
     return village_skeleton
 
-def position_village(village_skeleton, terrain, terrain_copy, plot=False): #TODO: DOn't overwrite the terrain
+def position_village(village_skeleton, terrain):
     z, x = terrain.shape
-    for building in village_skeleton:
-        terrain_copy[building.position[0], building.position[1]] = 50
-
-    # building_heat = np.max(terrain)
-    building_heat = 75
     for building in village_skeleton:
         interest_vector = building.get_interest(village_skeleton, terrain)
         building.set_position(building.position + interest_vector, z, x)
-        terrain_copy[building.position[0], building.position[1]] = building_heat
 
 
 def main():
     num_houses = 70
-    terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
+    elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
 
     #print(terrain)
-    village_skeleton = init_village(terrain, num_houses)
-    terrain_copy = np.copy(terrain)
+    village_skeleton = init_village(elevation_terrain, num_houses)
 
     for i in range(100):
-        plot = False
-        # if i % 10 == 0:
-        #     plot = True
-        position_village(village_skeleton, terrain, terrain_copy, plot)
+        position_village(village_skeleton, elevation_terrain)
 
-
-    for building in village_skeleton:
-        terrain[building.position[0], building.position[1]] = 50
-    maps_viz.plot(terrain)
+    maps_viz.plot(elevation_terrain, village_skeleton)
 
 if __name__=='__main__':
     main()
