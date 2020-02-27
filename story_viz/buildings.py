@@ -23,7 +23,6 @@ class Building(object):
         elif position[1] + max(self.dim) > x-1:
             new_x = x-1 - max(self.dim)
 
-        print('id', self.id, 'old pos', self.position, 'new pos', np.round([new_z, new_x]).astype(int))
         self.position = np.round([new_z, new_x]).astype(int)
 
 def normalize_vector(vector, only_greater_than=False):
@@ -46,10 +45,6 @@ class House(Building):
     def get_interest(self, village_skeleton, terrain):
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
-        print('social', social_vector)
-        print('slope', slope_vector)
-        #return social_vector * .5 + slope_vector * .5 + self.get_noise(10)
-        # print(normalize_vector(social_vector, True) + normalize_vector(slope_vector, True) * .3)
 
         return normalize_vector(social_vector, True) * 5 + normalize_vector(slope_vector, True) * 2
 

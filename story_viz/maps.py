@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import skewnorm
 import math
 from buildings import *
+import maps_viz
 
 class MultiAgentPositioningSystem:
     def __init__(self):
@@ -54,13 +55,8 @@ def position_village(village_skeleton, terrain, terrain_copy, plot=False): #TODO
     building_heat = 75
     for building in village_skeleton:
         interest_vector = building.get_interest(village_skeleton, terrain)
-        print('interest_vector', interest_vector)
         building.set_position(building.position + interest_vector, z, x)
         terrain_copy[building.position[0], building.position[1]] = building_heat
-
-    if plot:
-        plt.imshow(terrain_copy, cmap='hot', interpolation='nearest')
-        plt.show()
 
 
 def main():
@@ -74,21 +70,16 @@ def main():
     village_skeleton = init_village(terrain, num_houses)
     terrain_copy = np.copy(terrain)
 
-    # plt.ion()
     for i in range(100):
         plot = False
         # if i % 10 == 0:
         #     plot = True
         position_village(village_skeleton, terrain, terrain_copy, plot)
-        plt.imshow(terrain_copy, cmap='hot', interpolation='nearest')
-        # plt.draw()
-        # plt.pause(.1)
-        # plt.clf()
+
 
     for building in village_skeleton:
         terrain[building.position[0], building.position[1]] = 50
-    plt.imshow(terrain, cmap='hot', interpolation='nearest')
-    plt.show()
+    maps_viz.plot(terrain)
 
 if __name__=='__main__':
     main()
