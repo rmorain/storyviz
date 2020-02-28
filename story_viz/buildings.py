@@ -1,6 +1,20 @@
 import random
 import numpy as np
 from interests import *
+import importlib
+
+# Takes a dictionary specifying {building_class : num_buildings}
+def building_generator(building_spec):
+    buildings = []
+    building_id = 0
+    for building_class_name, num_buildings in building_spec.items():
+        for _ in range(num_buildings):
+            # Load "module.submodule.MyClass"
+            BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
+            # Instantiate the class (pass arguments to the constructor, if needed)
+            buildings.append(BuildingClass(building_id))
+            building_id += 1
+    return buildings
 
 class Building(object):
     def __init__(self, id, type):
@@ -10,6 +24,9 @@ class Building(object):
         self.position = np.array([0,0])
         self.dim = np.array([0,0])
         self.social_agents = []
+        self.knn = 0
+        self.attraction = np.inf
+        self.repulsion = -1
 
     def set_position(self, position, z, x):
         new_z = position[0]
@@ -88,3 +105,18 @@ class House(Residential):
         noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
         noise_vector = noise_vector / np.linalg.norm(noise_vector)
         return noise_vector * scale
+
+class Farm(Rural):
+    def __init__(self, id):
+        super(Farm, self).__init__(id, "farm")
+        self.dim = np.array([10,10])
+        self.social_agents = ["farm"]
+        self.knn = 4
+        self.attraction = 20
+        self.repulsion = 10
+
+    def get_interest(self, village_skeleton, terrain):
+        social_vector = sociability(terrain, village_skeleton, self)
+        slope_vector = slope(terrain, village_skeleton, self)
+        return normalize_vector(social_vector, True) * 2 + normalize_vector(slope_vector, True) * 2
+
