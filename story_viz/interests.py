@@ -1,6 +1,28 @@
 import random
 import numpy as np
 
+def find_buildings_within_bbox(village_skeleton, bounding_box):
+    valid_buildings = []
+    for building in village_skeleton:
+        if bounding_box[0][0] <= building.position[0] <= bounding_box[1][0]:
+            if bounding_box[0][1] <= building.position[1] <= bounding_box[1][1]:
+                valid_buildings.append(building)
+    return valid_buildings
+
+def find_buildings_within_extent(village_skeleton, location, extent):
+    min_z, max_z = location[0] - extent[0], location[0] + extent[0]
+    min_x, max_x = location[1] - extent[1], location[1] + extent[1]
+    bounding_box = ((min_z, min_x), (max_z, max_x))
+    return find_buildings_within_bbox(village_skeleton, bounding_box)
+
+def find_buildings_within_radius(village_skeleton, location, radius):
+    buildings_within_radius = []
+    buildings_within_extent = find_buildings_within_extent(village_skeleton, location, (radius, radius))
+    for building in buildings_within_extent:
+        if np.linalg.norm(building.position - location) <= radius:
+            buildings_within_radius.append(building)
+    return buildings_within_radius
+
 def get_vector(building, neighbor, distance, scale):
     if distance == 0:
         unit_directions = [[10,0], [-10,0], [0,-10], [0,10]]
@@ -48,20 +70,17 @@ def slope(terrain, village_skeleton, building):
     dz = np.average(left_half) - np.average(right_half)
     dx = np.average(bottom_half) - np.average(top_half)
 
-    # print('dz, dx', type(dz), dz, type(dx), dx)
-    # if np.isnan(dz):
-    #     print(left_half)
-    #     print(building.position[0], building.position[0] + max(building.dim), building.position[1], building_center[1])
-    #     print(np.average(left_half))
-    #     print(right_half)
-    #     print(building.position[0], building.position[0] + max(building.dim), building_center[1], building.position[1] + max(building.dim))
-    #     print(np.average(right_half))
-    # if np.isnan(dx):
-    #     print(bottom_half)
-    #     print(building.position[0], building_center[0], building.position[1], building.position[1] + max(building.dim))
-    #     print(np.average(bottom_half))
-    #     print(top_half)
-    #     print(building_center[0], building.position[0] + max(building.dim), building.position[1], building.position[1] + max(building.dim))
-    #     print(np.average(top_half))
-
     return np.array([dz, dx])
+
+def geographic_domination(terrain, village_skeleton, building):
+    def height_comparison(terrain, main_position, compared_position):
+        dy = terrain[main_position] - terrain[compared_position]
+        dy / (1 + np.linalg.norm(main_position - compared_position))
+
+    buildings_under_influence = find_buildings_within_radius(village_skeleton, building.position, building.influence_radius)
+    for building_under_influence in buildings_under_influence:
+        height_comparison(terrain, building.position, building_under_influence.position)
+
+    return np.array([0,0]) # TODO: Finish
+
+

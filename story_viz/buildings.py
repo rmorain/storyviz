@@ -16,6 +16,13 @@ def building_generator(building_spec):
             building_id += 1
     return buildings
 
+def normalize_vector(vector, only_greater_than=False):
+    distance = np.linalg.norm(vector)
+    if distance != 0:
+        if not only_greater_than or distance > 1:
+            return vector / distance
+    return vector
+
 class Building(object):
     def __init__(self, id, type):
         self.id = id
@@ -45,14 +52,6 @@ class Building(object):
 
     def get_interest(self, village_skeleton, terrain):
         return np.array([0,0])
-
-
-def normalize_vector(vector, only_greater_than=False):
-    distance = np.linalg.norm(vector)
-    if distance != 0:
-        if not only_greater_than or distance > 1:
-            return vector / distance
-    return vector
 
 
 class Rural(Building):
@@ -119,4 +118,15 @@ class Farm(Rural):
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
         return normalize_vector(social_vector, True) * 2 + normalize_vector(slope_vector, True) * 2
+
+class Church(Public):
+    def __init__(self, id):
+        super(Church, self).__init__(id, "church")
+        self.dim = np.array([40,40])
+        self.influence_radius = 100
+
+    def get_interest(self, village_skeleton, terrain):
+        domination_vector = geographic_domination(terrain, village_skeleton, self)
+        return normalize_vector(domination_vector, True) * 2
+
 
