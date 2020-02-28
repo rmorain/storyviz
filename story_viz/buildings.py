@@ -6,6 +6,7 @@ class Building(object):
     def __init__(self, id, type):
         self.id = id
         self.type = type
+        self.building_type = ""
         self.position = np.array([0,0])
         self.dim = np.array([0,0])
         self.social_agents = []
@@ -32,12 +33,39 @@ def normalize_vector(vector, only_greater_than=False):
             return vector / distance
     return vector
 
-# class Rural(Building):
-#
-# class
+
+class Rural(Building):
+    def __init__(self, id, type):
+        super(Rural, self).__init__(id, type)
+        self.building_type = "rural"
 
 
-class House(Building):
+class Residential(Building):
+    def __init__(self, id, type):
+        super(Residential, self).__init__(id, type)
+        self.building_type = "residential"
+
+
+class Commercial(Building):
+    def __init__(self, id, type):
+        super(Commercial, self).__init__(id, type)
+        self.building_type = "commercial"
+
+
+class Public(Building):
+    def __init__(self, id, type):
+        super(Public, self).__init__(id, type)
+        self.building_type = "public"
+
+
+class Aesthetic(Building):
+    def __init__(self, id, type):
+        super(Aesthetic, self).__init__(id, type)
+        self.building_type = "aesthetic"
+
+
+
+class House(Residential):
     def __init__(self, id):
         super(House, self).__init__(id, "house")
         self.dim = np.array([7,10])

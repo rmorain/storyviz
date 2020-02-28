@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 def plot(terrain, village_skeleton):
-    colors = {'rural':'brown'}
+    colors = {'rural':'brown', 'public':'purple', 'residential':'', 'commercial':'green'}
     for building in village_skeleton:
         terrain[building.position[0], building.position[1]] = 50
     plt.imshow(terrain, cmap='hot', interpolation='nearest')
