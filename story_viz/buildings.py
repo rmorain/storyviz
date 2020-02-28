@@ -29,7 +29,7 @@ class Building(object):
     def get_interest(self, village_skeleton, terrain):
         return np.array([0,0])
 
-    
+
 def normalize_vector(vector, only_greater_than=False):
     distance = np.linalg.norm(vector)
     if distance != 0:
