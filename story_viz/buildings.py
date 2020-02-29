@@ -33,9 +33,9 @@ class Building(object):
         self.social_agents = []
         self.knn = 0
         self.attraction = np.inf
-        self.repulsion = -1
+        self.repulsion = max(self.dim) # TODO: Pass in dim? Because nothing should collide
 
-    def set_position(self, position, z, x):
+    def get_valid_displacement(self, position, z, x):
         new_z = position[0]
         if position[0] < 0:
             new_z = 0
@@ -47,8 +47,10 @@ class Building(object):
             new_x = 0
         elif position[1] + max(self.dim) > x-1:
             new_x = x-1 - max(self.dim)
+        return np.round([new_z, new_x]).astype(int)
 
-        self.position = np.round([new_z, new_x]).astype(int)
+    def set_position(self, position, z, x):
+        self.position = self.get_valid_displacement(position, z, x)
 
     def get_interest(self, village_skeleton, terrain):
         return np.array([0,0])
@@ -123,10 +125,15 @@ class Church(Public):
     def __init__(self, id):
         super(Church, self).__init__(id, "church")
         self.dim = np.array([40,40])
-        self.influence_radius = 100
+        self.influence_radius = 200
+        self.knn = 30
+        self.attraction = 300
+        self.repulsion = max(self.dim) + 30
+        self.social_agents = ["house"]
 
     def get_interest(self, village_skeleton, terrain):
         domination_vector = geographic_domination(terrain, village_skeleton, self)
-        return normalize_vector(domination_vector, True) * 2
+        social_vector = sociability(terrain, village_skeleton, self)
+        return normalize_vector(domination_vector, True) * 5 + normalize_vector(social_vector, True) * 2
 
 

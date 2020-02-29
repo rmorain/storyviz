@@ -32,7 +32,8 @@ def position_village(village_skeleton, terrain):
 def main():
     num_houses = 70
     num_farms = 20
-    building_spec = {'House': num_houses, 'Farm': num_farms}
+    num_churches = 2
+    building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
     elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
 
     #print(terrain)

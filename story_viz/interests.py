@@ -72,15 +72,37 @@ def slope(terrain, village_skeleton, building):
 
     return np.array([dz, dx])
 
-def geographic_domination(terrain, village_skeleton, building):
+# max_length = length * steps
+def cast_rect_net(terrain, building, length, steps):
+    net_positions = set()
+    z, x = terrain.shape
+    net_directions = np.array([[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1],[-1,0],[-1,1]])
+    for step in range(1, steps+1):
+        for direction in net_directions:
+            scaled_direction = direction * step
+            position = building.get_valid_displacement(building.position + scaled_direction, z, x)
+            net_positions.add(tuple(position))
+    return list(net_positions)
+
+def get_geographic_domination_position(terrain, village_skeleton, building, position):
     def height_comparison(terrain, main_position, compared_position):
-        dy = terrain[main_position] - terrain[compared_position]
-        dy / (1 + np.linalg.norm(main_position - compared_position))
+        dy = float(terrain[tuple(main_position)] - terrain[tuple(compared_position)])
+        return dy / (1 + np.linalg.norm(main_position - compared_position))
 
-    buildings_under_influence = find_buildings_within_radius(village_skeleton, building.position, building.influence_radius)
+    domination = 0
+    buildings_under_influence = find_buildings_within_radius(village_skeleton, position, building.influence_radius)
     for building_under_influence in buildings_under_influence:
-        height_comparison(terrain, building.position, building_under_influence.position)
+        domination += height_comparison(terrain, position, building_under_influence.position)
+    return domination
 
-    return np.array([0,0]) # TODO: Finish
+def geographic_domination(terrain, village_skeleton, building):
+    possible_positions = cast_rect_net(terrain, building, building.influence_radius, 2)
+    domination_values = []
+    for position in possible_positions:
+        domination_val = get_geographic_domination_position(terrain, village_skeleton, building, position)
+        domination_values.append(domination_val)
+    i = np.argmax(domination_values)
+    position = possible_positions[i]
+    return position - building.position
 
 
