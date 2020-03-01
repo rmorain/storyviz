@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import copy
 
 def fit_to_range(x, minx, maxx, min_range, max_range):
     normalized_x = (x - minx) / (maxx - minx)
@@ -23,6 +24,40 @@ def get_normed_colors():
     for color_name in colors:
         colors[color_name] = norm_color(colors[color_name])
     return colors
+
+class VizAnimator:
+    def __init__(self):
+        self.history = []
+
+    def add(self, village_skeleton):
+        timestep = []
+        for building in village_skeleton:
+            z_ax = [building.position[0], building.position[0] + building.dim[0]]
+            x_ax = [building.position[1], building.position[1] + building.dim[1]]
+            building_type = building.building_type
+            timestep.append((building_type, z_ax, x_ax))
+        self.history.append(timestep)
+
+    def animate(self, terrain):
+        plt.ion()
+        for timestep in self.history:
+            self.plot(terrain, timestep)
+
+    def plot(self, terrain, buildings_info):
+        z, x = terrain.shape
+        world = np.zeros((z, x, 3))
+        building_colors = {'rural': 'brown', 'public': 'purple', 'residential': 'red', 'commercial': 'green',
+                           'terrain': 'white', 'aesthetic': 'pink'}
+        colors = get_normed_colors()
+        plot_terrain(world, terrain)
+        for (building_type, z_ax, x_ax) in buildings_info:
+            color_name = building_colors[building_type]
+            world[z_ax[0]: z_ax[1], x_ax[0]: x_ax[1]] = colors[color_name]
+
+        plt.imshow(world)
+        plt.draw()
+        plt.pause(.1)
+        plt.clf()
 
 def plot(terrain, village_skeleton):
     z, x = terrain.shape

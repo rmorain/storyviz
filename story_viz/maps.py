@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import skewnorm
 import math
 from buildings import *
-import maps_viz
+from maps_viz import *
 from terrain_generator import generate_terrain
 
 class MultiAgentPositioningSystem:
@@ -30,6 +30,7 @@ def position_village(village_skeleton, terrain):
 
 
 def main():
+    animator = VizAnimator()
     num_houses = 70
     num_farms = 20
     num_churches = 2
@@ -41,8 +42,10 @@ def main():
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
+        animator.add(village_skeleton)
 
-    maps_viz.plot(elevation_terrain, village_skeleton)
+    # maps_viz.plot(elevation_terrain, village_skeleton)
+    animator.animate(elevation_terrain)
 
 if __name__=='__main__':
     main()

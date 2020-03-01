@@ -29,7 +29,7 @@ def get_vector(building, neighbor, distance, scale):
         idx = random.randint(0,3)
         return unit_directions[idx]
     else:
-        return ((neighbor.position - building.position) / distance) * scale #min(20, scale) #TODO: Magic number
+        return ((neighbor.position - building.position) / distance) * scale
 
 
 def sociability(terrain, village_skeleton, building):
@@ -104,5 +104,4 @@ def geographic_domination(terrain, village_skeleton, building):
     i = np.argmax(domination_values)
     position = possible_positions[i]
     return position - building.position
-
 
