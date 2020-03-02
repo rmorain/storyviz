@@ -30,11 +30,12 @@ def generate_hill(terrain, peak_max):
                 modify_terrain(terrain, point, terrain_height - distance)
 
 def generate_river(material_terrain, max_width):
+    print('here')
     still_water_id = 9
     z, x = material_terrain.shape
     start_point = (random.randint(0, z - 1), random.randint(0, z - 1))
     end_point = (random.randint(0, z - 1), random.randint(0, x - 1))
-
+    print(start_point, end_point)
     points = get_grid_cells_btw(start_point, end_point)
     points = connect_neighboring_points(points)
     width_offset = random.randint(1, max_width) // 2

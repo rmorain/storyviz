@@ -38,18 +38,21 @@ class VizAnimator:
             timestep.append((building_type, z_ax, x_ax))
         self.history.append(timestep)
 
-    def animate(self, terrain):
+    def animate(self, elevation_terrain, material_terrain):
         plt.ion()
         for timestep in self.history:
-            self.plot(terrain, timestep)
+            self.plot(elevation_terrain, material_terrain, timestep)
 
-    def plot(self, terrain, buildings_info):
-        z, x = terrain.shape
+    def plot(self, elevation_terrain, material_terrain, buildings_info):
+        z, x = elevation_terrain.shape
         world = np.zeros((z, x, 3))
         building_colors = {'rural': 'brown', 'public': 'purple', 'residential': 'red', 'commercial': 'green',
                            'terrain': 'white', 'aesthetic': 'pink'}
         colors = get_normed_colors()
-        plot_terrain(world, terrain)
+        plot_terrain(world, elevation_terrain)
+        plot_terrain(world, material_terrain)
+
+  
         for (building_type, z_ax, x_ax) in buildings_info:
             color_name = building_colors[building_type]
             world[z_ax[0]: z_ax[1], x_ax[0]: x_ax[1]] = colors[color_name]

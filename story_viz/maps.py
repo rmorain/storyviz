@@ -35,17 +35,19 @@ def main():
     num_farms = 20
     num_churches = 2
     building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
+    # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
 
     #print(terrain)
     village_skeleton = init_village(elevation_terrain, building_spec)
+    plot(material_terrain, village_skeleton)
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
         animator.add(village_skeleton)
 
-    # maps_viz.plot(elevation_terrain, village_skeleton)
-    animator.animate(elevation_terrain)
+    # animator.plot(elevation_terrain, village_skeleton)
+    animator.animate(elevation_terrain, material_terrain)
 
 if __name__=='__main__':
     main()
