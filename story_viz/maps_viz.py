@@ -59,7 +59,7 @@ class VizAnimator:
 
         plt.imshow(world)
         plt.draw()
-        plt.pause(.1)
+        plt.pause(.09)
         plt.clf()
 
 def plot(terrain, village_skeleton):

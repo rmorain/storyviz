@@ -40,7 +40,6 @@ def main():
 
     #print(terrain)
     village_skeleton = init_village(elevation_terrain, building_spec)
-    plot(material_terrain, village_skeleton)
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
