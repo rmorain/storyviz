@@ -24,9 +24,11 @@ def init_village(terrain, building_spec):
 
 def position_village(village_skeleton, terrain):
     z, x = terrain.shape
-    for building in village_skeleton:
-        interest_vector = building.get_interest(village_skeleton, terrain)
-        building.set_position(building.position + interest_vector, z, x)
+    for i, building in enumerate(village_skeleton):
+        if not building.placed:
+            interest_vector = building.get_interest(village_skeleton, terrain)
+            building.set_position(building.position + interest_vector, z, x)
+            building.random_stop()
 
 
 def main():

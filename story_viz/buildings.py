@@ -34,6 +34,8 @@ class Building(object):
         self.knn = 0
         self.attraction = np.inf
         self.repulsion = max(self.dim) # TODO: Pass in dim? Because nothing should collide
+        self.placed = False
+        self.place_probability = .005
 
     def get_valid_displacement(self, position, z, x):
         new_z = position[0]
@@ -54,6 +56,11 @@ class Building(object):
 
     def get_interest(self, village_skeleton, terrain):
         return np.array([0,0])
+
+    def random_stop(self):
+        if random.random() < self.place_probability:
+            self.placed = True
+
 
 
 class Rural(Building):
