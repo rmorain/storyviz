@@ -43,7 +43,7 @@ class VizAnimator:
         for timestep in self.history:
             self.plot(elevation_terrain, material_terrain, timestep)
 
-    def plot(self, elevation_terrain, material_terrain, buildings_info):
+    def plot(self, elevation_terrain, material_terrain, buildings_info, play_rate=.09):
         z, x = elevation_terrain.shape
         world = np.zeros((z, x, 3))
         building_colors = {'rural': 'brown', 'public': 'purple', 'residential': 'red', 'commercial': 'green',
@@ -59,7 +59,7 @@ class VizAnimator:
 
         plt.imshow(world)
         plt.draw()
-        plt.pause(.09)
+        plt.pause(play_rate)
         plt.clf()
 
 def plot(terrain, village_skeleton):

@@ -31,19 +31,28 @@ def get_vector(building, neighbor, distance, scale):
     else:
         return ((neighbor.position - building.position) / distance) * scale
 
+def get_knn(village_skeleton, building, neighbor_types, k):
+    distances = dict()
+    for neighbor in village_skeleton:
+        if neighbor.id != building.id:
+            if neighbor.type in neighbor_types:
+                distance = np.linalg.norm(building.position - neighbor.position)
+                distances[neighbor] = distance
+    return sorted(distances.items(), key = lambda kv : kv[1])[:k]
 
 def sociability(terrain, village_skeleton, building):
     knn = building.knn
     attraction = building.attraction
     repulsion = building.repulsion
 
-    distances = dict()
-    for neighbor in village_skeleton:
-        if neighbor.id != building.id:
-            if neighbor.type in building.social_agents:
-                distance = np.linalg.norm(building.position - neighbor.position)
-                distances[neighbor] = distance
-    knn_neighbors = sorted(distances.items(), key = lambda kv : kv[1])[:knn]
+    # distances = dict()
+    # for neighbor in village_skeleton:
+    #     if neighbor.id != building.id:
+    #         if neighbor.type in building.social_agents:
+    #             distance = np.linalg.norm(building.position - neighbor.position)
+    #             distances[neighbor] = distance
+    # knn_neighbors = sorted(distances.items(), key = lambda kv : kv[1])[:knn]
+    knn_neighbors = get_knn(village_skeleton, building, building.social_agents, knn)
     knn_vector = np.array([0.,0.])
     for neighbor, distance in knn_neighbors:
         # print('knn', building.id, knn_vector)
@@ -104,4 +113,13 @@ def geographic_domination(terrain, village_skeleton, building):
     i = np.argmax(domination_values)
     position = possible_positions[i]
     return position - building.position
+
+def knn_centroid(terrain, village_skeleton, building):
+    knn = building.centroid_knn
+    knn_neighbors = get_knn(village_skeleton, building, building.centroid_types, knn)
+    knn_centroid = np.array([0,0])
+    for neighbor, distance in knn_neighbors:
+        knn_centroid += neighbor.position
+    knn_centroid /= knn
+    return knn_centroid - building.position
 

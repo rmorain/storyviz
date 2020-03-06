@@ -143,4 +143,15 @@ class Church(Public):
         social_vector = sociability(terrain, village_skeleton, self)
         return normalize_vector(domination_vector, True) * 5 + normalize_vector(social_vector, True) * 2
 
+class Store(Commercial):
+    def __init__(self, id):
+        super(Store, self).__init__(id, "store")
+        self.dim = np.array([25, 25])
+        self.centroid_types = ["house"]
+        self.centroid_knn = 7
+
+    def get_interest(self, village_skeleton, terrain):
+        commercial_vector = super(Store, self).get_interest(village_skeleton, terrain)
+        centroid_vector = knn_centroid(terrain, village_skeleton, self)
+        return normalize_vector(centroid_vector, True) * 5 + normalize_vector(commercial_vector, True) * 2
 
