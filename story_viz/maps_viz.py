@@ -28,6 +28,7 @@ def get_normed_colors():
 class VizAnimator:
     def __init__(self):
         self.history = []
+        self.terrain_plot = None
 
     def add(self, village_skeleton):
         timestep = []
@@ -45,12 +46,18 @@ class VizAnimator:
 
     def plot(self, elevation_terrain, material_terrain, buildings_info, play_rate=.09):
         z, x = elevation_terrain.shape
-        world = np.zeros((z, x, 3))
+        if self.terrain_plot is None:
+            world = np.zeros((z, x, 3))
+            plot_terrain(world, elevation_terrain)
+            plot_terrain(world, material_terrain)
+            self.terrain_plot = np.copy(world)
+        else:
+            world = np.copy(self.terrain_plot)
+
         building_colors = {'rural': 'brown', 'public': 'purple', 'residential': 'red', 'commercial': 'green',
                            'terrain': 'white', 'aesthetic': 'pink'}
         colors = get_normed_colors()
-        plot_terrain(world, elevation_terrain)
-        plot_terrain(world, material_terrain)
+
 
   
         for (building_type, z_ax, x_ax) in buildings_info:
