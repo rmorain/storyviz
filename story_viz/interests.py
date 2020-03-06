@@ -123,3 +123,11 @@ def knn_centroid(terrain, village_skeleton, building):
     knn_centroid /= knn
     return knn_centroid - building.position
 
+def repel_collision(terrain, village_skeleton, building):
+    repulsion = np.array([0,0])
+    building_vector = np.array([max(building.dim),max(building.dim)])
+    for neighbor in village_skeleton:
+        if np.linalg.norm(neighbor.position - building.position, ord=np.inf) <= (max(building.dim) + 2):
+            x = building.position - neighbor.position
+            repulsion += (np.sign(x) * building_vector) - x
+    return repulsion

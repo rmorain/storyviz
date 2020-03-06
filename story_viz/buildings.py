@@ -54,8 +54,13 @@ class Building(object):
     def set_position(self, position, z, x):
         self.position = self.get_valid_displacement(position, z, x)
 
+    def get_noise(self, scale=1):
+        noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
+        noise_vector = noise_vector / np.linalg.norm(noise_vector)
+        return noise_vector * scale
+
     def get_interest(self, village_skeleton, terrain):
-        return np.array([0,0])
+        return normalize_vector(repel_collision(terrain, village_skeleton, self), True) * 5
 
     def random_stop(self):
         if random.random() < self.place_probability:
@@ -104,15 +109,11 @@ class House(Residential):
         self.repulsion = 10
 
     def get_interest(self, village_skeleton, terrain):
+        residential_vector = super(House, self).get_interest(village_skeleton, terrain)
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
 
-        return normalize_vector(social_vector, True) * 5 + normalize_vector(slope_vector, True) * 2
-
-    def get_noise(self, scale=1):
-        noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
-        noise_vector = noise_vector / np.linalg.norm(noise_vector)
-        return noise_vector * scale
+        return normalize_vector(social_vector, True) * 5 + normalize_vector(slope_vector, True) * 2 + residential_vector
 
 class Farm(Rural):
     def __init__(self, id):
@@ -124,9 +125,10 @@ class Farm(Rural):
         self.repulsion = 10
 
     def get_interest(self, village_skeleton, terrain):
+        rural_vector = super(Farm, self).get_interest(village_skeleton, terrain)
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
-        return normalize_vector(social_vector, True) * 2 + normalize_vector(slope_vector, True) * 2
+        return normalize_vector(social_vector, True) * 2 + normalize_vector(slope_vector, True) * 2 + rural_vector
 
 class Church(Public):
     def __init__(self, id):
@@ -139,19 +141,20 @@ class Church(Public):
         self.social_agents = ["house"]
 
     def get_interest(self, village_skeleton, terrain):
+        public_vector = super(Church, self).get_interest(village_skeleton, terrain)
         domination_vector = geographic_domination(terrain, village_skeleton, self)
         social_vector = sociability(terrain, village_skeleton, self)
-        return normalize_vector(domination_vector, True) * 5 + normalize_vector(social_vector, True) * 2
+        return normalize_vector(domination_vector, True) * 5 + normalize_vector(social_vector, True) * 2 + public_vector
 
 class Store(Commercial):
     def __init__(self, id):
         super(Store, self).__init__(id, "store")
-        self.dim = np.array([25, 25])
+        self.dim = np.array([18, 18])
         self.centroid_types = ["house"]
         self.centroid_knn = 7
 
     def get_interest(self, village_skeleton, terrain):
         commercial_vector = super(Store, self).get_interest(village_skeleton, terrain)
         centroid_vector = knn_centroid(terrain, village_skeleton, self)
-        return normalize_vector(centroid_vector, True) * 5 + normalize_vector(commercial_vector, True) * 2
+        return normalize_vector(centroid_vector, True) * 5 + commercial_vector
 
