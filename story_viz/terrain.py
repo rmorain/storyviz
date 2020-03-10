@@ -17,4 +17,17 @@ class Terrain:
                         self.material[z-box.minz][x-box.minx] = material_id
                         break
 
+    # Initialize a material distance layer
+    # Pass in int for material you want to get distance from at each point
+    def init_material_dist(material):
+        x, y = self.material.shape  # Get dimensions of material terrain
+        material_dist_layer = np.zeros((x, y), np.inf)   # Initialize to all inf
+        return None # TODO more
+
+    # TODO
+    def update_material_dist():
+        return None  
+
+    
+
 
