@@ -20,7 +20,6 @@ from mcplatform import *
 
 import utilityFunctions as utilityFunctions
 from maps import create_minecraft_village
-from maps_builder import build_in_minecraft
 
 # Import files you want
 from classes import *
@@ -42,9 +41,9 @@ def perform(level, box, options):
 
     # s = StorySchematics(['House', 'Church', 'Farm'], ['small-convenient-house', 'evil-church', 'farm-wheat'])
     # schematics = s.get_schematics()
-    building_spec = get_building_spec()
+    building_spec, schematic_files = get_building_spec()
     village_skeleton, terrain = create_minecraft_village(level, box, building_spec)
-    build_in_minecraft(level, box, terrain, village_skeleton)
+    build_village_skeleton(level, box, village_skeleton, schematic_files)
 
 
 
@@ -60,6 +59,14 @@ def perform(level, box, options):
     # print('finished gps')
     #
 
+def build_village_skeleton(level, box, village_skeleton, schematic_files):
+    schematics = StorySchematics(list(schematic_files), list(schematic_files)).get_schematics()
+    for building in village_skeleton:
+        z, x = building.position[0], building.position[1]
+        schematic = schematics[building.schematic_file]
+        source_box = BoundingBox((0, 0, 0),(schematic.Width, schematic.Height, schematic.Length))
+        level.copyBlocksFrom(schematic, source_box, (box.minx+x, box.miny, box.minz+z))
+
 def get_building_spec():
     num_houses = 20
     num_farms = 10
@@ -70,12 +77,18 @@ def get_building_spec():
                      'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
                      'Church': [num_churches, {'evil-church': (-1,-1)}]}
 
+    schematic_files = set()
+    for building_class in building_spec:
+        schematic_info = building_spec[building_class][1]
+        for schematic_file in schematic_info:
+            schematic_files.add(schematic_file)
+
     for class_name in building_spec:
         building_info = building_spec[class_name]
         for schematic_file in building_info[1]:
             schematic_dim = get_schematics_info([schematic_file])
             building_info[1][schematic_file] = schematic_dim[0]
-    return building_spec
+    return building_spec, schematic_files
 
 def get_schematics(schematic_files):
     __PATH__TO__SCHEMATICS = "stock-schematics/library/"
