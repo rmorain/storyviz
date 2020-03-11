@@ -19,7 +19,7 @@ class Terrain:
 
     # Initialize a material distance layer
     # Pass in int for material you want to get distance from at each point
-    def init_material_dist(material):
+    def init_material_dist(self, material):
         x, y = self.material.shape  # Get dimensions of material terrain
         material_dist_layer = np.zeros((x, y), np.inf)   # Initialize to all inf
         return None # TODO more
