@@ -4,7 +4,7 @@ from interests import *
 import importlib
 
 # Takes a dictionary specifying {building_class : num_buildings}
-def building_generator(building_spec):
+def building_generator(building_spec, schematics):
     buildings = []
     building_id = 0
     for building_class_name, num_buildings in building_spec.items():
@@ -12,7 +12,12 @@ def building_generator(building_spec):
             # Load "module.submodule.MyClass"
             BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
             # Instantiate the class (pass arguments to the constructor, if needed)
-            buildings.append(BuildingClass(building_id))
+            building = BuildingClass(building_id)
+            if schematics is not None:
+                schematic = schematics[building_class_name]
+                z, x = schematic.Length, schematic.Width
+                building.dim = np.array([z,x])
+            buildings.append(building)
             building_id += 1
     return buildings
 
