@@ -82,10 +82,10 @@ class StorySchematicPlacer:
                 start_z = random.randint(0, 10)
                 start_x = random.randint(0, total_width-width-1)
             elif pos_word == 'south':
-                start_z = random.randint(total_length-length-1, total_length-length-11)
+                start_z = random.randint(total_length-length-11, total_length-length-1)
                 start_x = random.randint(0, total_width-width-1)
             elif pos_word == 'east':
-                start_x = random.randint(total_width-width-1, total_width-width-11)
+                start_x = random.randint(total_width-width-11, total_width-width-1)
                 start_z = random.randint(0, total_length-length-1)
             elif pos_word == 'west':
                 start_x = random.randint(0, 10)

@@ -44,7 +44,7 @@ def create_minecraft_village(level, box, schematics, animate=False):
     #elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
     terrain = Terrain()
     terrain.load_map(level, box)
-    elevation_terrain, material_terrain = terrain.elevation, terrain.material
+    elevation_terrain, material_terrain = terrain.layers['elevation'], terrain.layers['material']
 
     #print(terrain)
     village_skeleton = init_village(elevation_terrain, building_spec, schematics)
