@@ -19,8 +19,8 @@ from mcplatform import *
 
 
 import utilityFunctions as utilityFunctions
-
-
+from maps import create_minecraft_village
+from maps_builder import build_in_minecraft
 
 # Import files you want
 from classes import *
@@ -39,15 +39,19 @@ def perform(level, box, options):
     story = options['Story']
     if story.isspace() or story is '':
         story = "On a farm in the west there was a house when out of nowhere a hovering ufo abducted the cow"
-    
-    sch_man = SchematicManager()
-    GSP = GeneralSchematicPlacer()
-    SSP = StorySchematicPlacer()
-    print('before')
-    schematics = sch_man.get_schematics(story)
-    print('got schem')
-    box, land_allocation_grid = SSP.place(level, box, options, schematics)
-    print('finished ssp')
-    GSP.place(level, box, options, schematics, land_allocation_grid)
-    print('finished gps')
+
+    s = StorySchematics(['House', 'Church', 'Farm'], ['small-convenient-house', 'evil-church', 'farm-wheat'])
+    schematics = s.get_schematics()
+    village_skeleton, terrain = create_minecraft_village(level, box, schematics)
+    build_in_minecraft(level, box, terrain, village_skeleton)
+    # sch_man = SchematicManager()
+    # GSP = GeneralSchematicPlacer()
+    # SSP = StorySchematicPlacer()
+    # print('before')
+    # schematics = sch_man.get_schematics(story)
+    # print('got schem')
+    # box, land_allocation_grid = SSP.place(level, box, options, schematics)
+    # print('finished ssp')
+    # GSP.place(level, box, options, schematics, land_allocation_grid)
+    # print('finished gps')
     # 
