@@ -3,20 +3,23 @@ import numpy as np
 from interests import *
 import importlib
 
-# Takes a dictionary specifying {building_class : num_buildings}
-def building_generator(building_spec, schematics):
+# Takes a dictionary specifying {building_class : [num_buildings, schematic_info]}
+def building_generator(building_spec):
     buildings = []
     building_id = 0
-    for building_class_name, num_buildings in building_spec.items():
+    for building_class_name, building_info in building_spec.items():
+        num_buildings, schematic_info = building_info[0], list(building_info[1].items())
         for _ in range(num_buildings):
             # Load "module.submodule.MyClass"
             BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
             # Instantiate the class (pass arguments to the constructor, if needed)
             building = BuildingClass(building_id)
-            if schematics is not None:
-                schematic = schematics[building_class_name]
-                z, x = schematic.Length, schematic.Width
-                building.dim = np.array([z,x])
+            if len(schematic_info) > 0:
+                print('schem info', schematic_info)
+                schematic_file, schematic_dim = random.choice(schematic_info)
+                building.schematic_file = schematic_file
+                print('schem dim', schematic_dim)
+                building.dim = np.array([schematic_dim[0],schematic_dim[1]])
             buildings.append(building)
             building_id += 1
     return buildings
@@ -33,6 +36,7 @@ class Building(object):
         self.id = id
         self.type = type
         self.building_type = ""
+        self.schematic_file = ""
         self.position = np.array([0,0])
         self.dim = np.array([0,0])
         self.social_agents = []
