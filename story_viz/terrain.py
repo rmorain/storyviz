@@ -8,9 +8,9 @@ from lines import *
 class Terrain:
     def __init__(self):
         self.layers = {'material':None, 'elevation':None}
-        self.generate_terrain()
         self.materials = {'water': 9}
         self.material_points = {}
+        self.generate_terrain()
 
     def load_map(self, level, box):
         self.layers['elevation'] = np.zeros((box.length, box.width))
@@ -84,8 +84,7 @@ class Terrain:
                     point = (point[0] + dz, point[1] + dx)
                     self.modify_terrain(terrain, point, terrain_height - distance)
 
-    def generate_river(self, material_terrain, max_width):
-        still_water_id = 9
+    def generate_material_line(self, material_terrain, max_width, material):
         z, x = material_terrain.shape
         start_point = (random.randint(0, z - 1), random.randint(0, z - 1))
         end_point = (random.randint(0, z - 1), random.randint(0, x - 1))
@@ -94,10 +93,10 @@ class Terrain:
         width_offset = random.randint(1, max_width) // 2
         points = expand_line(points, width_offset, start_point, end_point, z, x)
         for point in points:
-            material_terrain[point] = still_water_id
+            material_terrain[point] = material
 
     def generate_terrain(self):
-        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (25, 25, 0, 0, 1, 2)
+        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (500, 500, 0, 0, 1, 1)
 
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
@@ -105,7 +104,7 @@ class Terrain:
             self.generate_hill(self.layers['elevation'], max_hill_height)
 
         for _ in range(num_rivers):
-            self.generate_river(self.layers['material'], max_river_width)
+            self.generate_material_line(self.layers['material'], max_river_width, self.materials['water'])
 
         return None
 

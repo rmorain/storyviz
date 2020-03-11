@@ -11,7 +11,7 @@ def get_line_expansion(start_point, end_point, width_offset):
         return [(z, 0) for z in offsets]
 
 def expand_line(points, width_offset, start_point, end_point, box_length, box_width):
-    expanded_points = set()
+    expanded_points = set(points)
     if width_offset > 0:
         road_expansion = get_line_expansion(start_point, end_point, width_offset)
         for z, x in points:

@@ -72,9 +72,11 @@ def create_village(animate=False):
                      'Church': [num_churches, {}]}
 
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
-    elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
+    t = Terrain()
 
     #print(terrain)
+    elevation_terrain = t.layers['elevation']
+    material_terrain = t.layers['material']
     village_skeleton = init_village(elevation_terrain, building_spec, None)
 
     for i in range(100):
