@@ -33,8 +33,6 @@ class CostumeDresser:
             if key_i == len(tokens):
                 key_i = 0
             key = keyword_parts[key_i]
-            # rest_of_keywords = keyword_parts[:key_i]
-            # rest_of_keywords.extend(keyword_parts[key_i+1:])
             kw_token = self.lang_model(unicode(key))
             # Predict average similarity between keyword and each word in schematics relative path
             schem_scores = np.array([1 if key in schem
@@ -49,6 +47,8 @@ class CostumeDresser:
             # keys = [key]
             # keys.extend(rest_of_keywords)
             # normalized_keywords.append(" ".join(keys))
+        print("normalized keywords:", normalized_keywords)
+        print("schematics:", found_schematics)
         return [StorySchematics(normalized_keywords, found_schematics)] # takes in array of labels and array of schematics
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):

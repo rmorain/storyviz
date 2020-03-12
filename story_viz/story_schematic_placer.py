@@ -58,6 +58,7 @@ class StorySchematicPlacer:
         schematic_heights = np.zeros(len(schematics))
         # schematics are 1-indexed, 0 represents and empty space
         for i, schematic in enumerate(schematics):
+            print(i+1, schematic, keywords[i])
             height, length, width = schematic._Blocks.shape # y,z,x = _Blocks.shape
  
             # TODO: Prevent overlap
@@ -102,6 +103,10 @@ class StorySchematicPlacer:
             placements[start_z:start_z+length, start_x:start_x+width] = i+1
             schematic_heights[i] = y
             # placements[y:y+height, start_z:start_z+length, start_x:start_x+width] = i+1
+        for row in placements:
+            for x in row:
+                print(int(x)),
+            print()
         return placements, schematic_heights
 
     def place(self, level, box, options, schematics):
@@ -122,6 +127,7 @@ class StorySchematicPlacer:
 
         return box, placements
 
+    # UNUSED
     def _expand_placements(self, placement, height, width, length):
         h, w, l = placement.shape
         new_placement = np.zeros((height+h, width+w, length+l))
