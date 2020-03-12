@@ -40,6 +40,7 @@ class Building(object):
         self.attraction = np.inf
         self.repulsion = max(self.dim) # TODO: Pass in dim? Because nothing should collide
         self.placed = False
+        self.connected = False
         self.place_probability = .005
 
     def get_valid_displacement(self, position, z, x):

@@ -32,6 +32,14 @@ def position_village(village_skeleton, terrain):
             building.set_position(building.position + interest_vector, z, x)
             building.random_stop()
 
+# Connect roads between stopped buildings
+# TODO
+def draw_roads(self, village_skeleton, terrain):
+    for i, building in enumerate(village_skeleton):
+        if building.placed and not building.connected:
+            pass
+    return None
+
 def create_minecraft_village(level, box, schematics, animate=False):
     animator = VizAnimator()
     num_houses = 20
@@ -51,6 +59,7 @@ def create_minecraft_village(level, box, schematics, animate=False):
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
+        draw_roads(village_skeleton, terrain)
         if animate:
             animator.add(village_skeleton)
 
@@ -59,7 +68,7 @@ def create_minecraft_village(level, box, schematics, animate=False):
         animator.animate(elevation_terrain, material_terrain)
     return village_skeleton, elevation_terrain
 
-def create_village(animate=False):
+def create_village(animate=True):
     animator = VizAnimator()
     num_houses = 20
     num_farms = 10

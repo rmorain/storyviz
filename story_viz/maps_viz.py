@@ -4,7 +4,11 @@ import random
 import copy
 
 def fit_to_range(x, minx, maxx, min_range, max_range):
-    normalized_x = (x - minx) / (maxx - minx)
+    try:
+        normalized_x = (x - minx) / (maxx - minx)
+    except ZeroDivisionError:
+        print(x, minx, maxx)
+        normalized_x = minx
     return (normalized_x * (max_range - min_range)) + min_range
 
 def plot_terrain(world, terrain):
@@ -20,9 +24,9 @@ def plot_terrain(world, terrain):
 
 def get_normed_colors():
     colors = {'brown': (139,69,19), 'purple': (128,0,128), 'red': (255,0,0), 'green': (0,255,0), 'pink': (255,20,147)}
-    norm_color = lambda (r,g,b): (r/255., g/255., b/255.)
+    norm_color = lambda r,g,b: (r/255., g/255., b/255.)
     for color_name in colors:
-        colors[color_name] = norm_color(colors[color_name])
+        colors[color_name] = norm_color(*colors[color_name])
     return colors
 
 class VizAnimator:
@@ -63,7 +67,6 @@ class VizAnimator:
         for (building_type, z_ax, x_ax) in buildings_info:
             color_name = building_colors[building_type]
             world[z_ax[0]: z_ax[1], x_ax[0]: x_ax[1]] = colors[color_name]
-
         plt.imshow(world)
         plt.draw()
         plt.pause(play_rate)
