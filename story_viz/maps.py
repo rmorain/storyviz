@@ -58,7 +58,7 @@ def create_minecraft_village(level, box, building_spec, animate=False):
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:
         animator.animate(elevation_terrain, material_terrain)
-    return village_skeleton, elevation_terrain
+    return village_skeleton, terrain
 
 def create_village(animate=False):
     animator = VizAnimator()
@@ -94,7 +94,7 @@ def create_village(animate=False):
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:
         animator.animate(elevation_terrain, material_terrain)
-    return village_skeleton, elevation_terrain
+    return village_skeleton, t
 
 def main():
     create_village()

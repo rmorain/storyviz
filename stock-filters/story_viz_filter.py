@@ -44,7 +44,7 @@ def perform(level, box, options):
     # schematics = s.get_schematics()
     building_spec = get_village_spec()
     village_skeleton, terrain = create_minecraft_village(level, box, building_spec)
-    build_village_skeleton(level, box, village_skeleton, building_spec.get_all_village_schematics())
+    build_village_skeleton(level, box, village_skeleton, terrain, building_spec.get_all_village_schematics())
 
 
 
@@ -60,13 +60,15 @@ def perform(level, box, options):
     # print('finished gps')
     #
 
-def build_village_skeleton(level, box, village_skeleton, schematic_files):
+def build_village_skeleton(level, box, village_skeleton, terrain, schematic_files):
+    elevation = terrain.layers['elevation']
     schematics = StorySchematics(schematic_files, schematic_files).get_schematics()
     for building in village_skeleton:
         z, x = building.position[0], building.position[1]
+        elevation_offset = elevation[z][x]
         schematic = schematics[building.schematic_file]
         source_box = BoundingBox((0, 0, 0),(schematic.Width, schematic.Height, schematic.Length))
-        level.copyBlocksFrom(schematic, source_box, (box.minx+x, box.miny, box.minz+z))
+        level.copyBlocksFrom(schematic, source_box, (box.minx+x, box.miny - building.y_offset + elevation_offset, box.minz+z))
 
 def fill_building_spec_info(village_spec, building_class_name, schematic_files):
     schematic_dims, schematic_y_offsets = get_schematics_info(schematic_files)
