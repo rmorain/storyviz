@@ -39,16 +39,6 @@ class CostumeDresser:
                 else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' ')))) for schem in self.schematic_paths])
             found_schematics.append(self.schematic_paths[np.argmax(schem_scores)].replace(self.__FILE__TYPE, ''))
             normalized_keywords.append("{} {}".format(key, self.select_pos_word(keyword)))
-            # # Normalize later keywords to known positional info
-            # if len(rest_of_keywords) > 1:
-            #     for i,kw in enumerate(rest_of_keywords):
-            #         norm = self.normalize_pos_word(kw)
-            #         rest_of_keywords[i] = norm
-            # keys = [key]
-            # keys.extend(rest_of_keywords)
-            # normalized_keywords.append(" ".join(keys))
-        print("normalized keywords:", normalized_keywords)
-        print("schematics:", found_schematics)
         return [StorySchematics(normalized_keywords, found_schematics)] # takes in array of labels and array of schematics
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):

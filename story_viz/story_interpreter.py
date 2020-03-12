@@ -6,7 +6,7 @@ Return list of strings.
 Strings are associated keywords.
 """
 
-from rake_nltk import Rake
+# from rake_nltk import Rake
 import spacy
 from spacy import displacy
 import unicodedata
@@ -14,15 +14,15 @@ from spacy.lang.en.stop_words import STOP_WORDS
 
 spacy.prefer_gpu()
 
-class StoryInterpreterRake:
-    def __init__(self):
-        self.r = Rake()
+# class StoryInterpreterRake:
+#     def __init__(self):
+#         self.r = Rake()
 
-    def get_keywords(self, story):
-        print(story)
-        keywords_list = self.r.extract_keywords_from_text(story)
+#     def get_keywords(self, story):
+#         print(story)
+#         keywords_list = self.r.extract_keywords_from_text(story)
 
-        return self.r.get_ranked_phrases()
+#         return self.r.get_ranked_phrases()
 
         
 class StoryInterpreter:

@@ -3,16 +3,43 @@ import numpy as np
 from interests import *
 import importlib
 
-# Takes a dictionary specifying {building_class : num_buildings}
-def building_generator(building_spec):
+# Takes a dictionary specifying {building_class : [num_buildings, schematic_info]}
+# def building_generator(building_spec):
+#     buildings = []
+#     building_id = 0
+#     for building_class_name, building_info in building_spec.items():
+#         num_buildings, schematic_info = building_info[0], list(building_info[1].items())
+#         for _ in range(num_buildings):
+#             # Load "module.submodule.MyClass"
+#             BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
+#             # Instantiate the class (pass arguments to the constructor, if needed)
+#             building = BuildingClass(building_id)
+#             if len(schematic_info) > 0:
+#                 print('schem info', schematic_info)
+#                 schematic_file, schematic_dim = random.choice(schematic_info)
+#                 building.schematic_file = schematic_file
+#                 print('schem dim', schematic_dim)
+#                 building.dim = np.array([schematic_dim[0],schematic_dim[1]])
+#             buildings.append(building)
+#             building_id += 1
+#     return buildings
+
+def building_generator(village_spec):
     buildings = []
     building_id = 0
-    for building_class_name, num_buildings in building_spec.items():
-        for _ in range(num_buildings):
+    for building_class_name, building_spec in village_spec.building_specs.items():
+        for _ in range(building_spec.num_buildings):
             # Load "module.submodule.MyClass"
             BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
             # Instantiate the class (pass arguments to the constructor, if needed)
-            buildings.append(BuildingClass(building_id))
+            building = BuildingClass(building_id)
+
+            schematic_file, schematic_dim, schematic_y_offset = building_spec.sample()
+            if schematic_file is not None:
+                building.schematic_file = schematic_file
+                building.dim = np.array([schematic_dim[0],schematic_dim[1]])
+                building.y_offset = schematic_y_offset
+            buildings.append(building)
             building_id += 1
     return buildings
 
@@ -28,6 +55,7 @@ class Building(object):
         self.id = id
         self.type = type
         self.building_type = ""
+        self.schematic_file = ""
         self.position = np.array([0,0])
         self.dim = np.array([0,0])
         self.social_agents = []
