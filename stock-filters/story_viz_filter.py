@@ -67,29 +67,12 @@ def build_village_skeleton(level, box, village_skeleton, schematic_files):
         schematic = schematics[building.schematic_file]
         source_box = BoundingBox((0, 0, 0),(schematic.Width, schematic.Height, schematic.Length))
         level.copyBlocksFrom(schematic, source_box, (box.minx+x, box.miny, box.minz+z))
-#
-# def get_building_spec():
-#     num_houses = 20
-#     num_farms = 10
-#     num_churches = 0
-#     num_stores = 5
-#
-#     building_spec = {'House': [num_houses, {'small-convenient-house': (-1,-1), 'First survival House (copy)': (-1,-1)}],
-#                      'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
-#                      'Church': [num_churches, {'evil-church': (-1,-1)}]}
-#
-#     schematic_files = set()
-#     for building_class in building_spec:
-#         schematic_info = building_spec[building_class][1]
-#         for schematic_file in schematic_info:
-#             schematic_files.add(schematic_file)
-#
-#     for class_name in building_spec:
-#         building_info = building_spec[class_name]
-#         for schematic_file in building_info[1]:
-#             schematic_dim, schematic_y_offset = get_schematics_info([schematic_file])
-#             building_info[1][schematic_file] = schematic_dim[0]
-#     return building_spec, schematic_files
+
+def fill_building_spec_info(village_spec, building_class_name, schematic_files):
+    schematic_dims, schematic_y_offsets = get_schematics_info(schematic_files)
+    village_spec.building_specs[building_class_name].schematic_files = schematic_files
+    village_spec.building_specs[building_class_name].schematic_dims = schematic_dims
+    village_spec.building_specs[building_class_name].schematic_y_offsets = schematic_y_offsets
 
 def get_village_spec():
     num_houses = 20
@@ -101,46 +84,47 @@ def get_village_spec():
     #                  'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
     #                  'Church': [num_churches, {'evil-church': (-1,-1)}]}
     village_spec = VillageSpec()
-    village_spec.add("House", num_houses, ['small-convenient-house', 'First survival House (copy)'])
-    village_spec.add("Farm", num_farms, ['farm-wheat'])
-    village_spec.add("Church", num_churches, ['evil-church'])
+    village_spec.add("House", num_houses)
+    village_spec.add("Farm", num_farms)
+    village_spec.add("Church", num_churches)
+
+    fill_building_spec_info(village_spec, "House", ['small-convenient-house', 'First survival House (copy)'])
+    fill_building_spec_info(village_spec, "Farm", ['farm-wheat'])
+    fill_building_spec_info(village_spec, "Church", ['evil-church'])
 
     return village_spec
 
-# def get_schematics(schematic_files):
-#     __PATH__TO__SCHEMATICS = "stock-schematics/library/"
-#     __FILE__TYPE = ".schematic"
-#     schematics = []
-#     for schematic_file in schematic_files:
-#         schematics.append(MCSchematic(filename=__PATH__TO__SCHEMATICS + schematic_file + __FILE__TYPE))
-#     return schematics
-#
-# def get_schematics_info(schematic_files):
-#     schematics = get_schematics(schematic_files)
-#     schematic_dims = []
-#     schematic_y_offsets = []
-#     for schematic in schematics:
-#         schematic_dims.append(array([schematic.Length, schematic.Width]))
-#         schematic_y_offsets.append(get_schematic_y_offset(schematic))
-#
-#     return schematic_dims, schematic_y_offsets
-#
-# def get_schematic_y_offset(schematic):
-#     maxz, maxx, maxy = schematic.Length - 1, schematic.Width - 1, schematic.Height - 1
-#
-#     four_corner_materials = []
-#     for x in [0, maxx]:
-#         for z in [0, maxz]:
-#             corner_material = utilityFunctions.drillDown(schematic, x, z, 0, maxy)
-#             four_corner_materials.append(corner_material)
-#
-#     for y, (mat1, mat2, mat3, mat4) in enumerate(zip(*four_corner_materials)):
-#         if mat1 == mat2 == mat3 == mat4 == 2: #If the corners are all grass
-#             return maxy - y
-#
-#     return 0
-#             # for y in range(maxy, 0, -1):
-#                 # material_id = schematic.blockAt(x, y, z)
+def get_schematics(schematic_files):
+    __PATH__TO__SCHEMATICS = "stock-schematics/library/"
+    __FILE__TYPE = ".schematic"
+    schematics = []
+    for schematic_file in schematic_files:
+        schematics.append(MCSchematic(filename=__PATH__TO__SCHEMATICS + schematic_file + __FILE__TYPE))
+    return schematics
 
+def get_schematics_info(schematic_files):
+    schematics = get_schematics(schematic_files)
+    schematic_dims = []
+    schematic_y_offsets = []
+    for schematic in schematics:
+        schematic_dims.append(array([schematic.Length, schematic.Width]))
+        schematic_y_offsets.append(get_schematic_y_offset(schematic))
 
+    return schematic_dims, schematic_y_offsets
 
+def get_schematic_y_offset(schematic):
+    maxz, maxx, maxy = schematic.Length - 1, schematic.Width - 1, schematic.Height - 1
+
+    four_corner_materials = []
+    for x in [0, maxx]:
+        for z in [0, maxz]:
+            corner_material = utilityFunctions.drillDown(schematic, x, z, 0, maxy)
+            four_corner_materials.append(corner_material)
+
+    for y, (mat1, mat2, mat3, mat4) in enumerate(zip(*four_corner_materials)):
+        if mat1 == mat2 == mat3 == mat4 == 2:  # If the corners are all grass
+            return maxy - y
+
+    return 0
+    # for y in range(maxy, 0, -1):
+    # material_id = schematic.blockAt(x, y, z)

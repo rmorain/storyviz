@@ -7,6 +7,7 @@ from buildings import *
 from maps_viz import *
 from terrain_generator import generate_terrain
 from terrain import Terrain
+from village_spec import VillageSpec
 
 class MultiAgentPositioningSystem:
     def __init__(self):
@@ -67,9 +68,15 @@ def create_village(animate=False):
     num_stores = 5
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
-    building_spec = {'House': [num_houses, {}],
-                     'Farm': [num_farms, {}],
-                     'Church': [num_churches, {}]}
+    #
+    # building_spec = {'House': [num_houses, {}],
+    #                  'Farm': [num_farms, {}],
+    #                  'Church': [num_churches, {}]}
+
+    village_spec = VillageSpec()
+    village_spec.add("House", num_houses)
+    village_spec.add("Farm", num_houses)
+    village_spec.add("Church", num_houses)
 
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     t = Terrain()
@@ -77,7 +84,7 @@ def create_village(animate=False):
     #print(terrain)
     elevation_terrain = t.layers['elevation']
     material_terrain = t.layers['material']
-    village_skeleton = init_village(elevation_terrain, building_spec, None)
+    village_skeleton = init_village(elevation_terrain, village_spec)
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
