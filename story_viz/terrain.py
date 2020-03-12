@@ -15,6 +15,7 @@ class Terrain:
     def load_map(self, level, box):
         self.layers['elevation'] = np.zeros((box.length, box.width))
         self.layers['material'] = np.zeros((box.length, box.width))
+        self.layers['building'] = np.zeros((box.length, box.width))
         for z in range(box.minz, box.maxz):
             for x in range(box.minx, box.maxx):
                 for y in range(box.maxy, box.miny, -1):
