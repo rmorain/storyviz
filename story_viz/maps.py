@@ -7,6 +7,7 @@ from buildings import *
 from maps_viz import *
 from terrain_generator import generate_terrain
 from terrain import Terrain
+from village_spec import VillageSpec
 
 class MultiAgentPositioningSystem:
     def __init__(self):
@@ -14,10 +15,10 @@ class MultiAgentPositioningSystem:
 
 
 
-def init_village(terrain, building_spec, schematics):
+def init_village(terrain, building_spec):
     village_skeleton = []
     z, x = terrain.shape
-    buildings = building_generator(building_spec, schematics)
+    buildings = building_generator(building_spec)
     for building in buildings:
         print(building.type, max(building.dim), (z, x))
         building.set_position((random.randint(0, min(z, z - max(building.dim) - 1)), random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
@@ -42,12 +43,12 @@ def draw_roads(self, village_skeleton, terrain):
 
 def create_minecraft_village(level, box, schematics, animate=False):
     animator = VizAnimator()
-    num_houses = 20
-    num_farms = 10
-    num_churches = 2
-    num_stores = 5
-    # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
-    building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
+    # num_houses = 20
+    # num_farms = 10
+    # num_churches = 2
+    # num_stores = 5
+    # # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
+    # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     #elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
     terrain = Terrain()
@@ -55,7 +56,7 @@ def create_minecraft_village(level, box, schematics, animate=False):
     elevation_terrain, material_terrain = terrain.layers['elevation'], terrain.layers['material']
 
     #print(terrain)
-    village_skeleton = init_village(elevation_terrain, building_spec, schematics)
+    village_skeleton = init_village(elevation_terrain, building_spec)
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
@@ -66,7 +67,7 @@ def create_minecraft_village(level, box, schematics, animate=False):
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:
         animator.animate(elevation_terrain, material_terrain)
-    return village_skeleton, elevation_terrain
+    return village_skeleton, terrain
 
 def create_village(animate=True):
     animator = VizAnimator()
@@ -75,14 +76,24 @@ def create_village(animate=True):
     num_churches = 1
     num_stores = 5
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
-    building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
+    # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
+    #
+    # building_spec = {'House': [num_houses, {}],
+    #                  'Farm': [num_farms, {}],
+    #                  'Church': [num_churches, {}]}
+
+    village_spec = VillageSpec()
+    village_spec.add("House", num_houses)
+    village_spec.add("Farm", num_houses)
+    village_spec.add("Church", num_houses)
+
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     t = Terrain()
 
     #print(terrain)
     elevation_terrain = t.layers['elevation']
     material_terrain = t.layers['material']
-    village_skeleton = init_village(elevation_terrain, building_spec, None)
+    village_skeleton = init_village(elevation_terrain, village_spec)
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
@@ -92,7 +103,7 @@ def create_village(animate=True):
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:
         animator.animate(elevation_terrain, material_terrain)
-    return village_skeleton, elevation_terrain
+    return village_skeleton, t
 
 def main():
     create_village()
