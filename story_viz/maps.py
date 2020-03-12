@@ -8,6 +8,8 @@ from maps_viz import *
 from terrain_generator import generate_terrain
 from terrain import Terrain
 from village_spec import VillageSpec
+from astar import astar
+from interests import get_knn
 
 class MultiAgentPositioningSystem:
     def __init__(self):
@@ -33,13 +35,26 @@ def position_village(village_skeleton, terrain):
             building.set_position(building.position + interest_vector, z, x)
             building.random_stop()
 
-# Connect roads between stopped buildings
-# TODO
-def draw_roads(self, village_skeleton, terrain):
+# Connect stopped building to a road network
+def draw_roads(village_skeleton, terrain):
     for i, building in enumerate(village_skeleton):
         if building.placed and not building.connected:
-            pass
-    return None
+            connect(building, terrain)
+
+# Connect a building to the nearest road using a*
+def connect(building, terrain):
+    start = np.subtract(building.position, (1, 1))  # Start road at top left of building?
+    road = astar(terrain.layers['material'], start, terrain.materials['road'])
+    # Road is not None
+    if not road:
+        road = astar(terrain.layers['material'], start, terrain.materials['building'])
+
+    terrain.copy(road, terrain.layers['material'])
+
+
+        
+
+
 
 def create_minecraft_village(level, box, schematics, animate=False):
     animator = VizAnimator()
@@ -97,6 +112,7 @@ def create_village(animate=True):
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
+        draw_roads(village_skeleton, t)
         if animate:
             animator.add(village_skeleton)
 
