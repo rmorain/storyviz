@@ -8,7 +8,7 @@ from lines import *
 class Terrain:
     def __init__(self):
         self.layers = {'material':None, 'elevation':None}
-        self.materials = {'water': 9}
+        self.materials = {'water': 9, 'road': 1}
         self.material_points = {}
         self.generate_terrain()
 
@@ -108,5 +108,10 @@ class Terrain:
             self.generate_material_line(self.layers['material'], max_river_width, self.materials['water'])
 
         return None
+
+    # Copy of list of points of a material into a layer
+    def copy(self, points, layer, material):
+        for p in points:
+            layer[p] = material
 
 
