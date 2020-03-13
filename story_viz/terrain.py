@@ -8,7 +8,7 @@ from lines import *
 class Terrain:
     def __init__(self):
         self.layers = {'material':None, 'elevation':None}
-        self.materials = {'water': 9, 'road': 1}
+        self.materials = {'water': 9, 'road': 1, 'building': -1}
         self.material_points = {}
         self.generate_terrain()
 
@@ -101,11 +101,13 @@ class Terrain:
 
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
+        self.layers['road_dist'] = self.init_material_dist(self.materials['road'])
         for _ in range(num_hills):
             self.generate_hill(self.layers['elevation'], max_hill_height)
 
         for _ in range(num_rivers):
             self.generate_material_line(self.layers['material'], max_river_width, self.materials['water'])
+
 
         return None
 

@@ -41,15 +41,28 @@ def draw_roads(village_skeleton, terrain):
         if building.placed and not building.connected:
             connect(building, terrain)
 
+def get_min_road(building_road, road_road):
+    if building_road is None:
+        return road_road
+    if road_road is None:
+        return building_road
+    if len(building_road) < len(road_road)*.5:
+        return building_road
+    return road_road
+
 # Connect a building to the nearest road using a*
 def connect(building, terrain):
-    start = np.subtract(building.position, (1, 1))  # Start road at top left of building?
-    road = astar(terrain.layers['material'], start, terrain.materials['road'])
+    start = np.subtract(building.position, (1, 1))  # Start road at top left of building
+    building_road = []
+    road_road = []
+    if np.any(terrain.layers['material'] == terrain.materials['building']):  # Check if there are placed buildings
+        building_road = astar(terrain.layers['material'], start, terrain.materials['building'])  # Connect to nearest stopped building
+    if np.any(terrain.layers['material'] == terrain.materials['road']):  # Check if there are roads to connect to
+        road_road = astar(terrain.layers['material'], start, terrain.materials['road']) # Connect to nearest road
+    
     # Road is not None
-    if not road:
-        road = astar(terrain.layers['material'], start, terrain.materials['building'])
-
-    terrain.copy(road, terrain.layers['material'])
+    if road:
+        terrain.copy(road, terrain.layers['material'])
 
 
         
