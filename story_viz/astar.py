@@ -29,7 +29,6 @@ material: Material you are looking for (road block)
 """
 def astar(maze, start, material):
     """Returns a list of tuples as a path from the given start to the given end in the given maze"""
-
     # Create start and end node
     start_node = Node(None, start)
     start_node.g = start_node.h = start_node.f = 0
@@ -45,7 +44,7 @@ def astar(maze, start, material):
     while len(open_list) > 0:
         count += 1
         if count % 100 == 0:
-            print(count)
+            return None
         # Get the current node
         current_node = open_list[0]
         current_index = 0
@@ -58,8 +57,6 @@ def astar(maze, start, material):
         open_list.pop(current_index)
         closed_list.append(current_node)
         # print(len(open_list))
-        if len(open_list) > 500:
-            return None
         # Found the goal
         # Is the material you want (road)
         z, x = current_node.position

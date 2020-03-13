@@ -53,21 +53,16 @@ def get_min_road(building_road, road_road):
 # Connect a building to the nearest road using a*
 def connect(building, terrain):
     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
-    building_road = []
-    road_road = []
+    building_road = None
+    road_road = None
     if np.any(terrain.layers['material'] == terrain.materials['building']):  # Check if there are placed buildings
         building_road = astar(terrain.layers['material'], start, terrain.materials['building'])  # Connect to nearest stopped building
     if np.any(terrain.layers['material'] == terrain.materials['road']):  # Check if there are roads to connect to
         road_road = astar(terrain.layers['material'], start, terrain.materials['road']) # Connect to nearest road
-    
+    road = get_min_road(building_road, road_road)
     # Road is not None
     if road:
-        terrain.copy(road, terrain.layers['material'])
-
-
-        
-
-
+        terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
 
 def create_minecraft_village(level, box, schematics, animate=False):
     animator = VizAnimator()
@@ -125,7 +120,9 @@ def create_village(animate=True):
 
     for i in range(100):
         position_village(village_skeleton, elevation_terrain)
-        draw_roads(village_skeleton, t)
+        t.update_buildings(village_skeleton, t.layers['material'])
+        if i > 50:
+            draw_roads(village_skeleton, t)
         if animate:
             animator.add(village_skeleton)
 

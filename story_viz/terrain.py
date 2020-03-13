@@ -97,7 +97,7 @@ class Terrain:
             material_terrain[point] = material
 
     def generate_terrain(self):
-        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (500, 500, 0, 0, 1, 1)
+        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (100, 100, 0, 0, 1, 1)
 
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
@@ -110,6 +110,12 @@ class Terrain:
 
 
         return None
+
+    def update_buildings(self, village_skeleton, layer):
+        for building in village_skeleton:
+            if building.placed and not building.connected:
+                points = building.get_footprint()
+                self.copy(points, layer, self.materials['building'])
 
     # Copy of list of points of a material into a layer
     def copy(self, points, layer, material):
