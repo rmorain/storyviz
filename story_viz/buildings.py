@@ -66,6 +66,20 @@ class Building(object):
         self.connected = False
         self.place_probability = .005
 
+    def indices_array_generic(self,m,n):
+        r0 = np.arange(m) # Or r0,r1 = np.ogrid[:m,:n], out[:,:,0] = r0
+        r1 = np.arange(n)
+        out = np.empty((m,n,2),dtype=int)
+        out[:,:,0] = r0[:,None]
+        out[:,:,1] = r1
+        return out
+
+    def get_footprint(self):
+        indices = self.indices_array_generic(self.dim[0], self.dim[1])
+        footprint = indices + self.position
+        return footprint
+
+
     def get_valid_displacement(self, position, z, x):
         new_z = position[0]
         if position[0] < 0:

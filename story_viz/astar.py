@@ -14,7 +14,8 @@ class Node():
         self.f = 0
 
     def __eq__(self, other):
-        return self.position == other.position
+        
+        return self.position[0] == other.position [0] and self.position[1] == other.position[1]
 
 # Heurstic value of position
 # TODO
@@ -28,7 +29,6 @@ material: Material you are looking for (road block)
 """
 def astar(maze, start, material):
     """Returns a list of tuples as a path from the given start to the given end in the given maze"""
-
     # Create start and end node
     start_node = Node(None, start)
     start_node.g = start_node.h = start_node.f = 0
@@ -39,10 +39,12 @@ def astar(maze, start, material):
 
     # Add the start node
     open_list.append(start_node)
-
+    count = 0
     # Loop until you find the end
     while len(open_list) > 0:
-
+        count += 1
+        if count % 100 == 0:
+            return None
         # Get the current node
         current_node = open_list[0]
         current_index = 0
@@ -54,7 +56,7 @@ def astar(maze, start, material):
         # Pop current off open list, add to closed list
         open_list.pop(current_index)
         closed_list.append(current_node)
-
+        # print(len(open_list))
         # Found the goal
         # Is the material you want (road)
         z, x = current_node.position
@@ -73,7 +75,6 @@ def astar(maze, start, material):
 
             # Get node position
             node_position = (current_node.position[0] + new_position[0], current_node.position[1] + new_position[1])
-
             # Make sure within range
             if node_position[0] > (len(maze) - 1) or node_position[0] < 0 or node_position[1] > (len(maze[len(maze)-1]) -1) or node_position[1] < 0:
                 continue
@@ -87,11 +88,9 @@ def astar(maze, start, material):
 
             # Append
             children.append(new_node)
-        print([c.position for c in children])
+        # print([c.position for c in children])
         # Loop through children
         for child in children:
-            print(child)
-            print(closed_list)
             # Child is on the closed list
             if child in closed_list:
                 continue
