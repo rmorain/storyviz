@@ -17,19 +17,26 @@ class Node():
         
         return self.position[0] == other.position [0] and self.position[1] == other.position[1]
 
-# Heurstic value of position
-# TODO
-def get_heuristic(maze, pos):
-    return 0
+# Heuristic value of position
+# Heuristic comes from slope
+# terrain, child position, parent position
+def get_heuristic(terrain, c, p):
+    # force to tuples
+    c = c[0], c[1]
+    p = p[0], p[1]
+    el = terrain.layers['elevation']
+    # Change in y over change in x, just different in elevation
+    return (el[p] - el[c])
 
 """
 maze: material terrain
 start: start position
 material: Material you are looking for (road block)
 """
-def astar(maze, start, material):
+def astar(terrain, start, material):
     """Returns a list of tuples as a path from the given start to the given end in the given maze"""
     # Create start and end node
+    maze = terrain.layers['material']
     start_node = Node(None, start)
     start_node.g = start_node.h = start_node.f = 0
 
@@ -39,12 +46,8 @@ def astar(maze, start, material):
 
     # Add the start node
     open_list.append(start_node)
-    count = 0
     # Loop until you find the end
     while len(open_list) > 0:
-        count += 1
-        if count % 100 == 0:
-            return None
         # Get the current node
         current_node = open_list[0]
         current_index = 0
@@ -98,7 +101,7 @@ def astar(maze, start, material):
             # Create the f, g, and h values
             child.g = current_node.g + 1
             # child.h = ((child.position[0] - end_node.position[0]) ** 2) + ((child.position[1] - end_node.position[1]) ** 2)
-            child.h = get_heuristic(maze, child.position)
+            child.h = get_heuristic(terrain, child.position, current_node.position)
             child.f = child.g + child.h
 
             # Child is already in the open list
@@ -125,7 +128,7 @@ def main():
     maze = np.array(maze)
 
     start = (0, 0)
-    material = 5
+    material = 9
 
     path = astar(maze, start, material)
     print(path)

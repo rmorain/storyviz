@@ -97,7 +97,7 @@ class Terrain:
             material_terrain[point] = material
 
     def generate_terrain(self):
-        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (100, 100, 0, 0, 1, 1)
+        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (200, 200, 0, 0, 1, 1)
 
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))

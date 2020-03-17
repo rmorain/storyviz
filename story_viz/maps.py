@@ -40,6 +40,7 @@ def draw_roads(village_skeleton, terrain):
     for i, building in enumerate(village_skeleton):
         if building.placed and not building.connected:
             connect(building, terrain)
+            building.connected = True
 
 def get_min_road(building_road, road_road):
     if building_road is None:
@@ -56,9 +57,9 @@ def connect(building, terrain):
     building_road = None
     road_road = None
     if np.any(terrain.layers['material'] == terrain.materials['building']):  # Check if there are placed buildings
-        building_road = astar(terrain.layers['material'], start, terrain.materials['building'])  # Connect to nearest stopped building
+        building_road = astar(terrain, start, terrain.materials['building'])  # Connect to nearest stopped building
     if np.any(terrain.layers['material'] == terrain.materials['road']):  # Check if there are roads to connect to
-        road_road = astar(terrain.layers['material'], start, terrain.materials['road']) # Connect to nearest road
+        road_road = astar(terrain, start, terrain.materials['road']) # Connect to nearest road
     road = get_min_road(building_road, road_road)
     # Road is not None
     if road:
@@ -94,10 +95,10 @@ def create_minecraft_village(level, box, schematics, animate=False):
 
 def create_village(animate=True):
     animator = VizAnimator()
-    num_houses = 20
-    num_farms = 10
+    num_houses = 4
+    num_farms = 2
     num_churches = 1
-    num_stores = 5
+    num_stores = 1
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
     #
@@ -118,10 +119,10 @@ def create_village(animate=True):
     material_terrain = t.layers['material']
     village_skeleton = init_village(elevation_terrain, village_spec)
 
-    for i in range(100):
+    for i in range(10):
         position_village(village_skeleton, elevation_terrain)
         t.update_buildings(village_skeleton, t.layers['material'])
-        if i > 50:
+        if i > 5:
             draw_roads(village_skeleton, t)
         if animate:
             animator.add(village_skeleton)
