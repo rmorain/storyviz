@@ -73,11 +73,12 @@ class VizAnimator:
         plt.clf()
 
 def plot(terrain, village_skeleton):
-    z, x = terrain.shape
+    elevation = terrain.layers['elevation']
+    z, x = elevation.shape
     world = np.zeros((z,x,3))
     building_colors = {'rural':'brown', 'public':'purple', 'residential':'red', 'commercial':'green', 'terrain':'white', 'aesthetic':'pink'}
     colors = get_normed_colors()
-    plot_terrain(world, terrain)
+    plot_terrain(world, elevation)
     for building in village_skeleton:
         color_name = building_colors[building.building_type]
         world[building.position[0]: building.position[0]+building.dim[0], building.position[1]: building.position[1]+building.dim[1]] = colors[color_name]

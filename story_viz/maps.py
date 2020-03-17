@@ -9,6 +9,7 @@ from terrain_generator import generate_terrain
 from terrain import Terrain
 from village_spec import VillageSpec
 from astar import astar
+import astar2
 from interests import get_knn
 
 class MultiAgentPositioningSystem:
@@ -65,7 +66,27 @@ def connect(building, terrain):
     if road:
         terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
 
-def create_minecraft_village(level, box, schematics, animate=False):
+def connect2(building, terrain):
+    start = np.subtract(building.position, (1, 1))  # Start road at top left of building
+    road = astar2.astar(terrain, tuple(start), 0)
+    print(road)
+    # Road is not None
+    # if road:
+    #     terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
+
+def add_outside_roads(terrain):
+    num_outside_roads = random.randint(2, 3)
+    maxz, maxx = terrain.layers['material'].shape
+    for _ in range(num_outside_roads):
+        if random.choice([True, False]):
+            z = random.randint(0, maxz-1)
+            x = random.choice([0, maxx-1])
+        else:
+            z = random.choice([0, maxz-1])
+            x = random.randint(0, maxx-1)
+        terrain.layers['road'][z][x] = 0 # in case we want to distance from road
+
+def create_minecraft_village(level, box, building_spec, animate=False):
     animator = VizAnimator()
     # num_houses = 20
     # num_farms = 10
@@ -108,16 +129,18 @@ def create_village(animate=True):
 
     village_spec = VillageSpec()
     village_spec.add("House", num_houses)
-    village_spec.add("Farm", num_houses)
-    village_spec.add("Church", num_houses)
+    village_spec.add("Farm", num_farms)
+    village_spec.add("Church", num_churches)
 
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     t = Terrain()
+    t.generate_terrain(500, 500, 0, 0, 0, 0)
 
     #print(terrain)
     elevation_terrain = t.layers['elevation']
     material_terrain = t.layers['material']
     village_skeleton = init_village(elevation_terrain, village_spec)
+    add_outside_roads(t)
 
     for i in range(10):
         position_village(village_skeleton, elevation_terrain)
@@ -133,7 +156,7 @@ def create_village(animate=True):
     return village_skeleton, t
 
 def main():
-    create_village()
+    create_village(False)
 
 if __name__=='__main__':
     main()

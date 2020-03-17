@@ -9,15 +9,18 @@ import spacy
 import numpy as np
 from classes import StorySchematics
 
+
 class CostumeDresser:
     def __init__(self):
         temp = StorySchematics()
         self.__PATH__TO__SCHEMATICS = temp._StorySchematics__PATH__TO__SCHEMATICS
         self.__FILE__TYPE = temp._StorySchematics__FILE__TYPE
+        
+
         self.schematic_paths = self.get_schematic_paths()
         self.lang_model = spacy.load('en_core_web_sm')
     # keywords should be a list of strings, each string will contain a keyword and supporting positional words
-    def get_schematics(self, keywords):
+    def get_schematics(self, keywords, topn=1):
         print(keywords)
         # Get schematics from keywords
         found_schematics = []
@@ -33,15 +36,21 @@ class CostumeDresser:
             if key_i == len(tokens):
                 key_i = 0
             key = keyword_parts[key_i]
-            # rest_of_keywords = keyword_parts[:key_i]
-            # rest_of_keywords.extend(keyword_parts[key_i+1:])
             kw_token = self.lang_model(unicode(key))
             # Predict average similarity between keyword and each word in schematics relative path
             schem_scores = np.array([1 if key in schem
                 else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' ')))) for schem in self.schematic_paths])
-            found_schematics.append(self.schematic_paths[np.argmax(schem_scores)].replace(self.__FILE__TYPE, ''))
+
+            top10 = []
+            for i in range(topn):
+                top = np.argmax(schem_scores)
+                schem_scores[top] = -1
+                top10.append(top)
+            found_schematics.append(np.random.choice(np.array([self.schematic_paths[top10[i]].replace(self.__FILE__TYPE, '') for i in range(topn)])))
+            # found_schematics.append(self.schematic_paths[np.argmax(schem_scores)].replace(self.__FILE__TYPE, ''))
             normalized_keywords.append("{} {}".format(key, self.select_pos_word(keyword)))
         return [StorySchematics(normalized_keywords, found_schematics)] # takes in array of labels and array of schematics
+        
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):
         """
@@ -66,5 +75,11 @@ class CostumeDresser:
     def get_schematic_paths(self):
         schematic_paths = []
         for dr, _, schematic_names in os.walk(self.__PATH__TO__SCHEMATICS):
-            schematic_paths.extend([os.path.join(dr, schematic_name).replace(self.__PATH__TO__SCHEMATICS, '') for schematic_name in schematic_names])
+            schematic_paths.extend([os.path.join(dr, schematic_name).replace(self.__PATH__TO__SCHEMATICS, '') for schematic_name in schematic_names if self.__FILE__TYPE in schematic_name])
         return schematic_paths
+
+### Testing
+if __name__ == '__main__':
+    cd = CostumeDresser()
+    schems = cd.get_schematics(["cow", "house", "farm in the west", "hovering ufo"], 20)
+    print(schems)

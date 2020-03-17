@@ -7,23 +7,81 @@ from lines import *
 
 class Terrain:
     def __init__(self):
-        self.layers = {'material':None, 'elevation':None}
+        self.layers = {'material':None, 'elevation':None, 'road':None}
         self.materials = {'water': 9, 'road': 1, 'building': -1}
         self.material_points = {}
-        self.generate_terrain()
+
+    def offset_new_dim(self, dim, dim_offset, max_dim):
+        new_dim = []
+        for i in range(2):
+            if dim[i] + dim_offset[i] < 0:
+                new_dim.append(0)
+            elif dim[i] + dim_offset[i] >= max_dim:
+                new_dim.append(max_dim-1)
+            else:
+                new_dim.append(dim[i] + dim_offset[i])
+        return tuple(new_dim)
+
+    def handle_tree(self, z, x):
+        elevation = self.layers['elevation']
+        material = self.layers['material']
+        maxz, maxx = elevation.shape
+        tree_wood = [17, 162]
+        tree_dims = {(z, x)}
+        not_tree_dims = set()
+        handled_tree_dim = set()
+        neighbors = [(0,1),(0,-1),(1,0),(-1,0)]
+        while len(tree_dims) > 0:
+            tree_dim = tree_dims.pop()
+            handled_tree_dim.add(tree_dim)
+            for neighbor_offset in neighbors:
+                neighbor_dim = self.offset_new_dim(tree_dim, neighbor_offset, (maxz, maxx))
+                neighbor_material = material[neighbor_dim[0]][neighbor_dim[1]]
+                if neighbor_material in tree_wood and neighbor_dim not in handled_tree_dim:
+                    tree_dims.add(neighbor_dim)
+                if neighbor_material not in tree_wood:
+                    not_tree_dims.add(neighbor_dim)
+        avg_terrain = int(round(np.average([elevation[dim[0]][dim[1]] for dim in not_tree_dims])))
+        for dim in handled_tree_dim:
+            self.layers['elevation'][dim[0]][dim[1]] = avg_terrain
+
+    '''At the moment it just takes the avg surronding terrain elevation'''
+    def handle_tree_elevation(self):
+        for z in range(len(self.layers['elevation'])):
+            for x in range(len(self.layers['elevation'][0])):
+                if self.layers['elevation'][z][x] == np.inf:
+                    self.handle_tree(z, x)
+
+    def drill_down(self, level, box, z, x, y, min_y):
+        material_id = level.blockAt(x, y, z)
+        elevation = y
+        tree_wood = [17, 162]
+        tree_leaves = [18, 161]
+        other_flora = [31, 32, 37, 38, 39, 40, 175]
+        if y <= min_y:
+            return material_id, elevation
+        elif material_id == 0:
+            material_id, elevation = self.drill_down(level, box, z, x, y-1, min_y)
+        elif material_id in other_flora:
+            _, elevation = self.drill_down(level, box, z, x, y-1, min_y)
+        elif material_id in tree_wood:
+            elevation = np.inf
+        elif material_id in tree_leaves:
+            material_id, elevation = self.drill_down(level, box, z, x, y-1, min_y)
+        return material_id, elevation
 
     def load_map(self, level, box):
         self.layers['elevation'] = np.zeros((box.length, box.width))
         self.layers['material'] = np.zeros((box.length, box.width))
         self.layers['building'] = np.zeros((box.length, box.width))
+        self.layers['road'] = np.ones(box.length, box.width)
         for z in range(box.minz, box.maxz):
             for x in range(box.minx, box.maxx):
-                for y in range(box.maxy, box.miny, -1):
-                    material_id = level.blockAt(x, y, z)
-                    if material_id != 0: #If it isn't air
-                        self.layers['elevation'][z-box.minz][x-box.minx] = y - box.miny
-                        self.layers['material'][z-box.minz][x-box.minx] = material_id
-                        break
+                material_id, elevation = self.drill_down(level, box, z, x, box.maxy, box.miny)
+                self.layers['elevation'][z-box.minz][x-box.minx] = elevation - box.miny
+                self.layers['material'][z-box.minz][x-box.minx] = material_id
+        self.handle_tree_elevation()
+
 
     # Initialize a material distance layer
     # Pass in int for material you want to get distance from at each point
@@ -101,6 +159,7 @@ class Terrain:
 
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
+        self.layers['road'] = np.ones((z, x))
         self.layers['road_dist'] = self.init_material_dist(self.materials['road'])
         for _ in range(num_hills):
             self.generate_hill(self.layers['elevation'], max_hill_height)
