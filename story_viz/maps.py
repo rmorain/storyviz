@@ -64,6 +64,18 @@ def connect(building, terrain):
     if road:
         terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
 
+def add_outside_roads(self, terrain):
+    num_outside_roads = random.randint(2, 3)
+    maxz, maxx = terrain.layers['material'].shape
+    for _ in range(num_outside_roads):
+        if random.choice([True, False]):
+            z = random.randint(0, maxz)
+            x = random.choice([0, maxx])
+        else:
+            z = random.choice([0, maxz])
+            x = random.randint(0, maxx)
+        terrain.layers['material'][z][x] = terrain.materials['road']
+
 def create_minecraft_village(level, box, building_spec, animate=False):
     animator = VizAnimator()
     # num_houses = 20
