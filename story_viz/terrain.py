@@ -7,10 +7,9 @@ from lines import *
 
 class Terrain:
     def __init__(self):
-        self.layers = {'material':None, 'elevation':None}
+        self.layers = {'material':None, 'elevation':None, 'road':None}
         self.materials = {'water': 9, 'road': 1, 'building': -1}
         self.material_points = {}
-        self.generate_terrain()
 
     def offset_new_dim(self, dim, dim_offset, max_dim):
         new_dim = []
@@ -75,6 +74,7 @@ class Terrain:
         self.layers['elevation'] = np.zeros((box.length, box.width))
         self.layers['material'] = np.zeros((box.length, box.width))
         self.layers['building'] = np.zeros((box.length, box.width))
+        self.layers['road'] = np.ones(box.length, box.width)
         for z in range(box.minz, box.maxz):
             for x in range(box.minx, box.maxx):
                 material_id, elevation = self.drill_down(level, box, z, x, box.maxy, box.miny)
@@ -154,11 +154,12 @@ class Terrain:
         for point in points:
             material_terrain[point] = material
 
-    def generate_terrain(self):
-        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (100, 100, 0, 0, 1, 1)
+    def generate_terrain(self, z, x, num_hills, max_hill_height, num_rivers, max_river_width):
+        # z, x, num_hills, max_hill_height, num_rivers, max_river_width = (100, 100, 0, 0, 1, 1)
 
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
+        self.layers['road'] = np.ones((z, x))
         self.layers['road_dist'] = self.init_material_dist(self.materials['road'])
         for _ in range(num_hills):
             self.generate_hill(self.layers['elevation'], max_hill_height)
