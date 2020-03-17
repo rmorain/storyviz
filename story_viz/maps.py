@@ -64,7 +64,7 @@ def connect(building, terrain):
     if road:
         terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
 
-def create_minecraft_village(level, box, schematics, animate=False):
+def create_minecraft_village(level, box, building_spec, animate=False):
     animator = VizAnimator()
     # num_houses = 20
     # num_farms = 10

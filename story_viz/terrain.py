@@ -12,18 +12,44 @@ class Terrain:
         self.material_points = {}
         self.generate_terrain()
 
+
+    # def handle_wood(self, level, box, z, x, y):
+    #
+    #
+    # [[0, 0, 0, 0, 0],
+    #  [0, 1, 1, 1, 0],
+    #  [0, 0, 1, 1, 0],
+    #  [0, 0, 0, 0, 0]]
+
+
+    def drill_down(self, level, box, z, x, y, min_y):
+        material_id = level.blockAt(x, y, z)
+        elevation = y
+        tree_wood = [17, 162]
+        tree_leaves = [18, 161]
+        other_flora = [31, 32, 37, 38, 39, 40, 175]
+        if y <= min_y:
+            return material_id, elevation
+        elif material_id == 0:
+            material_id, elevation = self.drill_down(level, box, z, x, y-1, min_y)
+        elif material_id in other_flora:
+            _, elevation = self.drill_down(level, box, z, x, y-1, min_y)
+        elif material_id in tree_wood:
+            elevation = np.inf
+        elif material_id in tree_leaves:
+            material_id, elevation = self.drill_down(level, box, z, x, y-1, min_y)
+        return material_id, elevation
+
     def load_map(self, level, box):
         self.layers['elevation'] = np.zeros((box.length, box.width))
         self.layers['material'] = np.zeros((box.length, box.width))
         self.layers['building'] = np.zeros((box.length, box.width))
         for z in range(box.minz, box.maxz):
             for x in range(box.minx, box.maxx):
-                for y in range(box.maxy, box.miny, -1):
-                    material_id = level.blockAt(x, y, z)
-                    if material_id != 0: #If it isn't air
-                        self.layers['elevation'][z-box.minz][x-box.minx] = y - box.miny
-                        self.layers['material'][z-box.minz][x-box.minx] = material_id
-                        break
+                material_id, elevation = self.drill_down(level, box, z, x, box.maxy, box.miny)
+                self.layers['elevation'][z-box.minz][x-box.minx] = elevation - box.miny
+                self.layers['material'][z-box.minz][x-box.minx] = material_id
+
 
     # Initialize a material distance layer
     # Pass in int for material you want to get distance from at each point
