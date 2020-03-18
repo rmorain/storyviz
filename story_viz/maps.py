@@ -43,33 +43,34 @@ def draw_roads(village_skeleton, terrain):
             connect2(building, terrain)
             building.connected = True
 
-def get_min_road(building_road, road_road):
-    if building_road is None:
-        return road_road
-    if road_road is None:
-        return building_road
-    if len(building_road) < len(road_road)*.5:
-        return building_road
-    return road_road
-
-# Connect a building to the nearest road using a*
-def connect(building, terrain):
-    start = np.subtract(building.position, (1, 1))  # Start road at top left of building
-    building_road = None
-    road_road = None
-    if np.any(terrain.layers['material'] == terrain.materials['building']):  # Check if there are placed buildings
-        building_road = astar(terrain, start, terrain.materials['building'])  # Connect to nearest stopped building
-    if np.any(terrain.layers['material'] == terrain.materials['road']):  # Check if there are roads to connect to
-        road_road = astar(terrain, start, terrain.materials['road']) # Connect to nearest road
-    road = get_min_road(building_road, road_road)
-    # Road is not None
-    if road:
-        terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
+# def get_min_road(building_road, road_road):
+#     if building_road is None:
+#         return road_road
+#     if road_road is None:
+#         return building_road
+#     if len(building_road) < len(road_road)*.5:
+#         return building_road
+#     return road_road
+#
+# # Connect a building to the nearest road using a*
+# def connect(building, terrain):
+#     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
+#     building_road = None
+#     road_road = None
+#     if np.any(terrain.layers['material'] == terrain.materials['building']):  # Check if there are placed buildings
+#         building_road = astar(terrain, start, terrain.materials['building'])  # Connect to nearest stopped building
+#     if np.any(terrain.layers['material'] == terrain.materials['road']):  # Check if there are roads to connect to
+#         road_road = astar(terrain, start, terrain.materials['road']) # Connect to nearest road
+#     road = get_min_road(building_road, road_road)
+#     # Road is not None
+#     if road:
+#         terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
 
 def connect2(building, terrain):
     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
     road = astar2.astar(terrain, tuple(start), 0)
-    print(road)
+    print('adding road')
+    terrain.add_road(road)
     # Road is not None
     # if road:
     #     terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
@@ -84,7 +85,7 @@ def add_outside_roads(terrain):
         else:
             z = random.choice([0, maxz-1])
             x = random.randint(0, maxx-1)
-        terrain.layers['road'][z][x] = 0 # in case we want to distance from road
+        terrain.add_road([(z,x)])
 
 def create_minecraft_village(level, box, building_spec, animate=False):
     animator = VizAnimator()
@@ -118,7 +119,7 @@ def create_village(animate=True):
     animator = VizAnimator()
     num_houses = 4
     num_farms = 2
-    num_churches = 1
+    num_churches = 0
     num_stores = 1
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}

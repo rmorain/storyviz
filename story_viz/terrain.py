@@ -82,6 +82,10 @@ class Terrain:
                 self.layers['material'][z-box.minz][x-box.minx] = material_id
         self.handle_tree_elevation()
 
+    def add_road(self, path):
+        for point in path:
+            self.add_material_point('road', point)
+        self.update_material_dist('road')
 
     # Initialize a material distance layer
     # Pass in int for material you want to get distance from at each point

@@ -3,7 +3,8 @@ from heapq import *
 
 
 def heuristic(terrain, dim):
-    return terrain.layers['road'][dim]
+    return terrain.layers['road'][dim] # move closer to road
+
     # Take value from terrain.layers['road'] i.e. distance from any road
     # Take water into account
 
@@ -30,7 +31,7 @@ def astar(terrain, start, goal):
 
         current = heappop(oheap)[1]
         if terrain.layers['road'][current] == 0:
-            data = []
+            data = [start]
             while current in came_from:
                 data.append(current)
                 current = came_from[current]
