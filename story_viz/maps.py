@@ -40,7 +40,7 @@ def position_village(village_skeleton, terrain):
 def draw_roads(village_skeleton, terrain):
     for i, building in enumerate(village_skeleton):
         if building.placed and not building.connected:
-            connect(building, terrain)
+            connect2(building, terrain)
             building.connected = True
 
 def get_min_road(building_road, road_road):

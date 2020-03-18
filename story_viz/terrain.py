@@ -3,13 +3,13 @@ import copy
 import random
 
 from lines import *
-
+from heapq import *
 
 class Terrain:
     def __init__(self):
         self.layers = {'material':None, 'elevation':None, 'road':None}
         self.materials = {'water': 9, 'road': 1, 'building': -1}
-        self.material_points = {}
+        self.material_points = {'road':set()}
 
     def offset_new_dim(self, dim, dim_offset, max_dim):
         new_dim = []
@@ -74,7 +74,7 @@ class Terrain:
         self.layers['elevation'] = np.zeros((box.length, box.width))
         self.layers['material'] = np.zeros((box.length, box.width))
         self.layers['building'] = np.zeros((box.length, box.width))
-        self.layers['road'] = np.ones(box.length, box.width)
+        self.layers['road'] = np.full((box.length, box.width), np.inf)
         for z in range(box.minz, box.maxz):
             for x in range(box.minx, box.maxx):
                 material_id, elevation = self.drill_down(level, box, z, x, box.maxy, box.miny)
@@ -88,33 +88,78 @@ class Terrain:
     def init_material_dist(self, material):
         x, y = self.layers['material'].shape  # Get dimensions of material terrain
         material_dist_layer = np.full((x, y), np.inf)   # Initialize to all inf
-        self.material_points[material] = []
+        self.material_points[material] = {}
         # Look at each cell in material layer
         for i, row in enumerate(self.layers['material']):
             for j, block in enumerate(row):
                 # Check if cell contains material of interest
-                if block == material:
+                if block == material: # TODO: Makes sense for water, might be issue with roads
                     # Set distance from material at that point equal to zero
                     material_dist_layer[i][j] = 0
-                    self.material_points[material].append(np.array([i, j]))
+                    self.material_points[material].add(np.array([i, j]))
                     # Other wise it remains infinity
         return material_dist_layer
 
-    # Iteratively updates the minimum distance from each point to a material of interest
-    def update_material_dist(self, material_dist_layer, material):
-        # Runs at least once
-            # Look at each cell, beginning at top left
-        for i, row in enumerate(material_dist_layer):
-            for j, block in enumerate(row):
-                minimum = self.get_min_dist(np.array([i,j]), self.material_points[material])
-                material_dist_layer[i][j] = minimum
-        return material_dist_layer  
+    def add_material_point(self, material_dist_layer, point):
+        if material_dist_layer not in self.layers:
+            z, x = self.layers['elevation'].shape
+            self.layers[material_dist_layer] = np.full((z, x), np.inf)
+            self.material_points[material_dist_layer] = set()
+        self.layers[material_dist_layer][point] = 0
+        self.material_points[material_dist_layer].add(point)
 
-    def get_min_dist(self, point, list_of_points):
-        distances = []
-        for p in list_of_points:
-            distances.append(np.linalg.norm(point - p))
-        return min(distances)
+    def update_material_dist(self, material):
+        array = self.layers[material]
+        points = self.material_points[material]
+
+        neighbors = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+
+        close_set = points.copy()
+        oheap = []
+
+        for point in points:
+            heappush(oheap, (0, point))
+
+        while oheap:
+
+            current = heappop(oheap)[1]
+            for i, j in neighbors:
+                neighbor = current[0] + i, current[1] + j
+                # out of bounds check
+                if 0 <= neighbor[0] < array.shape[0]:
+                    if neighbor[1] < 0 or neighbor[1] >= array.shape[1]:
+                        continue
+                else:
+                    continue
+
+                # Because we are using a priority queue,
+                # all points updated will be at their minimum point so they don't need to be rechecked
+                if neighbor in close_set:
+                    continue
+
+                tentative_dist = self.layers[material][current] + 1
+                # If we update the neighbor than we need to update its neighbors
+                if tentative_dist < self.layers[material][neighbor]:
+                    self.layers[material][neighbor] = tentative_dist
+                    heappush(oheap, (tentative_dist, neighbor))
+                    close_set.add(neighbor)
+
+
+    # # Iteratively updates the minimum distance from each point to a material of interest
+    # def update_material_dist(self, material_dist_layer, material):
+    #     # Runs at least once
+    #         # Look at each cell, beginning at top left
+    #     for i, row in enumerate(material_dist_layer):
+    #         for j, block in enumerate(row):
+    #             minimum = self.get_min_dist(np.array([i,j]), self.material_points[material])
+    #             material_dist_layer[i][j] = minimum
+    #     return material_dist_layer
+    #
+    # def get_min_dist(self, point, list_of_points):
+    #     distances = []
+    #     for p in list_of_points:
+    #         distances.append(np.linalg.norm(point - p))
+    #     return min(distances)
 
     def get_coord_offset(self, coord, offset, scale):
         scaled_offset = tuple(scale*x for x in offset)
@@ -154,12 +199,10 @@ class Terrain:
         for point in points:
             material_terrain[point] = material
 
-    def generate_terrain(self):
-        z, x, num_hills, max_hill_height, num_rivers, max_river_width = (200, 200, 0, 0, 1, 1)
-
+    def generate_terrain(self, z=200, x=200, num_hills=0, max_hill_height=0, num_rivers=1, max_river_width=1):
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
-        self.layers['road'] = np.ones((z, x))
+        self.layers['road'] = np.full((z, x), np.inf)
         self.layers['road_dist'] = self.init_material_dist(self.materials['road'])
         for _ in range(num_hills):
             self.generate_hill(self.layers['elevation'], max_hill_height)

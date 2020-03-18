@@ -13,13 +13,6 @@ def heuristic(terrain, dim):
 
 
 def astar(terrain, start, goal):
-    def add_node():
-        came_from[neighbor] = current
-        gscore[neighbor] = tentative_g_score
-        fscore[neighbor] = tentative_g_score + heuristic(terrain, neighbor)
-        heappush(oheap, (fscore[neighbor], neighbor))
-        all_set.add(neighbor)
-
     array = terrain.layers['road']
     neighbors = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
