@@ -69,8 +69,11 @@ def draw_roads(village_skeleton, terrain):
 def connect2(building, terrain):
     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
     road = astar2.astar(terrain, tuple(start), 0)
-    print('adding road')
-    terrain.add_road(road)
+    if road is not None:
+        print('adding road')
+        terrain.add_road(road) # TODO: Houses that are close enough to roads should be counted as connected
+    else:
+        print('No road')
     # Road is not None
     # if road:
     #     terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
@@ -117,8 +120,8 @@ def create_minecraft_village(level, box, building_spec, animate=False):
 
 def create_village(animate=True):
     animator = VizAnimator()
-    num_houses = 4
-    num_farms = 2
+    num_houses = 1
+    num_farms = 0
     num_churches = 0
     num_stores = 1
     # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
@@ -135,7 +138,7 @@ def create_village(animate=True):
 
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     t = Terrain()
-    t.generate_terrain(500, 500, 0, 0, 0, 0)
+    t.generate_terrain(30, 30, 0, 0, 0, 0)
 
     #print(terrain)
     elevation_terrain = t.layers['elevation']
@@ -143,13 +146,19 @@ def create_village(animate=True):
     village_skeleton = init_village(elevation_terrain, village_spec)
     add_outside_roads(t)
 
-    for i in range(10):
+    for i in range(20):
         position_village(village_skeleton, elevation_terrain)
         t.update_buildings(village_skeleton, t.layers['material'])
-        if i > 5:
-            draw_roads(village_skeleton, t)
+        draw_roads(village_skeleton, t)
         if animate:
             animator.add(village_skeleton)
+
+    # a = t.layers['road']
+    # fig, (ax1, ax2) = plt.subplots(1, 2)
+    # ax1.imshow(np.clip(a, 0, 1), cmap='hot', interpolation='nearest')
+    # ax2.imshow(a, cmap='hot', interpolation='nearest')
+    # plt.show()
+    plot(t, village_skeleton)
 
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:

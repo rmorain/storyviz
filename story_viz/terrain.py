@@ -225,7 +225,8 @@ class Terrain:
 
     # Copy of list of points of a material into a layer
     def copy(self, points, layer, material):
-        for p in points:
-            layer[p] = material
+        for p in points.reshape((-1,2)):
+            layer[p[0], p[1]] = material
+
 
 

@@ -82,6 +82,9 @@ def plot(terrain, village_skeleton):
     for building in village_skeleton:
         color_name = building_colors[building.building_type]
         world[building.position[0]: building.position[0]+building.dim[0], building.position[1]: building.position[1]+building.dim[1]] = colors[color_name]
+
+    for point in terrain.material_points['road']:
+        world[point[0]][point[1]] = [1,1,1]
     #     terrain[building.position[0], building.position[1]] = 50
     #
     # plt.imshow(terrain, cmap='hot', interpolation='nearest')

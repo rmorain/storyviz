@@ -64,7 +64,7 @@ class Building(object):
         self.repulsion = max(self.dim) # TODO: Pass in dim? Because nothing should collide
         self.placed = False
         self.connected = False
-        self.place_probability = .5
+        self.place_probability = .1
 
     def indices_array_generic(self,m,n):
         r0 = np.arange(m) # Or r0,r1 = np.ogrid[:m,:n], out[:,:,0] = r0

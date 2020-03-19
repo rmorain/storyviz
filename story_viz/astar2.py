@@ -1,9 +1,18 @@
-import numpy
+import numpy as np
 from heapq import *
 
 
-def heuristic(terrain, dim):
-    return terrain.layers['road'][dim] # move closer to road
+def heuristic(terrain, parent, child):
+    cost = 0
+    water_cost = 2
+    if terrain.layers['material'][child] == terrain.materials['water']:
+        cost += water_cost
+    if terrain.layers['material'][child] == terrain.materials['building']:
+        cost += np.inf
+    cost += terrain.layers['road'][child] # move closer to road
+    if parent is not None:
+        cost += abs(terrain.layers['elevation'][parent] - terrain.layers['elevation'][child])
+    return cost
 
     # Take value from terrain.layers['road'] i.e. distance from any road
     # Take water into account
@@ -21,7 +30,7 @@ def astar(terrain, start, goal):
     all_set = set()
     came_from = {}
     gscore = {start: 0}
-    fscore = {start: heuristic(terrain, start)}
+    fscore = {start: heuristic(terrain, None, start)}
     oheap = []
 
     heappush(oheap, (fscore[start], start))
@@ -55,31 +64,33 @@ def astar(terrain, start, goal):
                 all_set.add(neighbor)
             elif tentative_g_score >= gscore.get(neighbor, 0):
                 continue
+            tentative_f_score = heuristic(terrain, current, neighbor)
+            if tentative_f_score == np.inf:
+                continue
 
             came_from[neighbor] = current
             gscore[neighbor] = tentative_g_score
-            fscore[neighbor] = tentative_g_score + heuristic(terrain, neighbor)
+            fscore[neighbor] = tentative_g_score + tentative_f_score
             heappush(oheap, (fscore[neighbor], neighbor))
 
-    return False
 
-if __name__=='__main__':
-
-    '''Here is an example of using my algo with a numpy array,
-       astar(array, start, destination)
-       astar function returns a list of points (shortest path)'''
-
-    nmap = numpy.array([
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
-
-    print astar(nmap, (0, 0), (2, 2))
+# if __name__=='__main__':
+#
+#     '''Here is an example of using my algo with a numpy array,
+#        astar(array, start, destination)
+#        astar function returns a list of points (shortest path)'''
+#
+#     nmap = np.array([
+#         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+#         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#         [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+#         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+#         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#         [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+#         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+#         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
+#
+#     print astar(nmap, (0, 0), (2, 2))
