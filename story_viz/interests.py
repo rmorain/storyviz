@@ -69,12 +69,13 @@ def sociability(terrain, village_skeleton, building):
     #return np.sum(knn_vector, axis=1)
 
 def slope(terrain, village_skeleton, building):
+    elevation = terrain.layers['elevation']
     building_center = building.position + (max(building.dim) // 2) # TODO: This is 2d
-    left_half = terrain[building.position[0]:building.position[0] + max(building.dim), building.position[1] : building_center[1]]
-    right_half = terrain[building.position[0]:building.position[0] + max(building.dim), building_center[1] : building.position[1] + max(building.dim)]
+    left_half = elevation[building.position[0]:building.position[0] + max(building.dim), building.position[1] : building_center[1]]
+    right_half = elevation[building.position[0]:building.position[0] + max(building.dim), building_center[1] : building.position[1] + max(building.dim)]
 
-    bottom_half = terrain[building.position[0] : building_center[0], building.position[1]:building.position[1] + max(building.dim)]
-    top_half = terrain[building_center[0] : building.position[0] + max(building.dim), building.position[1]:building.position[1] + max(building.dim)]
+    bottom_half = elevation[building.position[0] : building_center[0], building.position[1]:building.position[1] + max(building.dim)]
+    top_half = elevation[building_center[0] : building.position[0] + max(building.dim), building.position[1]:building.position[1] + max(building.dim)]
 
     dz = np.average(left_half) - np.average(right_half)
     dx = np.average(bottom_half) - np.average(top_half)
@@ -84,7 +85,7 @@ def slope(terrain, village_skeleton, building):
 # max_length = length * steps
 def cast_rect_net(terrain, building, length, steps):
     net_positions = set()
-    z, x = terrain.shape
+    z, x = terrain.layers['elevation'].shape
     net_directions = np.array([[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1],[-1,0],[-1,1]])
     for step in range(1, steps+1):
         for direction in net_directions:
@@ -94,14 +95,15 @@ def cast_rect_net(terrain, building, length, steps):
     return list(net_positions)
 
 def get_geographic_domination_position(terrain, village_skeleton, building, position):
-    def height_comparison(terrain, main_position, compared_position):
-        dy = float(terrain[tuple(main_position)] - terrain[tuple(compared_position)])
+    elevation = terrain.layers['elevation']
+    def height_comparison(elevation, main_position, compared_position):
+        dy = float(elevation[tuple(main_position)] - elevation[tuple(compared_position)])
         return dy / (1 + np.linalg.norm(main_position - compared_position))
 
     domination = 0
     buildings_under_influence = find_buildings_within_radius(village_skeleton, position, building.influence_radius)
     for building_under_influence in buildings_under_influence:
-        domination += height_comparison(terrain, position, building_under_influence.position)
+        domination += height_comparison(elevation, position, building_under_influence.position)
     return domination
 
 def geographic_domination(terrain, village_skeleton, building):
@@ -124,10 +126,16 @@ def knn_centroid(terrain, village_skeleton, building):
     return knn_centroid - building.position
 
 def repel_collision(terrain, village_skeleton, building):
+    def get_building_to_position_repulsion(building, position):
+        if np.linalg.norm(position - building.position, ord=np.inf) <= (max(building.dim) + 2):
+            x = building.position - position
+            return (np.sign(x) * building_vector) - x
+        return np.array([0,0])
     repulsion = np.array([0,0])
     building_vector = np.array([max(building.dim),max(building.dim)])
     for neighbor in village_skeleton:
-        if np.linalg.norm(neighbor.position - building.position, ord=np.inf) <= (max(building.dim) + 2):
-            x = building.position - neighbor.position
-            repulsion += (np.sign(x) * building_vector) - x
+        repulsion += get_building_to_position_repulsion(building, neighbor.position)
+    for point in terrain.material_points['road']:
+        repulsion += get_building_to_position_repulsion(building, point)
+
     return repulsion

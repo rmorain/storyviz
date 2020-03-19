@@ -11,7 +11,7 @@ def heuristic(terrain, parent, child):
         cost += np.inf
     cost += terrain.layers['road'][child] # move closer to road
     if parent is not None:
-        cost += abs(terrain.layers['elevation'][parent] - terrain.layers['elevation'][child])
+        cost += abs(terrain.layers['elevation'][parent] - terrain.layers['elevation'][child]) * 2
     return cost
 
     # Take value from terrain.layers['road'] i.e. distance from any road

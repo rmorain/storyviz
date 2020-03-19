@@ -3,26 +3,6 @@ import numpy as np
 from interests import *
 import importlib
 
-# Takes a dictionary specifying {building_class : [num_buildings, schematic_info]}
-# def building_generator(building_spec):
-#     buildings = []
-#     building_id = 0
-#     for building_class_name, building_info in building_spec.items():
-#         num_buildings, schematic_info = building_info[0], list(building_info[1].items())
-#         for _ in range(num_buildings):
-#             # Load "module.submodule.MyClass"
-#             BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
-#             # Instantiate the class (pass arguments to the constructor, if needed)
-#             building = BuildingClass(building_id)
-#             if len(schematic_info) > 0:
-#                 print('schem info', schematic_info)
-#                 schematic_file, schematic_dim = random.choice(schematic_info)
-#                 building.schematic_file = schematic_file
-#                 print('schem dim', schematic_dim)
-#                 building.dim = np.array([schematic_dim[0],schematic_dim[1]])
-#             buildings.append(building)
-#             building_id += 1
-#     return buildings
 
 def building_generator(village_spec):
     buildings = []
@@ -64,7 +44,7 @@ class Building(object):
         self.repulsion = max(self.dim) # TODO: Pass in dim? Because nothing should collide
         self.placed = False
         self.connected = False
-        self.place_probability = .1
+        self.place_probability = .03
 
     def indices_array_generic(self,m,n):
         r0 = np.arange(m) # Or r0,r1 = np.ogrid[:m,:n], out[:,:,0] = r0
