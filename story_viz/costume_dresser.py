@@ -11,14 +11,17 @@ from classes import StorySchematics
 
 
 class CostumeDresser:
-    def __init__(self):
+    def __init__(self, spacy_model=None):
         temp = StorySchematics()
         self.__PATH__TO__SCHEMATICS = temp._StorySchematics__PATH__TO__SCHEMATICS
         self.__FILE__TYPE = temp._StorySchematics__FILE__TYPE
         
 
         self.schematic_paths = self.get_schematic_paths()
-        self.lang_model = spacy.load('en_core_web_sm')
+        if spacy_model is None:
+            self.lang_model = spacy.load('en_core_web_sm')
+        else:
+            self.lang_model = spacy_model
     # keywords should be a list of strings, each string will contain a keyword and supporting positional words
     def get_schematics(self, keywords, topn=1):
         print(keywords)
@@ -49,7 +52,7 @@ class CostumeDresser:
             found_schematics.append(np.random.choice(np.array([self.schematic_paths[top10[i]].replace(self.__FILE__TYPE, '') for i in range(topn)])))
             # found_schematics.append(self.schematic_paths[np.argmax(schem_scores)].replace(self.__FILE__TYPE, ''))
             normalized_keywords.append("{} {}".format(key, self.select_pos_word(keyword)))
-        return [StorySchematics(normalized_keywords, found_schematics)] # takes in array of labels and array of schematics
+        return StorySchematics(normalized_keywords, found_schematics) # takes in array of labels and array of schematics
         
     # Returns normalized position word, or the word itself if no similar word exists
     def normalize_pos_word(self, pos_word):

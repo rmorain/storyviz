@@ -26,8 +26,11 @@ spacy.prefer_gpu()
 
         
 class StoryInterpreter:
-    def __init__(self):
-        self.nlp = spacy.load("en_core_web_sm")
+    def __init__(self, spacy_model=None):
+        if spacy_model is None:
+            self.nlp = spacy.load("en_core_web_sm")
+        else:
+            self.nlp = spacy_model
 
     def get_pps(self, doc):
         "Function to get PPs from a parsed document."
