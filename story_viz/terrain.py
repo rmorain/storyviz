@@ -16,8 +16,8 @@ class Terrain:
         for i in range(2):
             if dim[i] + dim_offset[i] < 0:
                 new_dim.append(0)
-            elif dim[i] + dim_offset[i] >= max_dim:
-                new_dim.append(max_dim-1)
+            elif dim[i] + dim_offset[i] >= max_dim[i]:
+                new_dim.append(max_dim[i]-1)
             else:
                 new_dim.append(dim[i] + dim_offset[i])
         return tuple(new_dim)
