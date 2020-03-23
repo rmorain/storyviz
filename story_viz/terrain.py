@@ -192,16 +192,30 @@ class Terrain:
                     point = (point[0] + dz, point[1] + dx)
                     self.modify_terrain(terrain, point, terrain_height - distance)
 
+    def add_material_line(self, material_terrain, material, start_point, end_point, width):
+        z, x = material_terrain.shape
+        points = get_grid_cells_btw(start_point, end_point)
+        points = connect_neighboring_points(points)
+        points = expand_line(points, width, start_point, end_point, z, x)
+        for point in points:
+            material_terrain[point] = material
+
     def generate_material_line(self, material_terrain, max_width, material):
         z, x = material_terrain.shape
         start_point = (random.randint(0, z - 1), random.randint(0, z - 1))
         end_point = (random.randint(0, z - 1), random.randint(0, x - 1))
-        points = get_grid_cells_btw(start_point, end_point)
-        points = connect_neighboring_points(points)
         width_offset = random.randint(1, max_width) // 2
-        points = expand_line(points, width_offset, start_point, end_point, z, x)
-        for point in points:
-            material_terrain[point] = material
+        self.add_material_line(material_terrain, material, start_point, end_point, width_offset)
+
+        # z, x = material_terrain.shape
+        # start_point = (random.randint(0, z - 1), random.randint(0, z - 1))
+        # end_point = (random.randint(0, z - 1), random.randint(0, x - 1))
+        # points = get_grid_cells_btw(start_point, end_point)
+        # points = connect_neighboring_points(points)
+        # width_offset = random.randint(1, max_width) // 2
+        # points = expand_line(points, width_offset, start_point, end_point, z, x)
+        # for point in points:
+        #     material_terrain[point] = material
 
     def generate_terrain(self, z=200, x=200, num_hills=0, max_hill_height=0, num_rivers=1, max_river_width=1):
         self.layers['material'] = np.zeros((z, x))

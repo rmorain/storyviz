@@ -72,6 +72,12 @@ class VizAnimator:
         plt.pause(play_rate)
         plt.clf()
 
+def draw_river(terrain, world):
+    for z, row in enumerate(terrain.layers['material']):
+        for x, material in enumerate(row):
+            if material == terrain.materials['water']:
+                world[z][x] = [.2, .2, 1.]
+
 def plot(terrain, village_skeleton):
     elevation = terrain.layers['elevation']
     z, x = elevation.shape
@@ -85,6 +91,8 @@ def plot(terrain, village_skeleton):
 
     for point in terrain.material_points['road']:
         world[point[0]][point[1]] = [1,1,1]
+
+    draw_river(terrain, world)
     #     terrain[building.position[0], building.position[1]] = 50
     #
     # plt.imshow(terrain, cmap='hot', interpolation='nearest')

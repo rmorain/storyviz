@@ -66,14 +66,21 @@ def draw_roads(village_skeleton, terrain):
 #     if road:
 #         terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
 
-def connect2(building, terrain):
+def connect_building(building, terrain):
     # Fix position if it is too far off
-    y,x = building.position
-    h,w = terrain.layers['elevation'].shape
-    if y > h or x > w or y < 0 or x < 0:
-        building.position = np.array([0,0])
-    # TODO: Add something to put the building back in bounds
+    z, x = building.position
+    maxz, maxx = terrain.layers['elevation'].shape
     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
+    if start[0] < 0 or start[1] < 0:
+        start = np.add(building.position, (1,1))
+
+    connect_point(start, terrain)
+
+    # if y > h or x > w or y < 0 or x < 0:
+    #     building.position = np.array([0,0])
+    # # TODO: Add something to put the building back in bounds
+
+def connect_point(start, terrain):
     road = astar2.astar(terrain, tuple(start), 0)
     if road is not None:
         print('adding road')
