@@ -119,14 +119,14 @@ class Terrain:
         neighbors = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
         close_set = points.copy()
-        oheap = []
+        oset = set()
 
         for point in points:
-            heappush(oheap, (0, point))
+            oset.add(point)
 
-        while oheap:
+        while oset:
 
-            current = heappop(oheap)[1]
+            current = oset.pop()
             for i, j in neighbors:
                 neighbor = current[0] + i, current[1] + j
                 # out of bounds check
@@ -145,8 +145,7 @@ class Terrain:
                 # If we update the neighbor than we need to update its neighbors
                 if tentative_dist < self.layers[material][neighbor]:
                     self.layers[material][neighbor] = tentative_dist
-                    heappush(oheap, (tentative_dist, neighbor))
-                    close_set.add(neighbor)
+                    oset.add(neighbor)
 
 
     # # Iteratively updates the minimum distance from each point to a material of interest
