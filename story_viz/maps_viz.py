@@ -89,10 +89,11 @@ def plot(terrain, village_skeleton):
         color_name = building_colors[building.building_type]
         world[building.position[0]: building.position[0]+building.dim[0], building.position[1]: building.position[1]+building.dim[1]] = colors[color_name]
 
+    draw_river(terrain, world)
+
     for point in terrain.material_points['road']:
         world[point[0]][point[1]] = [1,1,1]
 
-    draw_river(terrain, world)
     #     terrain[building.position[0], building.position[1]] = 50
     #
     # plt.imshow(terrain, cmap='hot', interpolation='nearest')
