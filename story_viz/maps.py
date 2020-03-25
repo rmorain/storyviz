@@ -173,7 +173,7 @@ def anneal_positioning(terrain, village_skeleton, animate, animator, distances, 
         terrain.update_buildings(village_skeleton, terrain.layers['material'])
         draw_roads(village_skeleton, terrain)
         if animate:
-            animator.add(village_skeleton)
+            animator.add(terrain, village_skeleton)
 
 def randomize_unplaced_building_positions(terrain, village_skeleton):
     z, x = terrain.layers['elevation'].shape
@@ -213,7 +213,7 @@ def create_minecraft_village(level, box, building_spec, animate=False):
 
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:
-        animator.animate(elevation_terrain, material_terrain)
+        animator.animate(terrain, village_skeleton)
     return village_skeleton, terrain
 
 def create_village(animate=True):
@@ -254,7 +254,7 @@ def create_village(animate=True):
 
     # animator.plot(elevation_terrain, village_skeleton)
     if animate:
-        animator.animate(elevation_terrain, material_terrain)
+        animator.animate(t, village_skeleton)
     plot(t, village_skeleton)
     return village_skeleton, t
 
