@@ -135,8 +135,15 @@ class House(Residential):
         residential_vector = super(House, self).get_interest(village_skeleton, terrain)
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
+        road_vector = near('road', terrain, self)
+        water_vector = near('water', terrain, self)
 
-        return normalize_vector(social_vector, True) * 5 + normalize_vector(slope_vector, True) * 2 + residential_vector
+        return normalize_vector(social_vector, True) * 5 + \
+               normalize_vector(slope_vector, True) * 2 + \
+               residential_vector + \
+               normalize_vector(road_vector, True) + \
+               normalize_vector(water_vector, True)
+
 
 class Farm(Rural):
     def __init__(self, id):

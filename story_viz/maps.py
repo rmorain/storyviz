@@ -9,14 +9,12 @@ from terrain_generator import generate_terrain
 from terrain import Terrain
 from village_spec import VillageSpec
 from astar import astar
-import astar2
+import astar
 from interests import get_knn
 
 class MultiAgentPositioningSystem:
     def __init__(self):
         self.author = "Dr. Robert Morain"
-
-
 
 def init_village(terrain, building_spec):
     village_skeleton = []
@@ -43,29 +41,6 @@ def draw_roads(village_skeleton, terrain):
             connect_building(building, terrain)
             building.connected = True
 
-# def get_min_road(building_road, road_road):
-#     if building_road is None:
-#         return road_road
-#     if road_road is None:
-#         return building_road
-#     if len(building_road) < len(road_road)*.5:
-#         return building_road
-#     return road_road
-#
-# # Connect a building to the nearest road using a*
-# def connect(building, terrain):
-#     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
-#     building_road = None
-#     road_road = None
-#     if np.any(terrain.layers['material'] == terrain.materials['building']):  # Check if there are placed buildings
-#         building_road = astar(terrain, start, terrain.materials['building'])  # Connect to nearest stopped building
-#     if np.any(terrain.layers['material'] == terrain.materials['road']):  # Check if there are roads to connect to
-#         road_road = astar(terrain, start, terrain.materials['road']) # Connect to nearest road
-#     road = get_min_road(building_road, road_road)
-#     # Road is not None
-#     if road:
-#         terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
-
 def connect_building(building, terrain):
     # Fix position if it is too far off
     z, x = building.position
@@ -73,6 +48,11 @@ def connect_building(building, terrain):
     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
     if start[0] < 0 or start[1] < 0:
         start = np.add(building.position, (1,1))
+    # Check if out of bounds
+    if start[0] > len(terrain.layers['material']):
+        start[0] = len(terrain.layers['material']) - 1
+    if start[1] > len(terrain.layers['material']):
+        start[1] = len(terrain.layers['material']) - 1
 
     connect_point(start, terrain)
 
@@ -81,16 +61,14 @@ def connect_building(building, terrain):
     # # TODO: Add something to put the building back in bounds
 
 def connect_point(start, terrain):
-    road = astar2.astar(terrain, tuple(start), 0)
+    road = astar.astar(terrain, tuple(start), 0)
     if road is not None:
         print('adding road')
         print(road)
         terrain.add_road(road) # TODO: Houses that are close enough to roads should be counted as connected
     else:
         print('No road possible')
-    # Road is not None
-    # if road:
-    #     terrain.copy(road, terrain.layers['material'], terrain.materials['road'])
+
 
 def add_outside_roads(terrain):
     num_outside_roads = random.randint(2, 3)
@@ -106,19 +84,10 @@ def add_outside_roads(terrain):
 
 def create_minecraft_village(level, box, building_spec, animate=False):
     animator = VizAnimator()
-    # num_houses = 20
-    # num_farms = 10
-    # num_churches = 2
-    # num_stores = 5
-    # # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
-    # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
-    # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
-    #elevation_terrain, material_terrain = generate_terrain(500, 500, 10, 80, 1, 5)
     terrain = Terrain()
     terrain.load_map(level, box)
     elevation_terrain, material_terrain = terrain.layers['elevation'], terrain.layers['material']
 
-    #print(terrain)
     village_skeleton = init_village(elevation_terrain, building_spec)
 
     for i in range(100):
@@ -127,7 +96,6 @@ def create_minecraft_village(level, box, building_spec, animate=False):
         if animate:
             animator.add(village_skeleton)
 
-    # animator.plot(elevation_terrain, village_skeleton)
     if animate:
         animator.animate(elevation_terrain, material_terrain)
     return village_skeleton, terrain
@@ -138,12 +106,6 @@ def create_village(animate=True):
     num_farms = 30
     num_churches = 3
     num_stores = 1
-    # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches, 'Store': num_stores}
-    # building_spec = {'House': num_houses, 'Farm': num_farms, 'Church': num_churches}
-    #
-    # building_spec = {'House': [num_houses, {}],
-    #                  'Farm': [num_farms, {}],
-    #                  'Church': [num_churches, {}]}
 
     village_spec = VillageSpec()
     village_spec.add("House", num_houses)
@@ -154,7 +116,6 @@ def create_village(animate=True):
     t = Terrain()
     t.generate_terrain(500, 500, 6, 200, 2, 5)
 
-    #print(terrain)
     elevation_terrain = t.layers['elevation']
     material_terrain = t.layers['material']
     village_skeleton = init_village(elevation_terrain, village_spec)
@@ -167,13 +128,6 @@ def create_village(animate=True):
         if animate:
             animator.add(village_skeleton)
 
-    # a = t.layers['road']
-    # fig, (ax1, ax2) = plt.subplots(1, 2)
-    # ax1.imshow(np.clip(a, 0, 1), cmap='hot', interpolation='nearest')
-    # ax2.imshow(a, cmap='hot', interpolation='nearest')
-    # plt.show()
-
-    # animator.plot(elevation_terrain, village_skeleton)
     if animate:
         animator.animate(elevation_terrain, material_terrain)
     plot(t, village_skeleton)

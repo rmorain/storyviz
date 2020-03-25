@@ -139,3 +139,24 @@ def repel_collision(terrain, village_skeleton, building):
         repulsion += get_building_to_position_repulsion(building, point)
 
     return repulsion
+
+# Return vector to move building closer to a materials
+def near(material, terrain, building):
+    material_dist = terrain.layers[material]
+    building_center = building.position + (max(building.dim) // 2)  # TODO: This is 2d
+
+    left_half = material_dist[building.position[0]:building.position[0] + max(building.dim),
+                building.position[1]: building_center[1]]
+    right_half = material_dist[building.position[0]:building.position[0] + max(building.dim),
+                 building_center[1]: building.position[1] + max(building.dim)]
+
+    bottom_half = material_dist[building.position[0]: building_center[0],
+                  building.position[1]:building.position[1] + max(building.dim)]
+    top_half = material_dist[building_center[0]: building.position[0] + max(building.dim),
+               building.position[1]:building.position[1] + max(building.dim)]
+
+    dz = np.average(left_half) - np.average(right_half)
+    dx = np.average(bottom_half) - np.average(top_half)
+
+    return np.array([dz, dx])
+
