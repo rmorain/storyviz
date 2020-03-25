@@ -45,6 +45,23 @@ class Building(object):
         self.placed = False
         self.connected = False
         self.place_probability = .03
+        self.cum_interest_vector_distance = 0
+        self.num_interest_vectors_recorded = 0
+        self.min_interest_vector = np.inf
+        self.max_interest_vector = 0
+        self.last_interest_vector = None
+
+    def store_interest_info(self, interest_vector):
+        self.num_interest_vectors_recorded += 1
+        distance = np.linalg.norm(interest_vector)
+        self.cum_interest_vector_distance += distance
+        if distance < self.min_interest_vector:
+            self.min_interest_vector = distance
+        if distance > self.max_interest_vector:
+            self.max_interest_vector = distance
+
+    def get_interest_info(self):
+        return self.min_interest_vector, self.cum_interest_vector_distance/self.num_interest_vectors_recorded, self.max_interest_vector
 
     def indices_array_generic(self,m,n):
         r0 = np.arange(m) # Or r0,r1 = np.ogrid[:m,:n], out[:,:,0] = r0
@@ -83,6 +100,14 @@ class Building(object):
         return noise_vector * scale
 
     def get_interest(self, village_skeleton, terrain):
+        if self.placed:
+            return np.array([0,0])
+        else:
+            interest = self.calculate_interest(village_skeleton, terrain)
+            self.last_interest_vector = interest
+            return interest
+
+    def calculate_interest(self, village_skeleton, terrain):
         return normalize_vector(repel_collision(terrain, village_skeleton, self), True) * 5
 
     def random_stop(self):
@@ -131,8 +156,8 @@ class House(Residential):
         self.attraction = 40
         self.repulsion = 10
 
-    def get_interest(self, village_skeleton, terrain):
-        residential_vector = super(House, self).get_interest(village_skeleton, terrain)
+    def calculate_interest(self, village_skeleton, terrain):
+        residential_vector = super(House, self).calculate_interest(village_skeleton, terrain)
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
         road_vector = near('road', terrain, self)
@@ -154,8 +179,8 @@ class Farm(Rural):
         self.attraction = 20
         self.repulsion = 10
 
-    def get_interest(self, village_skeleton, terrain):
-        rural_vector = super(Farm, self).get_interest(village_skeleton, terrain)
+    def calculate_interest(self, village_skeleton, terrain):
+        rural_vector = super(Farm, self).calculate_interest(village_skeleton, terrain)
         social_vector = sociability(terrain, village_skeleton, self)
         slope_vector = slope(terrain, village_skeleton, self)
         return normalize_vector(social_vector, True) * 2 + normalize_vector(slope_vector, True) * 2 + rural_vector
@@ -170,8 +195,8 @@ class Church(Public):
         self.repulsion = max(self.dim) + 30
         self.social_agents = ["house"]
 
-    def get_interest(self, village_skeleton, terrain):
-        public_vector = super(Church, self).get_interest(village_skeleton, terrain)
+    def calculate_interest(self, village_skeleton, terrain):
+        public_vector = super(Church, self).calculate_interest(village_skeleton, terrain)
         domination_vector = geographic_domination(terrain, village_skeleton, self)
         social_vector = sociability(terrain, village_skeleton, self)
         return normalize_vector(domination_vector, True) * 5 + normalize_vector(social_vector, True) * 2 + public_vector
@@ -183,8 +208,8 @@ class Store(Commercial):
         self.centroid_types = ["house"]
         self.centroid_knn = 7
 
-    def get_interest(self, village_skeleton, terrain):
-        commercial_vector = super(Store, self).get_interest(village_skeleton, terrain)
+    def calculate_interest(self, village_skeleton, terrain):
+        commercial_vector = super(Store, self).calculate_interest(village_skeleton, terrain)
         centroid_vector = knn_centroid(terrain, village_skeleton, self)
         return normalize_vector(centroid_vector, True) * 5 + commercial_vector
 
