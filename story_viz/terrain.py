@@ -7,9 +7,9 @@ from heapq import *
 
 class Terrain:
     def __init__(self):
-        self.layers = {'material':None, 'elevation':None, 'road':None}
+        self.layers = {'material':None, 'elevation':None, 'road':None, 'water':None}
         self.materials = {'water': 9, 'road': 1, 'building': -1}
-        self.material_points = {'road':set()}
+        self.material_points = {'road':set(), 'water':set()}
 
     def offset_new_dim(self, dim, dim_offset, max_dim):
         new_dim = []
@@ -89,10 +89,10 @@ class Terrain:
 
     # Initialize a material distance layer
     # Pass in int for material you want to get distance from at each point
-    def init_material_dist(self, material):
+    def init_material_dist(self, material_str):
+        material = self.materials[material_str]
         x, y = self.layers['material'].shape  # Get dimensions of material terrain
         material_dist_layer = np.full((x, y), np.inf)   # Initialize to all inf
-        self.material_points[material] = {}
         # Look at each cell in material layer
         for i, row in enumerate(self.layers['material']):
             for j, block in enumerate(row):
@@ -100,7 +100,7 @@ class Terrain:
                 if block == material: # TODO: Makes sense for water, might be issue with roads
                     # Set distance from material at that point equal to zero
                     material_dist_layer[i][j] = 0
-                    self.material_points[material].add(np.array([i, j]))
+                    self.material_points[material_str].add((i, j))
                     # Other wise it remains infinity
         return material_dist_layer
 
@@ -115,7 +115,7 @@ class Terrain:
     def update_material_dist(self, material):
         array = self.layers[material]
         points = self.material_points[material]
-
+        print(points)
         neighbors = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
         close_set = points.copy()
@@ -146,23 +146,6 @@ class Terrain:
                 if tentative_dist < self.layers[material][neighbor]:
                     self.layers[material][neighbor] = tentative_dist
                     oset.add(neighbor)
-
-
-    # # Iteratively updates the minimum distance from each point to a material of interest
-    # def update_material_dist(self, material_dist_layer, material):
-    #     # Runs at least once
-    #         # Look at each cell, beginning at top left
-    #     for i, row in enumerate(material_dist_layer):
-    #         for j, block in enumerate(row):
-    #             minimum = self.get_min_dist(np.array([i,j]), self.material_points[material])
-    #             material_dist_layer[i][j] = minimum
-    #     return material_dist_layer
-    #
-    # def get_min_dist(self, point, list_of_points):
-    #     distances = []
-    #     for p in list_of_points:
-    #         distances.append(np.linalg.norm(point - p))
-    #     return min(distances)
 
     def get_coord_offset(self, coord, offset, scale):
         scaled_offset = tuple(scale*x for x in offset)
@@ -196,8 +179,11 @@ class Terrain:
         points = get_grid_cells_btw(start_point, end_point)
         points = connect_neighboring_points(points)
         points = expand_line(points, width, start_point, end_point, z, x)
+
         for point in points:
             material_terrain[point] = material
+            self.material_points['water'].add(point)
+
 
     def generate_material_line(self, material_terrain, max_width, material):
         z, x = material_terrain.shape
@@ -206,28 +192,20 @@ class Terrain:
         width_offset = random.randint(1, max_width) // 2
         self.add_material_line(material_terrain, material, start_point, end_point, width_offset)
 
-        # z, x = material_terrain.shape
-        # start_point = (random.randint(0, z - 1), random.randint(0, z - 1))
-        # end_point = (random.randint(0, z - 1), random.randint(0, x - 1))
-        # points = get_grid_cells_btw(start_point, end_point)
-        # points = connect_neighboring_points(points)
-        # width_offset = random.randint(1, max_width) // 2
-        # points = expand_line(points, width_offset, start_point, end_point, z, x)
-        # for point in points:
-        #     material_terrain[point] = material
-
     def generate_terrain(self, z=200, x=200, num_hills=0, max_hill_height=0, num_rivers=1, max_river_width=1):
         self.layers['material'] = np.zeros((z, x))
         self.layers['elevation'] = np.zeros((z, x))
-        self.layers['road'] = np.full((z, x), np.inf)
-        self.layers['road_dist'] = self.init_material_dist(self.materials['road'])
+        self.layers['road'] = self.init_material_dist('road')
+
         for _ in range(num_hills):
             self.generate_hill(self.layers['elevation'], max_hill_height)
 
         for _ in range(num_rivers):
             self.generate_material_line(self.layers['material'], max_river_width, self.materials['water'])
 
-
+        self.layers['water'] = self.init_material_dist('water')
+        self.update_material_dist('water')
+        assert np.all(self.layers['water'] != np.inf)
         return None
 
     def update_buildings(self, village_skeleton, layer):
@@ -239,7 +217,8 @@ class Terrain:
     # Copy of list of points of a material into a layer
     def copy(self, points, layer, material):
         for p in points.reshape((-1,2)):
-            layer[p[0], p[1]] = material
-
-
+            try:
+                layer[p[0], p[1]] = material
+            except:
+                pass
 
