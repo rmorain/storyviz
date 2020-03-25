@@ -146,10 +146,9 @@ def plot_iterative_positioning(village_skeleton, distances):
     ax4.hist(avgs)
     plt.show()
 
-def iterative_positioning(terrain, village_skeleton, animate, animator):
-    avg_distance = free_positioning(terrain, village_skeleton)
-    distances = []
-    for i in range(200):
+def anneal_positioning(terrain, village_skeleton, animate, animator, distances, avg_distance):
+    anneal_positioning_epochs = 200
+    for i in range(anneal_positioning_epochs):
         all_buildings_placed = place_buildings(village_skeleton, avg_distance)
         if all_buildings_placed:
             print('all buildings placed')
@@ -159,6 +158,21 @@ def iterative_positioning(terrain, village_skeleton, animate, animator):
         draw_roads(village_skeleton, terrain)
         if animate:
             animator.add(village_skeleton)
+
+def randomize_unplaced_building_positions(terrain, village_skeleton):
+    z, x = terrain.layers['elevation'].shape
+    for building in village_skeleton:
+        if not building.placed:
+            building.set_position((random.randint(0, min(z, z - max(building.dim) - 1)),
+                                   random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
+
+def iterative_positioning(terrain, village_skeleton, animate, animator):
+    avg_distance = free_positioning(terrain, village_skeleton)
+    distances = []
+    num_anneals = 5
+    for _ in range(num_anneals):
+        anneal_positioning(terrain, village_skeleton, animate, animator, distances, avg_distance)
+        randomize_unplaced_building_positions(terrain, village_skeleton)
 
     # plot_iterative_positioning(village_skeleton, distances)
 
