@@ -83,7 +83,21 @@ def add_outside_roads(terrain):
             x = random.randint(0, maxx-1)
         terrain.add_road([(z,x)])
 
-def place_buildings(village_skeleton, avg_distance):
+# Make sure building doesn't collide with other buildings, water, or roads.
+def has_collision(terrain, building):
+    for point in np.reshape(building.get_footprint(), (-1, 2)):
+        point = tuple(point)
+        if terrain.layers['material'][point] == terrain.materials['building']:
+            return True
+        if terrain.layers['material'][point] == terrain.materials['water']:
+            return True
+        if terrain.layers['road'][point] == 0:
+            return True
+
+    return False
+
+
+def place_buildings(terrain, village_skeleton, avg_distance):
     all_buildings_placed = True
     for building in village_skeleton:
         if not building.placed:
@@ -91,6 +105,8 @@ def place_buildings(village_skeleton, avg_distance):
             distance = np.linalg.norm(building.last_interest_vector)
             if distance < avg_distance:
                 if random.random() > ((distance + avg_distance) / (2*avg_distance)): # Normalize distance so 0 has 50% chance of being placed
+                    # if not has_collision(terrain, building): # TODO: This should be the real check, but maps takes a lot of time when its included.
+                    #     building.placed = True
                     building.placed = True
     return all_buildings_placed
 
@@ -121,11 +137,10 @@ def plot_iterative_positioning(village_skeleton, distances):
     ax4.hist(avgs)
     plt.show()
 
-def iterative_positioning(terrain, village_skeleton, animate, animator):
-    avg_distance = free_positioning(terrain, village_skeleton)
-    distances = []
-    for i in range(200):
-        all_buildings_placed = place_buildings(village_skeleton, avg_distance)
+def anneal_positioning(terrain, village_skeleton, animate, animator, distances, avg_distance):
+    anneal_positioning_epochs = 200
+    for i in range(anneal_positioning_epochs):
+        all_buildings_placed = place_buildings(terrain, village_skeleton, avg_distance)
         if all_buildings_placed:
             print('all buildings placed')
             break
@@ -133,7 +148,22 @@ def iterative_positioning(terrain, village_skeleton, animate, animator):
         terrain.update_buildings(village_skeleton, terrain.layers['material'])
         draw_roads(village_skeleton, terrain)
         if animate:
-            animator.add(village_skeleton)
+            animator.add(terrain, village_skeleton)
+
+def randomize_unplaced_building_positions(terrain, village_skeleton):
+    z, x = terrain.layers['elevation'].shape
+    for building in village_skeleton:
+        if not building.placed:
+            building.set_position((random.randint(0, min(z, z - max(building.dim) - 1)),
+                                   random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
+
+def iterative_positioning(terrain, village_skeleton, animate, animator):
+    avg_distance = free_positioning(terrain, village_skeleton)
+    distances = []
+    num_anneals = 5
+    for _ in range(num_anneals):
+        anneal_positioning(terrain, village_skeleton, animate, animator, distances, avg_distance)
+        randomize_unplaced_building_positions(terrain, village_skeleton)
 
     # plot_iterative_positioning(village_skeleton, distances)
 
@@ -148,7 +178,7 @@ def create_minecraft_village(level, box, building_spec, animate=False):
     iterative_positioning(terrain, village_skeleton, animate, animator)
 
     if animate:
-        animator.animate(elevation_terrain, material_terrain)
+        animator.animate(terrain, village_skeleton)
     return village_skeleton, terrain
 
 def create_village(animate=True):
@@ -175,7 +205,7 @@ def create_village(animate=True):
     iterative_positioning(t, village_skeleton, animate, animator)
 
     if animate:
-        animator.animate(elevation_terrain, material_terrain)
+        animator.animate(t, village_skeleton)
     plot(t, village_skeleton)
     return village_skeleton, t
 
