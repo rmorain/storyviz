@@ -3,6 +3,7 @@ Filter to do story visualization.
 """
 import sys
 import os
+import json
 # Add story_viz folder to path
 
 sys.path.append(os.getcwd() + '/story_viz')
@@ -15,8 +16,6 @@ from random import *
 from numpy import *
 from pymclevel import alphaMaterials, MCSchematic, MCLevel, BoundingBox
 from mcplatform import *
-
-
 
 import utilityFunctions as utilityFunctions
 from maps import create_minecraft_village
@@ -40,34 +39,17 @@ def perform(level, box, options):
     if story.isspace() or story is '':
         story = "On a farm in the west there was a house when out of nowhere a hovering ufo abducted the cow"
 
-
-
+    schematic_begin = time.time()
     sch_man = SchematicManager()
     schematics, class_schem = sch_man.get_schematics(story, ['house', 'farm', 'church', 'shop'])
     print("schematics:",schematics)
     print("classified schematics:",class_schem)
+    print("Found story schematics in {} seconds".format(time.time()-schematic_begin))
 
-
-
-    # s = StorySchematics(['House', 'Church', 'Farm'], ['small-convenient-house', 'evil-church', 'farm-wheat'])
-    # schematics = s.get_schematics()
     building_spec = get_village_spec(class_schem)
     village_skeleton, terrain = create_minecraft_village(level, box, building_spec)
     build_village_skeleton(level, box, village_skeleton, terrain, building_spec.get_all_village_schematics())
 
-
-
-    # sch_man = SchematicManager()
-    # GSP = GeneralSchematicPlacer()
-    # SSP = StorySchematicPlacer()
-    # print('before')
-    # schematics = sch_man.get_schematics(story)
-    # print('got schem')
-    # box, land_allocation_grid = SSP.place(level, box, options, schematics)
-    # print('finished ssp')
-    # GSP.place(level, box, options, schematics, land_allocation_grid)
-    # print('finished gps')
-    #
 
 def build_village_skeleton(level, box, village_skeleton, terrain, schematic_files):
     elevation = terrain.layers['elevation']
@@ -85,7 +67,8 @@ def fill_building_spec_info(village_spec, building_class_name, schematic_files):
     village_spec.building_specs[building_class_name].schematic_dims = schematic_dims
     village_spec.building_specs[building_class_name].schematic_y_offsets = schematic_y_offsets
 
-def get_village_spec(classified_schematics):
+# TODO: Use each story schematic ONCE and then randomly sample from general schematics for the rest
+def get_village_spec(story_schematics):
     num_houses = 20
     num_farms = 10
     num_churches = 5
@@ -95,31 +78,29 @@ def get_village_spec(classified_schematics):
     #                  'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
     #                  'Church': [num_churches, {'evil-church': (-1,-1)}]}
     village_spec = VillageSpec()
+    general_schematics = load_general_schematics()
 
     village_spec.add("House", num_houses)
-    house_schems = []#classified_schematics['house']
-    if len(house_schems) == 0:
-        house_schems = ['small-convenient-house', 'First survival House (copy)']
+    house_schems = story_schematics['house']
+    if len(house_schems) < num_houses:
+        house_schems.extend(random.sample(general_schematics['house'], num_houses - len(house_schems)))
+    print("House schematics:",house_schems)
     fill_building_spec_info(village_spec, "House", house_schems)
 
     village_spec.add("Farm", num_farms)
-    farm_schems = []#classified_schematics['farm']
-    if len(farm_schems) == 0:
-        farm_schems = ['farm-wheat']
+    farm_schems = story_schematics['farm']    
+    if len(farm_schems) < num_farms:
+        farm_schems.extend(random.sample(general_schematics['farm'], num_houses - len(farm_schems)))
     fill_building_spec_info(village_spec, "Farm", farm_schems)
 
     village_spec.add("Church", num_churches)
-    church_schems = []#classified_schematics['church']
-    if len(church_schems) == 0:
-        church_schems = ['evil-church']
+    church_schems = story_schematics['church']    
+    if len(church_schems) < num_churches:
+        church_schems.extend(random.sample(general_schematics['church'], num_houses - len(church_schems)))
     fill_building_spec_info(village_spec, "Church", church_schems)
+    
     # village_spec.add("Store", num_stores)
 
-
-
-
-
-    
     return village_spec
 
 def get_schematics(schematic_files):
@@ -157,3 +138,8 @@ def get_schematic_y_offset(schematic):
     return 0
     # for y in range(maxy, 0, -1):
     # material_id = schematic.blockAt(x, y, z)
+
+def load_general_schematics():
+    with open("stock-schematics\general_schematics_list.json") as j:
+        general_schematics = json.load(j)
+    return general_schematics
