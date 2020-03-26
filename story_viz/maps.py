@@ -46,9 +46,6 @@ def draw_roads(village_skeleton, terrain):
             building.connected = True
 
 def connect_building(building, terrain):
-    # Fix position if it is too far off
-    z, x = building.position
-    maxz, maxx = terrain.layers['elevation'].shape
     start = np.subtract(building.position, (1, 1))  # Start road at top left of building
     if start[0] < 0 or start[1] < 0:
         start = np.add(building.position, (1,1))
