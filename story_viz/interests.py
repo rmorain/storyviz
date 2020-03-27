@@ -144,7 +144,9 @@ def repel_collision(terrain, village_skeleton, building):
 def near(material, terrain, building):
     material_dist = terrain.layers[material]
     building_center = building.position + (max(building.dim) // 2)  # TODO: This is 2d
-
+    # If the material does not exist, don't move at all
+    if material_dist is None:
+        return np.array([0, 0])
     left_half = material_dist[building.position[0]:building.position[0] + max(building.dim),
                 building.position[1]: building_center[1]]
     right_half = material_dist[building.position[0]:building.position[0] + max(building.dim),

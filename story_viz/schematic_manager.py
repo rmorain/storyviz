@@ -40,4 +40,5 @@ class SchematicManager:
             schem_token = self.spacy_model(unicode(schematic))
             class_score = [schem_token.similarity(self.spacy_model(unicode(c))) for c in schematic_classes]
             schem_classifications[schematic_classes[np.argmax(np.array(class_score))]].append(schematic)
+        print("SCHEM CLASSIFICATIONS",schem_classifications)
         return schematics_obj, schem_classifications

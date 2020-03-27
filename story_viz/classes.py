@@ -11,7 +11,7 @@ class StorySchematics:
         self.schematics = schematics
         self.labels = labels
         self.schematics_dict = {}
-        self.__PATH__TO__SCHEMATICS = "stock-schematics/library/"
+        self.__PATH__TO__SCHEMATICS = "stock-schematics/"
         self.__FILE__TYPE = ".schematic"
 
 

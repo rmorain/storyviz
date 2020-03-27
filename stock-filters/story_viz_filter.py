@@ -83,20 +83,19 @@ def get_village_spec(story_schematics):
     village_spec.add("House", num_houses)
     house_schems = story_schematics['house']
     if len(house_schems) < num_houses:
-        house_schems.extend(random.sample(general_schematics['house'], num_houses - len(house_schems)))
-    print("House schematics:",house_schems)
+        house_schems.extend(sample(general_schematics['house'], num_houses - len(house_schems)))
     fill_building_spec_info(village_spec, "House", house_schems)
 
     village_spec.add("Farm", num_farms)
     farm_schems = story_schematics['farm']    
     if len(farm_schems) < num_farms:
-        farm_schems.extend(random.sample(general_schematics['farm'], num_houses - len(farm_schems)))
+        farm_schems.extend(sample(general_schematics['farm'], num_farms - len(farm_schems)))
     fill_building_spec_info(village_spec, "Farm", farm_schems)
 
     village_spec.add("Church", num_churches)
     church_schems = story_schematics['church']    
     if len(church_schems) < num_churches:
-        church_schems.extend(random.sample(general_schematics['church'], num_houses - len(church_schems)))
+        church_schems.extend(sample(general_schematics['church'], num_churches - len(church_schems)))
     fill_building_spec_info(village_spec, "Church", church_schems)
     
     # village_spec.add("Store", num_stores)
@@ -104,12 +103,17 @@ def get_village_spec(story_schematics):
     return village_spec
 
 def get_schematics(schematic_files):
-    __PATH__TO__SCHEMATICS = "stock-schematics/library/"
+    __PATH__TO__SCHEMATICS = "stock-schematics/"
     __FILE__TYPE = ".schematic"
     schematics = []
     for schematic_file in schematic_files:
-        print("FILE:",schematic_file)
-        schematics.append(MCSchematic(filename=__PATH__TO__SCHEMATICS + schematic_file + __FILE__TYPE))
+        path = __PATH__TO__SCHEMATICS + schematic_file + __FILE__TYPE
+        path = path.replace('//', '/').replace('.schematic.schematic', '.schematic')
+        try:
+            schematics.append(MCSchematic(filename=path))
+        except:
+            # If that schematic isn't valid, just duplicate the last one (less diversity, but not too much so)
+            schematics.append(schematics[-1])
     return schematics
 
 def get_schematics_info(schematic_files):
@@ -140,6 +144,6 @@ def get_schematic_y_offset(schematic):
     # material_id = schematic.blockAt(x, y, z)
 
 def load_general_schematics():
-    with open("stock-schematics\general_schematics_list.json") as j:
+    with open("stock-schematics/general_schematics_list.json") as j:
         general_schematics = json.load(j)
     return general_schematics

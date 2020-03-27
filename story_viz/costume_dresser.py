@@ -13,7 +13,7 @@ from classes import StorySchematics
 class CostumeDresser:
     def __init__(self, spacy_model=None):
         temp = StorySchematics()
-        self.__PATH__TO__SCHEMATICS = temp._StorySchematics__PATH__TO__SCHEMATICS
+        self.__PATH__TO__SCHEMATICS = "stock-schematics/"
         self.__FILE__TYPE = temp._StorySchematics__FILE__TYPE
         
 
@@ -76,6 +76,7 @@ class CostumeDresser:
         return terms[top_i] if scores[top_i] > threshold else "random"
     # returns the relative paths to all schematics individually
     def get_schematic_paths(self):
+        print("__PATH__TO__SCHEMATICS:",self.__PATH__TO__SCHEMATICS)
         schematic_paths = []
         for dr, _, schematic_names in os.walk(self.__PATH__TO__SCHEMATICS):
             schematic_paths.extend([os.path.join(dr, schematic_name).replace(self.__PATH__TO__SCHEMATICS, '') for schematic_name in schematic_names if self.__FILE__TYPE in schematic_name])
