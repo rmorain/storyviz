@@ -111,7 +111,7 @@ def place_buildings(terrain, village_skeleton, avg_distance):
     return all_buildings_placed
 
 def free_positioning(terrain, village_skeleton):
-    free_positioning_epochs = 100
+    free_positioning_epochs = 50
     distances = []
     for i in range(free_positioning_epochs):
         if i >= (free_positioning_epochs * .9):
@@ -138,7 +138,7 @@ def plot_iterative_positioning(village_skeleton, distances):
     plt.show()
 
 def anneal_positioning(terrain, village_skeleton, animate, animator, distances, avg_distance):
-    anneal_positioning_epochs = 200
+    anneal_positioning_epochs = 50
     for i in range(anneal_positioning_epochs):
         all_buildings_placed = place_buildings(terrain, village_skeleton, avg_distance)
         if all_buildings_placed:
@@ -196,6 +196,7 @@ def create_village(animate=True):
     # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
     t = Terrain()
     t.generate_terrain(500, 500, 6, 200, 2, 5)
+    #t.generate_terrain(500, 500, num_rivers=0)
 
     elevation_terrain = t.layers['elevation']
     material_terrain = t.layers['material']
