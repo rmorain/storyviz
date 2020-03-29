@@ -46,9 +46,9 @@ def perform(level, box, options):
     print("classified schematics:",class_schem)
     print("Found story schematics in {} seconds".format(time.time()-schematic_begin))
 
-    building_spec = get_village_spec(class_schem)
-    village_skeleton, terrain = create_minecraft_village(level, box, building_spec)
-    build_village_skeleton(level, box, village_skeleton, terrain, building_spec.get_all_village_schematics())
+    village_spec = get_village_spec(class_schem)
+    village_skeleton, terrain = create_minecraft_village(level, box, village_spec)
+    build_village_skeleton(level, box, village_skeleton, terrain, village_spec.get_all_village_schematics())
 
 
 def build_village_skeleton(level, box, village_skeleton, terrain, schematic_files):

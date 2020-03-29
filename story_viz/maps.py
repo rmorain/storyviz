@@ -167,22 +167,26 @@ def iterative_positioning(terrain, village_skeleton, animate, animator):
 
     # plot_iterative_positioning(village_skeleton, distances)
 
-def create_minecraft_village(level, box, building_spec, animate=False):
-    animator = VizAnimator()
+def create_minecraft_village(level, box, village_spec, animate=False):
     terrain = Terrain()
     terrain.load_map(level, box)
-    elevation_terrain, material_terrain = terrain.layers['elevation'], terrain.layers['material']
+    return create_village(terrain, village_spec, animate)
 
-    village_skeleton = init_village(elevation_terrain, building_spec)
+def create_village(terrain, village_spec, animate=True):
+    animator = VizAnimator()
+    elevation_terrain = terrain.layers['elevation']
+    material_terrain = terrain.layers['material']
+    village_skeleton = init_village(elevation_terrain, village_spec)
+    add_outside_roads(terrain)
 
     iterative_positioning(terrain, village_skeleton, animate, animator)
 
     if animate:
         animator.animate(terrain, village_skeleton)
+    plot(terrain, village_skeleton)
     return village_skeleton, terrain
 
-def create_village(animate=True):
-    animator = VizAnimator()
+def get_village_spec():
     num_houses = 30
     num_farms = 30
     num_churches = 3
@@ -192,26 +196,47 @@ def create_village(animate=True):
     village_spec.add("House", num_houses)
     village_spec.add("Farm", num_farms)
     village_spec.add("Church", num_churches)
+    return village_spec
 
-    # generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
-    t = Terrain()
-    t.generate_terrain(500, 500, 6, 200, 2, 5)
-    #t.generate_terrain(500, 500, num_rivers=0)
+def get_random_terrain(z=200, x=200, num_hills=0, max_hill_height=0, num_rivers=1, max_river_width=1):
+    terrain = Terrain()
+    terrain.generate_terrain(z, x, num_hills, max_hill_height, num_rivers, max_river_width)
+    return terrain
 
-    elevation_terrain = t.layers['elevation']
-    material_terrain = t.layers['material']
-    village_skeleton = init_village(elevation_terrain, village_spec)
-    add_outside_roads(t)
+def evaluate_village(village_skeleton):
+    distances = 0
+    for building in village_skeleton:
+        distances += np.linalg.norm(building.last_interest_vector)
+    return distances / len(village_skeleton)
 
-    iterative_positioning(t, village_skeleton, animate, animator)
+def generate_random_village():
+    village_spec = get_village_spec()
+    terrain = get_random_terrain(500, 500, 6, 200, 4, 20)
+    return create_village(terrain, village_spec, False)
 
-    if animate:
-        animator.animate(t, village_skeleton)
-    plot(t, village_skeleton)
-    return village_skeleton, t
+def get_best_random_village(num_eval=3):
+    village_spec = get_village_spec()
+    unmod_terrain = get_random_terrain(500, 500, 6, 200, 4, 20)
+    best_eval = np.inf
+    best_village_skeleton = None
+    best_terrain = None
+    choice = -1
+
+    for i in range(num_eval):
+        terrain = copy.deepcopy(unmod_terrain)
+        village_skeleton, terrain = create_village(terrain, village_spec, False)
+        eval = evaluate_village(village_skeleton)
+        if eval < best_eval:
+            best_eval = eval
+            best_village_skeleton = copy.deepcopy(village_skeleton)
+            best_terrain = copy.deepcopy(terrain)
+            choice = i
+    plot(best_terrain, best_village_skeleton)
+
 
 def main():
-    create_village(False)
+    generate_random_village()
+    # get_best_random_village(num_eval=3)
 
 if __name__=='__main__':
     main()
