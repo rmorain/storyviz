@@ -92,7 +92,8 @@ class Building(object):
         return np.round([new_z, new_x]).astype(int)
 
     def set_position(self, position, z, x):
-        self.position = self.get_valid_displacement(position, z, x)
+        if not self.placed:
+            self.position = self.get_valid_displacement(position, z, x)
 
     def get_noise(self, scale=1):
         noise_vector = np.array([random.uniform(-1,1), random.uniform(-1,1)])
@@ -114,6 +115,16 @@ class Building(object):
         if random.random() < self.place_probability:
             self.placed = True
 
+    def probability_placement(self, avg_distance):
+        if not self.placed:
+            all_buildings_placed = False
+            distance = np.linalg.norm(self.last_interest_vector)
+            if distance < avg_distance:
+                if random.random() > ((distance + avg_distance) / (2*avg_distance)): # Normalize distance so 0 has 50% chance of being placed
+                    # if not has_collision(terrain, building): # TODO: This should be the real check, but maps takes a lot of time when its included.
+                    #     building.placed = True
+                    self.placed = True
+        return self.placed
 
 
 class Rural(Building):
