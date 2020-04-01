@@ -22,7 +22,7 @@ from maps import create_minecraft_village
 from village_spec import VillageSpec
 
 # Import files you want
-from classes import *
+import classes
 from schematic_manager import SchematicManager
 from general_schematic_placer import GeneralSchematicPlacer 
 from story_schematic_placer import StorySchematicPlacer
@@ -53,7 +53,7 @@ def perform(level, box, options):
 
 def build_village_skeleton(level, box, village_skeleton, terrain, schematic_files):
     elevation = terrain.layers['elevation']
-    schematics = StorySchematics(schematic_files, schematic_files).get_schematics()
+    schematics = classes.StorySchematics(schematic_files, schematic_files).get_schematics()
     for building in village_skeleton:
         z, x = building.position[0], building.position[1]
         elevation_offset = elevation[z][x]
@@ -106,14 +106,15 @@ def get_schematics(schematic_files):
     __PATH__TO__SCHEMATICS = "stock-schematics/"
     __FILE__TYPE = ".schematic"
     schematics = []
-    for schematic_file in schematic_files:
+    for i,schematic_file in enumerate(schematic_files):
         path = __PATH__TO__SCHEMATICS + schematic_file + __FILE__TYPE
         path = path.replace('//', '/').replace('.schematic.schematic', '.schematic')
         try:
             schematics.append(MCSchematic(filename=path))
         except:
-            # If that schematic isn't valid, just duplicate the last one (less diversity, but not too much so)
-            schematics.append(schematics[-1])
+            # If that schematic isn't valid, just throw in a generic stand-in
+            schematics.append(MCSchematic(filename='stock-schematics/library/small-convenient-house.schematic'))
+            schematic_files[i] = 'library/small-convenient-house.schematic'
     return schematics
 
 def get_schematics_info(schematic_files):
