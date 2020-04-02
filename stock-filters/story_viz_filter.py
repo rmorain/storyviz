@@ -22,7 +22,7 @@ from maps import create_minecraft_village
 from village_spec import VillageSpec
 
 # Import files you want
-import classes
+import classes as classes
 from schematic_manager import SchematicManager
 from general_schematic_placer import GeneralSchematicPlacer 
 from story_schematic_placer import StorySchematicPlacer
@@ -83,19 +83,19 @@ def get_village_spec(story_schematics):
     village_spec.add("House", num_houses)
     house_schems = story_schematics['house']
     if len(house_schems) < num_houses:
-        house_schems.extend(sample(general_schematics['house'], num_houses - len(house_schems)))
+        house_schems.extend(random.choice(general_schematics['house'], num_houses - len(house_schems)))
     fill_building_spec_info(village_spec, "House", house_schems)
 
     village_spec.add("Farm", num_farms)
     farm_schems = story_schematics['farm']    
     if len(farm_schems) < num_farms:
-        farm_schems.extend(sample(general_schematics['farm'], num_farms - len(farm_schems)))
+        farm_schems.extend(random.choice(general_schematics['farm'], num_farms - len(farm_schems)))
     fill_building_spec_info(village_spec, "Farm", farm_schems)
 
     village_spec.add("Church", num_churches)
     church_schems = story_schematics['church']    
     if len(church_schems) < num_churches:
-        church_schems.extend(sample(general_schematics['church'], num_churches - len(church_schems)))
+        church_schems.extend(random.choice(general_schematics['church'], num_churches - len(church_schems)))
     fill_building_spec_info(village_spec, "Church", church_schems)
     
     # village_spec.add("Store", num_stores)
@@ -112,6 +112,7 @@ def get_schematics(schematic_files):
         try:
             schematics.append(MCSchematic(filename=path))
         except:
+            print("\n{} IS NOT VALID\n".format(path))
             # If that schematic isn't valid, just throw in a generic stand-in
             schematics.append(MCSchematic(filename='stock-schematics/library/small-convenient-house.schematic'))
             schematic_files[i] = 'library/small-convenient-house.schematic'
