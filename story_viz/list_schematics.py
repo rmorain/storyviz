@@ -5,7 +5,7 @@ import numpy as np
 import json
 
 schems_per_type = {'house':[], 'farm':[], 'church':[], 'store':[]}
-schem_keywords = {'house': ['house','home','inn','hotel','apartment'], 'farm':['farm','ranch','plant','garden'], 'church':['church','temple','shrine'], 'store':['store','shop','market']}
+schem_keywords = {'house': ['house','home','inn','hotel','apartment'], 'farm':['farm','ranch','plant','garden'], 'church':['church','temple','shrine', 'castle', 'fort', 'fortress', 'capitol', 'hall'], 'store':['store','shop','market', 'bazaar', 'trade', 'bank']}
 
 # returns the relative paths to all schematics individually
 def get_schematic_paths():
@@ -21,7 +21,7 @@ for t, schems in schems_per_type.items():
   for schematic in schematics:
     schem_name = schematic.split('\\')[-1].lower()
     is_type = np.any(np.array([kw in schem_name for kw in schem_keywords[t]]))
-    if t in schem_name:
+    if is_type:
       schems.append(schematic.replace('\\','/'))
 
 with open('stock-schematics/general_schematics_list.json', 'w') as f:
