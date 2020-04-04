@@ -22,7 +22,7 @@ from maps import create_minecraft_village
 from village_spec import VillageSpec
 
 # Import files you want
-import classes as classes
+import classes
 from schematic_manager import SchematicManager
 from general_schematic_placer import GeneralSchematicPlacer 
 from story_schematic_placer import StorySchematicPlacer
@@ -41,7 +41,7 @@ def perform(level, box, options):
 
     schematic_begin = time.time()
     sch_man = SchematicManager()
-    schematics, class_schem = sch_man.get_schematics(story, ['house', 'farm', 'church', 'shop'])
+    schematics, class_schem = sch_man.get_schematics(story, ['house', 'farm', 'church', 'store'])
     print("schematics:",schematics)
     print("classified schematics:",class_schem)
     print("Found story schematics in {} seconds".format(time.time()-schematic_begin))
@@ -98,8 +98,12 @@ def get_village_spec(story_schematics):
         church_schems.extend(random.choice(general_schematics['church'], num_churches - len(church_schems)))
     fill_building_spec_info(village_spec, "Church", church_schems)
     
-    # village_spec.add("Store", num_stores)
+    village_spec.add("Store", num_stores)
+    store_schems = story_schematics['store']
 
+    if len(store_schems) < num_stores:
+        store_schems.extend(random.choice(general_schematics['store'], num_stores - len(store_schems)))
+    fill_building_spec_info(village_spec, "Store", store_schems)
     return village_spec
 
 def get_schematics(schematic_files):

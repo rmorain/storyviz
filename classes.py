@@ -1,5 +1,3 @@
-
-
 from pymclevel import  MCSchematic
 
 class StorySchematics:
@@ -13,14 +11,20 @@ class StorySchematics:
         self.schematics = schematics
         self.labels = labels
         self.schematics_dict = {}
-        self.__PATH__TO__SCHEMATICS = "stock-schematics/library/"
+        self.__PATH__TO__SCHEMATICS = "stock-schematics/"
         self.__FILE__TYPE = ".schematic"
+        print(self.__PATH__TO__SCHEMATICS)
 
 
     def get_schematics(self):
         assert self.schematics is not None and self.labels is not None
         for i, filename in enumerate(self.schematics):
-            print(filename)
             if self.labels[i] not in self.schematics_dict.keys():
-                self.schematics_dict[self.labels[i]] = MCSchematic(filename=self.__PATH__TO__SCHEMATICS + filename + self.__FILE__TYPE)
+                f = filename
+                # if self.__PATH__TO__SCHEMATICS not in filename:
+                f = self.__PATH__TO__SCHEMATICS + f
+                if self.__FILE__TYPE not in filename:
+                    f += self.__FILE__TYPE
+                f = f.replace('//', '/')
+                self.schematics_dict[self.labels[i]] = MCSchematic(filename=f)
         return self.schematics_dict
