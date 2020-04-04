@@ -8,8 +8,6 @@ import json
 
 sys.path.append(os.getcwd() + '/story_viz')
 
-print(sys.path)
-
 import time # for timing
 from math import sqrt, tan, sin, cos, pi, ceil, floor, acos, atan, asin, degrees, radians, log, atan2, acos, asin
 from random import *
@@ -107,8 +105,9 @@ def get_village_spec(story_schematics):
     return village_spec
 
 def get_schematics(schematic_files):
-    __PATH__TO__SCHEMATICS = "stock-schematics/"
-    __FILE__TYPE = ".schematic"
+    temp = classes.StorySchematics()
+    __PATH__TO__SCHEMATICS = temp._StorySchematics__PATH__TO__SCHEMATICS
+    __FILE__TYPE = temp._StorySchematics__FILE__TYPE
     schematics = []
     for i,schematic_file in enumerate(schematic_files):
         path = __PATH__TO__SCHEMATICS + schematic_file + __FILE__TYPE

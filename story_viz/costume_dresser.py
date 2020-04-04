@@ -13,7 +13,7 @@ from classes import StorySchematics
 class CostumeDresser:
     def __init__(self, spacy_model=None):
         temp = StorySchematics()
-        self.__PATH__TO__SCHEMATICS = "stock-schematics/"
+        self.__PATH__TO__SCHEMATICS = temp._StorySchematics__PATH__TO__SCHEMATICS
         self.__FILE__TYPE = temp._StorySchematics__FILE__TYPE
         
 
@@ -22,6 +22,7 @@ class CostumeDresser:
             self.lang_model = spacy.load('en_core_web_sm')
         else:
             self.lang_model = spacy_model
+
     # keywords should be a list of strings, each string will contain a keyword and supporting positional words
     def get_schematics(self, keywords, topn=1):
         print(keywords)
@@ -67,6 +68,7 @@ class CostumeDresser:
         pos_token = self.lang_model(unicode(pos_word))
         scores = [pos_token.similarity(self.lang_model(unicode(term))) for term in terms]
         return terms[np.argmax(scores)]
+
     # Selects a normalized pos word for every schematic. If none are close to normalized pos words, place randomly
     def select_pos_word(self, keyword):
         terms = "above next far north south east west center floating".split()
@@ -74,9 +76,9 @@ class CostumeDresser:
         threshold = .1
         top_i = np.argmax(scores)
         return terms[top_i] if scores[top_i] > threshold else "random"
+        
     # returns the relative paths to all schematics individually
     def get_schematic_paths(self):
-        print("__PATH__TO__SCHEMATICS:",self.__PATH__TO__SCHEMATICS)
         schematic_paths = []
         for dr, _, schematic_names in os.walk(self.__PATH__TO__SCHEMATICS):
             schematic_paths.extend([os.path.join(dr, schematic_name).replace(self.__PATH__TO__SCHEMATICS, '') for schematic_name in schematic_names if self.__FILE__TYPE in schematic_name])
