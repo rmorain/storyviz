@@ -65,12 +65,37 @@ def fill_building_spec_info(village_spec, building_class_name, schematic_files):
     village_spec.building_specs[building_class_name].schematic_dims = schematic_dims
     village_spec.building_specs[building_class_name].schematic_y_offsets = schematic_y_offsets
 
+def get_minmax_buildings(village_size):
+    if village_size == 'small':
+        minmax_houses = (5, 10)
+        minmax_farms = (5,10)
+        minmax_churches = (0,1)
+        minmax_stores = (0,1)
+
+    elif village_size == 'medium':
+        minmax_houses = (10, 15)
+        minmax_farms = (10,15)
+        minmax_churches = (0,1)
+        minmax_stores = (1,2)
+    else:
+        minmax_houses = (15, 25)
+        minmax_farms = (10,15)
+        minmax_churches = (1,2)
+        minmax_stores = (2,4)
+    return minmax_houses, minmax_farms, minmax_churches, minmax_stores
+
+def get_num_buildings(village_size):
+    minmax_buildings = get_minmax_buildings(village_size)
+    return tuple(random.randint(minmax_building[0], minmax_building[1]) for minmax_building in minmax_buildings)
+
 # TODO: Use each story schematic ONCE and then randomly sample from general schematics for the rest
 def get_village_spec(story_schematics):
-    num_houses = 20
-    num_farms = 10
-    num_churches = 5
-    num_stores = 5
+    # num_houses = 20
+    # num_farms = 10
+    # num_churches = 5
+    # num_stores = 5
+    village_sizes = ["small", "medium", "big"]
+    num_houses, num_farms, num_churches, num_stores = get_num_buildings(village_size=random.choice(village_sizes))
 
     # building_spec = {'House': [num_houses, {'small-convenient-house': (-1,-1), 'First survival House (copy)': (-1,-1)}],
     #                  'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
@@ -126,8 +151,9 @@ def get_schematics_info(schematic_files):
     schematic_dims = []
     schematic_y_offsets = []
     for schematic in schematics:
-        schematic_dims.append(array([schematic.Length, schematic.Width]))
-        schematic_y_offsets.append(get_schematic_y_offset(schematic))
+        if schematic.Length < 100 or schematic.Width < 100:
+            schematic_dims.append(array([schematic.Length, schematic.Width]))
+            schematic_y_offsets.append(get_schematic_y_offset(schematic))
 
     return schematic_dims, schematic_y_offsets
 
