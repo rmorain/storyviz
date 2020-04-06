@@ -32,10 +32,20 @@ inputs = (
 	("Creators: Robert Morain, Jack Demke, Connor Wilhelm", "label"),
 	)
 
+# Gets the levels z,x dim, but keeps box y dim.
+def expand_box_to_level(level, box):
+    level_box = level.bounds
+    x = level_box.maxx - level_box.minx
+    y = level_box.maxy - box.miny
+    z = level_box.maxz - level_box.minz
+    return BoundingBox((level_box.minx, box.miny, level_box.minz), (x, y, z))
+
 def perform(level, box, options):
     story = options['Story']
     if story.isspace() or story is '':
         story = "On a farm in the west there was a house when out of nowhere a hovering ufo abducted the cow"
+
+    box = expand_box_to_level(level, box)
 
     schematic_begin = time.time()
     sch_man = SchematicManager()
