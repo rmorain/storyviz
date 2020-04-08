@@ -160,11 +160,16 @@ def get_schematics_info(schematic_files):
     schematics = get_schematics(schematic_files)
     schematic_dims = []
     schematic_y_offsets = []
-    for schematic in schematics:
+    for i, schematic in enumerate(schematics):
         if schematic.Length < 100 or schematic.Width < 100:
             schematic_dims.append(array([schematic.Length, schematic.Width]))
             schematic_y_offsets.append(get_schematic_y_offset(schematic))
+        else:
+            # Ensure that the schematic_files match the dims and y_offsets
+            print("SCHEMATIC",schematic_files[i],"TOO LARGE")
+            schematic_files.pop(i)
 
+    print("FILES:", schematic_files)
     return schematic_dims, schematic_y_offsets
 
 def get_schematic_y_offset(schematic):
