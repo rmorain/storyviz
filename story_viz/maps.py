@@ -34,7 +34,7 @@ def position_village(village_skeleton, terrain, record=False, can_place_building
             building_placed = False
             interest_vector = building.get_interest(village_skeleton, terrain)
             if can_place_buildings:
-                building_placed = building.probability_placement(avg_distance)
+                building_placed = building.probability_placement(terrain, avg_distance)
             building.set_position(building.position + interest_vector, z, x)
             if record and not building_placed:
                 building.store_interest_info(interest_vector)
@@ -85,20 +85,6 @@ def add_outside_roads(terrain):
             z = random.choice([0, maxz-1])
             x = random.randint(0, maxx-1)
         terrain.add_road([(z,x)])
-
-# Make sure building doesn't collide with other buildings, water, or roads.
-def has_collision(terrain, building):
-    for point in np.reshape(building.get_footprint(), (-1, 2)):
-        point = tuple(point)
-        if terrain.layers['material'][point] == terrain.materials['building']:
-            return True
-        if terrain.layers['material'][point] == terrain.materials['water']:
-            return True
-        if terrain.layers['road'][point] == 0:
-            return True
-
-    return False
-
 
 def check_all_buildings_placed(village_skeleton):
     for building in village_skeleton:
