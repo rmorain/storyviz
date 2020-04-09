@@ -43,7 +43,7 @@ class CostumeDresser:
             kw_token = self.lang_model(unicode(key))
             # Predict average similarity between keyword and each word in schematics relative path
             schem_scores = np.array([1 if key in schem
-                else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('/', ' ').replace('\\', ' ')))) for schem in self.schematic_paths])
+                else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('\\','/').split('/')[-1]))) for schem in self.schematic_paths])
 
             top10 = []
             for i in range(topn):
