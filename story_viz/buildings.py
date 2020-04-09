@@ -115,15 +115,27 @@ class Building(object):
         if random.random() < self.place_probability:
             self.placed = True
 
-    def probability_placement(self, avg_distance):
+    # Make sure building doesn't collide with other buildings, water, or roads.
+    def has_collision(self, terrain):
+        for point in np.reshape(self.get_footprint(), (-1, 2)):
+            point = tuple(point)
+            if terrain.layers['material'][point] == terrain.materials['building']:
+                return True
+            if terrain.layers['material'][point] == terrain.materials['water']:
+                return True
+            if terrain.layers['road'][point] == 0:
+                return True
+        return False
+
+    def probability_placement(self, terrain, avg_distance):
         if not self.placed:
             all_buildings_placed = False
             distance = np.linalg.norm(self.last_interest_vector)
             if distance < avg_distance:
                 if random.random() > ((distance + avg_distance) / (2*avg_distance)): # Normalize distance so 0 has 50% chance of being placed
-                    # if not has_collision(terrain, building): # TODO: This should be the real check, but maps takes a lot of time when its included.
-                    #     building.placed = True
-                    self.placed = True
+                    if not self.has_collision(terrain): # TODO: This should be the real check, but maps takes a lot of time when its included.
+                        self.placed = True
+                    # self.placed = True
         return self.placed
 
 
