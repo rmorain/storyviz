@@ -55,7 +55,8 @@ def perform(level, box, options):
     print("Found story schematics in {} seconds".format(time.time()-schematic_begin))
 
     village_spec = get_village_spec(class_schem)
-    village_skeleton, terrain = create_minecraft_village(level, box, village_spec)
+    village_skeleton, terrain = create_minecraft_village(level, box, village_spec, animate=False)
+    build_road(level, box, terrain)
     build_village_skeleton(level, box, village_skeleton, terrain, village_spec.get_all_village_schematics())
 
 
@@ -68,6 +69,13 @@ def build_village_skeleton(level, box, village_skeleton, terrain, schematic_file
         schematic = schematics[building.schematic_file]
         source_box = BoundingBox((0, 0, 0),(schematic.Width, schematic.Height, schematic.Length))
         level.copyBlocksFrom(schematic, source_box, (box.minx+x, box.miny - building.y_offset + elevation_offset, box.minz+z))
+
+def build_road(level, box, terrain):
+    points = terrain.material_points['road']
+    for point in points:
+        z, x = point[0], point[1]
+        y = terrain.layers['elevation'][z][x]
+        utilityFunctions.setBlock(level, (1, 0), box.minx+x, box.miny+y, box.minz + z)
 
 def fill_building_spec_info(village_spec, building_class_name, schematic_files):
     schematic_dims, schematic_y_offsets = get_schematics_info(schematic_files)
@@ -100,16 +108,9 @@ def get_num_buildings(village_size):
 
 # TODO: Use each story schematic ONCE and then randomly sample from general schematics for the rest
 def get_village_spec(story_schematics):
-    # num_houses = 20
-    # num_farms = 10
-    # num_churches = 5
-    # num_stores = 5
     village_sizes = ["small", "medium", "big"]
     num_houses, num_farms, num_churches, num_stores = get_num_buildings(village_size=random.choice(village_sizes))
 
-    # building_spec = {'House': [num_houses, {'small-convenient-house': (-1,-1), 'First survival House (copy)': (-1,-1)}],
-    #                  'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
-    #                  'Church': [num_churches, {'evil-church': (-1,-1)}]}
     village_spec = VillageSpec()
     general_schematics = load_general_schematics()
 
@@ -161,15 +162,16 @@ def get_schematics_info(schematic_files):
     schematic_dims = []
     schematic_y_offsets = []
     for i, schematic in enumerate(schematics):
-        if schematic.Length < 100 or schematic.Width < 100:
-            schematic_dims.append(array([schematic.Length, schematic.Width]))
-            schematic_y_offsets.append(get_schematic_y_offset(schematic))
-        else:
-            # Ensure that the schematic_files match the dims and y_offsets
-            print("SCHEMATIC",schematic_files[i],"TOO LARGE")
-            schematic_files.pop(i)
+        # if schematic.Length < 100 or schematic.Width < 100:
+        #     schematic_dims.append(array([schematic.Length, schematic.Width]))
+        #     schematic_y_offsets.append(get_schematic_y_offset(schematic))
+        # else:
+        #     # Ensure that the schematic_files match the dims and y_offsets
+        #     print("SCHEMATIC",schematic_files[i],"TOO LARGE")
+        #     schematic_files.pop(i)
+        schematic_dims.append(array([schematic.Length, schematic.Width]))
+        schematic_y_offsets.append(get_schematic_y_offset(schematic))
 
-    print("FILES:", schematic_files)
     return schematic_dims, schematic_y_offsets
 
 def get_schematic_y_offset(schematic):
@@ -186,8 +188,6 @@ def get_schematic_y_offset(schematic):
             return maxy - y
 
     return 0
-    # for y in range(maxy, 0, -1):
-    # material_id = schematic.blockAt(x, y, z)
 
 def load_general_schematics():
     with open("stock-schematics/general_schematics_list.json") as j:
