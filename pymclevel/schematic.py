@@ -52,8 +52,8 @@ class MCSchematic(EntityLevel):
         reflect the current dimensions of the schematic rather than the ones specified in the NBT structure.
         I'm not sure what happens when I try to re-save a rotated schematic.
         """
-        if DEBUG: print('debug is on')
-        print('papapapa')
+        # if DEBUG: print('debug is on')
+        # print('papapapa')
         if DEBUG: log.debug(u"Creating scematic.")
         if filename:
             if DEBUG: log.debug(u"Using %s"%filename)

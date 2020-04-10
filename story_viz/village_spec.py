@@ -26,10 +26,10 @@ class BuildingSpec:
     def sample(self):
         if len(self.schematic_files) > 0:
             rand_idx = random.randint(0, len(self.schematic_files)-1)
-            print(rand_idx)
-            print(self.schematic_files[rand_idx])
-            print(self.schematic_dims[rand_idx])
-            print(self.schematic_y_offsets[rand_idx])
+            # print(rand_idx)
+            # print(self.schematic_files[rand_idx])
+            # print(self.schematic_dims[rand_idx])
+            # print(self.schematic_y_offsets[rand_idx])
             return self.schematic_files[rand_idx], self.schematic_dims[rand_idx], self.schematic_y_offsets[rand_idx]
         return None, None, None
 

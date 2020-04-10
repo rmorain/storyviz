@@ -19,7 +19,7 @@ class CostumeDresser:
 
         self.schematic_paths = self.get_schematic_paths()
         if spacy_model is None:
-            self.lang_model = spacy.load('en_core_web_sm')
+            self.lang_model = spacy.load('en_core_web_lg')
         else:
             self.lang_model = spacy_model
 
@@ -43,7 +43,7 @@ class CostumeDresser:
             kw_token = self.lang_model(unicode(key))
             # Predict average similarity between keyword and each word in schematics relative path
             schem_scores = np.array([1 if key in schem
-                else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('\\','/').split('/')[-1]))) for schem in self.schematic_paths])
+                else kw_token.similarity(self.lang_model(unicode(schem.replace('-', ' ').replace('_', ' ').replace('\\','/').split('/')[-1]))) if kw_token.has_vector else 0 for schem in self.schematic_paths])
 
             top10 = []
             for i in range(topn):
@@ -66,13 +66,13 @@ class CostumeDresser:
         terms = "above next far north south east west center".split()
         pos_word = pos_word.lower()
         pos_token = self.lang_model(unicode(pos_word))
-        scores = [pos_token.similarity(self.lang_model(unicode(term))) for term in terms]
+        scores = [pos_token.similarity(self.lang_model(unicode(term))) if pos_token.has_vector else 0 for term in terms]
         return terms[np.argmax(scores)]
 
     # Selects a normalized pos word for every schematic. If none are close to normalized pos words, place randomly
     def select_pos_word(self, keyword):
         terms = "above next far north south east west center floating".split()
-        scores = [self.lang_model(unicode(t)).similarity(self.lang_model(unicode(keyword))) for t in terms]
+        scores = [self.lang_model(unicode(t)).similarity(self.lang_model(unicode(keyword))) if self.lang_model(unicode(t)).has_vector else 0 for t in terms]
         threshold = .1
         top_i = np.argmax(scores)
         return terms[top_i] if scores[top_i] > threshold else "random"

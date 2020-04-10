@@ -7,7 +7,7 @@ def fit_to_range(x, minx, maxx, min_range, max_range):
     try:
         normalized_x = (x - minx) / (maxx - minx)
     except ZeroDivisionError:
-        print(x, minx, maxx)
+        # print(x, minx, maxx)
         normalized_x = minx
     return (normalized_x * (max_range - min_range)) + min_range
 

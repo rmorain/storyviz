@@ -28,7 +28,7 @@ spacy.prefer_gpu()
 class StoryInterpreter:
     def __init__(self, spacy_model=None):
         if spacy_model is None:
-            self.nlp = spacy.load("en_core_web_sm")
+            self.nlp = spacy.load("en_core_web_lg")
         else:
             self.nlp = spacy_model
 
@@ -46,7 +46,7 @@ class StoryInterpreter:
         for i, w in enumerate(keywords):
             for j, k in enumerate(keywords):
                 if i != j and k in w:
-                    print(k)
+                    # print(k)
                     keywords.pop(j)
 
     def clean_keywords(self, keywords):
@@ -55,7 +55,7 @@ class StoryInterpreter:
             doc = self.nlp(k)
             for token in doc:
                 if token.is_stop == True:
-                    print(token)
+                    # print(token)
                     continue
                 if len(clean_keys) <= i:
                         clean_keys.append(str(token))

@@ -21,7 +21,7 @@ def init_village(terrain, building_spec):
     z, x = terrain.shape
     buildings = building_generator(building_spec)
     for building in buildings:
-        print(building.type, max(building.dim), (z, x))
+        # print(building.type, max(building.dim), (z, x))
         building.set_position((random.randint(0, min(z, z - max(building.dim) - 1)), random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
         village_skeleton.append(building)
     return village_skeleton
@@ -67,11 +67,12 @@ def connect_building(building, terrain):
 def connect_point(start, terrain):
     road = astar.astar(terrain, tuple(start), 0)
     if road is not None:
-        print('adding road')
-        print(road)
+        # print('adding road')
+        # print(road)
         terrain.add_road(road) # TODO: Houses that are close enough to roads should be counted as connected
     else:
-        print('No road possible')
+        # print('No road possible')
+        pass
 
 
 def add_outside_roads(terrain):
@@ -124,7 +125,7 @@ def anneal_positioning(terrain, village_skeleton, animate, animator, distances, 
     for i in range(anneal_positioning_epochs):
         all_buildings_placed = check_all_buildings_placed(village_skeleton)
         if all_buildings_placed:
-            print('all buildings placed')
+            # print('all buildings placed')
             break
         distances += position_village(village_skeleton, terrain, record=True, can_place_buildings=True, avg_distance=avg_distance)
         terrain.update_buildings(village_skeleton, terrain.layers['material'])

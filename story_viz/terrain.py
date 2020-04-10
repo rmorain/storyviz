@@ -115,7 +115,7 @@ class Terrain:
     def update_material_dist(self, material):
         array = self.layers[material]
         points = self.material_points[material]
-        print(points)
+        # print(points)
         neighbors = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
         close_set = points.copy()

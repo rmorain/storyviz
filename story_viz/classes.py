@@ -13,7 +13,7 @@ class StorySchematics:
         self.schematics_dict = {}
         self.__PATH__TO__SCHEMATICS = "stock-schematics/"
         self.__FILE__TYPE = ".schematic"
-        print(self.__PATH__TO__SCHEMATICS)
+        # print(self.__PATH__TO__SCHEMATICS)
 
 
     def get_schematics(self):
