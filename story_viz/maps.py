@@ -139,6 +139,9 @@ def randomize_unplaced_building_positions(terrain, village_skeleton):
             building.set_position((random.randint(0, min(z, z - max(building.dim) - 1)),
                                    random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
 
+def remove_unplaced_buildings(village_skeleton):
+    return [building for building in village_skeleton if building.placed is True]
+
 def iterative_positioning(terrain, village_skeleton, animate, animator):
     avg_distance = free_positioning(terrain, village_skeleton)
     distances = []
@@ -146,7 +149,8 @@ def iterative_positioning(terrain, village_skeleton, animate, animator):
     for _ in range(num_anneals):
         anneal_positioning(terrain, village_skeleton, animate, animator, distances, avg_distance)
         randomize_unplaced_building_positions(terrain, village_skeleton)
-
+    village_skeleton = remove_unplaced_buildings(village_skeleton)
+    return village_skeleton
     # plot_iterative_positioning(village_skeleton, distances)
 
 def create_minecraft_village(level, box, village_spec, animate=False):
@@ -161,7 +165,7 @@ def create_village(terrain, village_spec, animate=True):
     village_skeleton = init_village(elevation_terrain, village_spec)
     add_outside_roads(terrain)
 
-    iterative_positioning(terrain, village_skeleton, animate, animator)
+    village_skeleton = iterative_positioning(terrain, village_skeleton, animate, animator)
 
     if animate:
         animator.animate(terrain, village_skeleton)
