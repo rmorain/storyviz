@@ -55,7 +55,8 @@ def perform(level, box, options):
     print("Found story schematics in {} seconds".format(time.time()-schematic_begin))
 
     village_spec = get_village_spec(class_schem)
-    village_skeleton, terrain = create_minecraft_village(level, box, village_spec)
+    village_skeleton, terrain = create_minecraft_village(level, box, village_spec, animate=False)
+    build_road(level, box, terrain)
     build_village_skeleton(level, box, village_skeleton, terrain, village_spec.get_all_village_schematics())
 
 
@@ -68,6 +69,12 @@ def build_village_skeleton(level, box, village_skeleton, terrain, schematic_file
         schematic = schematics[building.schematic_file]
         source_box = BoundingBox((0, 0, 0),(schematic.Width, schematic.Height, schematic.Length))
         level.copyBlocksFrom(schematic, source_box, (box.minx+x, box.miny - building.y_offset + elevation_offset, box.minz+z))
+
+def build_road(level, box, terrain):
+    points = terrain.material_points['road']
+    for point in points:
+        z, x = point[0], point[1]
+        utilityFunctions.setBlock(level, (1, 0), box.minx+x, box.miny, box.minz + z)
 
 def fill_building_spec_info(village_spec, building_class_name, schematic_files):
     schematic_dims, schematic_y_offsets = get_schematics_info(schematic_files)
@@ -186,8 +193,6 @@ def get_schematic_y_offset(schematic):
             return maxy - y
 
     return 0
-    # for y in range(maxy, 0, -1):
-    # material_id = schematic.blockAt(x, y, z)
 
 def load_general_schematics():
     with open("stock-schematics/general_schematics_list.json") as j:
