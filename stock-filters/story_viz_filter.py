@@ -74,7 +74,8 @@ def build_road(level, box, terrain):
     points = terrain.material_points['road']
     for point in points:
         z, x = point[0], point[1]
-        utilityFunctions.setBlock(level, (1, 0), box.minx+x, box.miny, box.minz + z)
+        y = terrain.layers['elevation'][z][x]
+        utilityFunctions.setBlock(level, (1, 0), box.minx+x, box.miny+y, box.minz + z)
 
 def fill_building_spec_info(village_spec, building_class_name, schematic_files):
     schematic_dims, schematic_y_offsets = get_schematics_info(schematic_files)
@@ -107,16 +108,9 @@ def get_num_buildings(village_size):
 
 # TODO: Use each story schematic ONCE and then randomly sample from general schematics for the rest
 def get_village_spec(story_schematics):
-    # num_houses = 20
-    # num_farms = 10
-    # num_churches = 5
-    # num_stores = 5
     village_sizes = ["small", "medium", "big"]
     num_houses, num_farms, num_churches, num_stores = get_num_buildings(village_size=random.choice(village_sizes))
 
-    # building_spec = {'House': [num_houses, {'small-convenient-house': (-1,-1), 'First survival House (copy)': (-1,-1)}],
-    #                  'Farm': [num_farms, {'farm-wheat': (-1,-1)}],
-    #                  'Church': [num_churches, {'evil-church': (-1,-1)}]}
     village_spec = VillageSpec()
     general_schematics = load_general_schematics()
 
