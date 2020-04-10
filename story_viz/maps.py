@@ -153,10 +153,13 @@ def iterative_positioning(terrain, village_skeleton, animate, animator):
     return village_skeleton
     # plot_iterative_positioning(village_skeleton, distances)
 
-def create_minecraft_village(level, box, village_spec, animate=False):
+def create_minecraft_village(level, box, village_spec, num_evals=3, animate=False):
     terrain = Terrain()
     terrain.load_map(level, box)
-    return create_village(terrain, village_spec, animate)
+    if num_evals <= 1:
+        return create_village(terrain, village_spec, animate)
+    else:
+        return create_eval_village(terrain, village_spec, num_evals)
 
 def create_village(terrain, village_spec, animate=True):
     animator = VizAnimator()
@@ -199,6 +202,22 @@ def generate_random_village():
     village_spec = get_village_spec()
     terrain = get_random_terrain(500, 500, 6, 200, 4, 20)
     return create_village(terrain, village_spec, False)
+
+def create_eval_village(terrain, village_spec, num_eval=3):
+    best_eval = np.inf
+    best_village_skeleton = None
+    best_terrain = None
+    evals = []
+    for i in range(num_eval):
+        eval_terrain = copy.deepcopy(terrain)
+        village_skeleton, eval_terrain = create_village(eval_terrain, village_spec, False)
+        eval = evaluate_village(village_skeleton)
+        evals.append(eval)
+        if eval < best_eval:
+            best_eval = eval
+            best_village_skeleton = copy.deepcopy(village_skeleton)
+            best_terrain = copy.deepcopy(eval_terrain)
+    return best_village_skeleton, best_terrain
 
 def get_best_random_village(num_eval=3):
     village_spec = get_village_spec()
