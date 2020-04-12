@@ -60,7 +60,7 @@ def perform(level, box, options):
         print(building_spec.building_class_name)
         for building_schem in building_spec.schematic_files:
             print(building_schem)
-    village_skeleton, terrain = create_minecraft_village(level, box, village_spec, animate=False)
+    village_skeleton, terrain = create_minecraft_village(level, box, village_spec, num_evals=5, animate=False)
     build_road(level, box, terrain)
     build_village_skeleton(level, box, village_skeleton, terrain, village_spec.get_all_village_schematics())
 
