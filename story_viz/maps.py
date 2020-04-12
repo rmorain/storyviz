@@ -94,7 +94,7 @@ def check_all_buildings_placed(village_skeleton):
     return True
 
 def free_positioning(terrain, village_skeleton):
-    free_positioning_epochs = 50
+    free_positioning_epochs = 65
     distances = []
     for i in range(free_positioning_epochs):
         if i >= (free_positioning_epochs * .9):
@@ -160,7 +160,7 @@ def create_minecraft_village(level, box, village_spec, num_evals=3, animate=Fals
     if num_evals <= 1:
         return create_village(terrain, village_spec, animate)
     else:
-        return create_eval_village(terrain, village_spec, num_evals)
+        return create_eval_village(terrain, village_spec, num_evals, animate)
 
 def create_village(terrain, village_spec, animate=True):
     animator = VizAnimator()
@@ -204,14 +204,14 @@ def generate_random_village():
     terrain = get_random_terrain(500, 500, 6, 200, 4, 20)
     return create_village(terrain, village_spec, False)
 
-def create_eval_village(terrain, village_spec, num_eval=3):
+def create_eval_village(terrain, village_spec, num_eval=3, animate=False):
     best_eval = np.inf
     best_village_skeleton = None
     best_terrain = None
     evals = []
     for i in range(num_eval):
         eval_terrain = copy.deepcopy(terrain)
-        village_skeleton, eval_terrain = create_village(eval_terrain, village_spec, False)
+        village_skeleton, eval_terrain = create_village(eval_terrain, village_spec, animate)
         eval = evaluate_village(village_skeleton)
         evals.append(eval)
         if eval < best_eval:
