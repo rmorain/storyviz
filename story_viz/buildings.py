@@ -76,7 +76,6 @@ class Building(object):
         footprint = indices + self.position
         return footprint
 
-
     def get_valid_displacement(self, position, z, x):
         new_z = position[0]
         if position[0] < 0:
@@ -133,9 +132,8 @@ class Building(object):
             distance = np.linalg.norm(self.last_interest_vector)
             if distance < avg_distance:
                 if random.random() > ((distance + avg_distance) / (2*avg_distance)): # Normalize distance so 0 has 50% chance of being placed
-                    if not self.has_collision(terrain): # TODO: This should be the real check, but maps takes a lot of time when its included.
+                    if not self.has_collision(terrain):
                         self.placed = True
-                    # self.placed = True
         return self.placed
 
 
