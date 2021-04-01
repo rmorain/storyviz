@@ -113,11 +113,15 @@ def get_num_buildings(village_size):
 
 # TODO: Use each story schematic ONCE and then randomly sample from general schematics for the rest
 def get_village_spec(story_schematics):
+
     village_sizes = ["small", "medium", "big"]
     num_houses, num_farms, num_churches, num_stores = get_num_buildings(village_size=random.choice(village_sizes))
 
     village_spec = VillageSpec()
     general_schematics = load_general_schematics()
+
+    village_spec.story_schematics = list(story_schematics['house'] + story_schematics['farm'] + story_schematics['church'] + story_schematics['store'])
+    print("STORY_SCHEMATICS:",village_spec.story_schematics)
 
     village_spec.add("House", num_houses)
     house_schems = story_schematics['house']
@@ -139,10 +143,10 @@ def get_village_spec(story_schematics):
     
     village_spec.add("Store", num_stores)
     store_schems = story_schematics['store']
-
     if len(store_schems) < num_stores:
         store_schems.extend(random.choice(general_schematics['store'], num_stores - len(store_schems)))
     fill_building_spec_info(village_spec, "Store", store_schems)
+
     return village_spec
 
 def get_schematics(schematic_files):

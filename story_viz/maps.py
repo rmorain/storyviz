@@ -20,10 +20,12 @@ def init_village(terrain, building_spec):
     village_skeleton = []
     z, x = terrain.shape
     buildings = building_generator(building_spec)
+
     for building in buildings:
         # print(building.type, max(building.dim), (z, x))
         building.set_position((random.randint(0, min(z, z - max(building.dim) - 1)), random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
         village_skeleton.append(building)
+        building.story = (building.schematic_file in building_spec.story_schematics)
     return village_skeleton
 
 def position_village(village_skeleton, terrain, record=False, can_place_buildings=False, avg_distance=None):
@@ -141,7 +143,7 @@ def randomize_unplaced_building_positions(terrain, village_skeleton):
                                    random.randint(0, min(x, x - max(building.dim) - 1))), z, x)
 
 def remove_unplaced_buildings(village_skeleton):
-    return [building for building in village_skeleton if building.placed is True]
+    return [building for building in village_skeleton if building.placed is True or building.story is True]
 
 def iterative_positioning(terrain, village_skeleton, animate, animator):
     avg_distance = free_positioning(terrain, village_skeleton)
