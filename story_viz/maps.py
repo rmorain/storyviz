@@ -12,9 +12,6 @@ from astar import astar
 import astar
 from interests import get_knn
 
-class MultiAgentPositioningSystem:
-    def __init__(self):
-        self.author = "Dr. Robert Morain"
 
 def init_village(terrain, building_spec):
     village_skeleton = []
@@ -156,15 +153,15 @@ def iterative_positioning(terrain, village_skeleton, animate, animator):
     return village_skeleton
     # plot_iterative_positioning(village_skeleton, distances)
 
-def create_minecraft_village(level, box, village_spec, num_evals=3, animate=False):
+def create_minecraft_village(level, box, village_spec, num_evals=3, animate=False, plot_village=False):
     terrain = Terrain()
     terrain.load_map(level, box)
     if num_evals <= 1:
-        return create_village(terrain, village_spec, animate)
+        return create_village(terrain, village_spec, animate, plot_village)
     else:
-        return create_eval_village(terrain, village_spec, num_evals, animate)
+        return create_eval_village(terrain, village_spec, num_evals, animate, plot_village)
 
-def create_village(terrain, village_spec, animate=True):
+def create_village(terrain, village_spec, animate=True, plot_village=False):
     animator = VizAnimator()
     elevation_terrain = terrain.layers['elevation']
     material_terrain = terrain.layers['material']
@@ -175,7 +172,8 @@ def create_village(terrain, village_spec, animate=True):
 
     if animate:
         animator.animate(terrain, village_skeleton)
-    plot(terrain, village_skeleton)
+    if plot_village:
+        plot(terrain, village_skeleton)
     return village_skeleton, terrain
 
 def get_village_spec():
@@ -206,14 +204,16 @@ def generate_random_village():
     terrain = get_random_terrain(500, 500, 6, 200, 4, 20)
     return create_village(terrain, village_spec, False)
 
-def create_eval_village(terrain, village_spec, num_eval=3, animate=False):
+def create_eval_village(terrain, village_spec, num_eval=3, animate=False, plot_village=False):
+    print('Creating', num_eval, 'potential villages')
     best_eval = np.inf
     best_village_skeleton = None
     best_terrain = None
     evals = []
     for i in range(num_eval):
+        print('Creating potential village:', i)
         eval_terrain = copy.deepcopy(terrain)
-        village_skeleton, eval_terrain = create_village(eval_terrain, village_spec, animate)
+        village_skeleton, eval_terrain = create_village(eval_terrain, village_spec, animate, plot_village)
         eval = evaluate_village(village_skeleton)
         evals.append(eval)
         if eval < best_eval:
