@@ -11,7 +11,7 @@ setup(
         "PyOpenGL==3.1.1a1",
         "numpy==1.16.6",
         "PyYAML==5.2",
-        "Pillow==6.2.1",
+        "Pillow==8.3.2",
         "ftputil==3.4",
         "spacy==2.0.18",
         "pygame==1.9.6",
