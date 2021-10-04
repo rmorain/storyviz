@@ -10,7 +10,7 @@ setup(
     install_requires=["scipy==1.2.1",
         "PyOpenGL==3.1.1a1",
         "numpy==1.16.6",
-        "PyYAML==5.2",
+        "PyYAML==5.4",
         "Pillow==6.2.1",
         "ftputil==3.4",
         "spacy==2.0.18",
