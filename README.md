@@ -35,3 +35,5 @@ sudo apt-get install xclip
 ```
 
 For information about MCEdit and how to run MCEdit filters, [VISIT THE WIKI PAGE](http://github.com/mcgreentn/MCAI/wiki)
+
+*You only need to select a single block to run the Storyviz filter, but make sure you select a block towards the bottom of the map (e.g. below water level).*
