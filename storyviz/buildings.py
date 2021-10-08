@@ -10,9 +10,21 @@ def building_generator(village_spec):
     for building_class_name, building_spec in village_spec.building_specs.items():
         for _ in range(building_spec.num_buildings):
             # Load "module.submodule.MyClass"
-            BuildingClass = getattr(importlib.import_module("buildings"), building_class_name)
+            # BuildingClass = getattr(importlib.import_module("storyviz.buildings"), building_class_name)
+            building_classes = {
+                    "Church": Church, 
+                    "Residential": Residential, 
+                    "Rural": Rural, 
+                    "Commercial": Commercial,
+                    "Public": Public,
+                    "Aesthetic": Aesthetic,
+                    "Store": Store,
+                    "Farm": Farm,
+                    "House": House,
+                    }
+            building = building_classes[building_class_name](building_id)
             # Instantiate the class (pass arguments to the constructor, if needed)
-            building = BuildingClass(building_id)
+            # building = BuildingClass(building_id)
 
             schematic_file, schematic_dim, schematic_y_offset = building_spec.sample()
             if schematic_file is not None:

@@ -3,14 +3,13 @@ import random
 import matplotlib.pyplot as plt
 from scipy.stats import skewnorm
 import math
-from buildings import *
-from maps_viz import *
-from terrain_generator import generate_terrain
-from terrain import Terrain
-from village_spec import VillageSpec
-from astar import astar
-import astar
-from interests import get_knn
+from .buildings import *
+from .maps_viz import *
+from .terrain_generator import generate_terrain
+from .terrain import Terrain
+from .village_spec import VillageSpec
+from .astar import astar
+from .interests import get_knn
 
 
 def init_village(terrain, building_spec):
@@ -64,7 +63,7 @@ def connect_building(building, terrain):
     # # TODO: Add something to put the building back in bounds
 
 def connect_point(start, terrain):
-    road = astar.astar(terrain, tuple(start), 0)
+    road = astar(terrain, tuple(start), 0)
     if road is not None:
         # print('adding road')
         # print(road)
