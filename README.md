@@ -1,7 +1,7 @@
 # Install
 
 ```console
-git clone --recursive git@github.com:rmorain/storyviz.git
+git clone --recursive https://github.com/rmorain/storyviz.git
 ```
 
 Recursively clone the repo. 
