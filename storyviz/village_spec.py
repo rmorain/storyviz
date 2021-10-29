@@ -3,6 +3,7 @@ import random
 class VillageSpec:
     def __init__(self):
         self.building_specs = {}
+        self.story_schematics = []
 
     def add(self, building_class_name, num_buildings):
         b = BuildingSpec(building_class_name, num_buildings)
