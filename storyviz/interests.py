@@ -83,29 +83,37 @@ def sociability(terrain, village_skeleton, building):
 
 
 def slope(terrain, village_skeleton, building):
+    def get_side(z_start, z_end, x_start, x_end):
+        if z_end >= max_z:
+            z_end = max_z - 1
+        if x_end >= max_x:
+            x_end = max_x - 1
+        return elevation[z_start: z_end, x_start: x_end]
+
     elevation = terrain.layers["elevation"]
+    max_z, max_x = elevation.shape
+    building_dim = [building.dim[0], building.dim[1]]
+    if building.dim[0] <= 2:
+        building_dim[0] = 3
+    if building.dim[1] <= 2:
+        building_dim[1] = 3
     building_center = [
         building.position[0] + (building.dim[0] // 2),
         building.position[1] + (building.dim[1] // 2),
     ]
-    left_half = elevation[
-        building.position[0] : building.position[0] + building.dim[0],
-        building.position[1] : building_center[1],
-    ]
-    right_half = elevation[
-        building.position[0] : building.position[0] + building.dim[0],
-        building_center[1] : building.position[1] + building.dim[1],
-    ]
-    bottom_half = elevation[
-        building.position[0] : building_center[0],
-        building.position[1] : building.position[1] + building.dim[1],
-    ]
-    top_half = elevation[
-        building_center[0] : building.position[0] + building.dim[0],
-        building.position[1] : building.position[1] + building.dim[1],
-    ]
-    dz = np.average(left_half) - np.average(right_half)
-    dx = np.average(bottom_half) - np.average(top_half)
+    left_half = get_side(building.position[0], building.position[0] + building_dim[0],
+                         building.position[1], building_center[1])
+    right_half = get_side(building.position[0], building.position[0] + building_dim[0],
+                          building_center[1], building.position[1] + building_dim[1])
+    bottom_half = get_side(building.position[0], building_center[0],
+                           building.position[1], building.position[1] + building_dim[1])
+    top_half = get_side(building_center[0], building.position[0] + building_dim[0],
+                        building.position[1], building.position[1] + building_dim[1])
+    dz, dx = 0, 0
+    if left_half.size != 0 and right_half.size != 0:
+        dz = np.average(left_half) - np.average(right_half)
+    if bottom_half.size != 0 and top_half.size != 0:
+        dx = np.average(bottom_half) - np.average(top_half)
     return np.array([dz, dx])
 
 
@@ -190,30 +198,39 @@ def repel_collision(terrain, village_skeleton, building):
 
 # Return vector to move building closer to a materials
 def near(material, terrain, building):
+    def get_side(z_start, z_end, x_start, x_end):
+        if z_end >= max_z:
+            z_end = max_z - 1
+        if x_end >= max_x:
+            x_end = max_x - 1
+        return material_dist[z_start: z_end, x_start: x_end]
+
     material_dist = terrain.layers[material]
+    # If the material does not exist, don't move at all
+    if material_dist is None:
+        return np.array([0, 0])
+    max_z, max_x = material_dist.shape
+    building_dim = [building.dim[0], building.dim[1]]
+    if building.dim[0] <= 2:
+        building_dim[0] = 3
+    if building.dim[1] <= 2:
+        building_dim[1] = 3
     building_center = [
         building.position[0] + (building.dim[0] // 2),
         building.position[1] + (building.dim[1] // 2),
     ]
-    # If the material does not exist, don't move at all
-    if material_dist is None:
-        return np.array([0, 0])
-    left_half = material_dist[
-        building.position[0] : building.position[0] + building.dim[0],
-        building.position[1] : building_center[1],
-    ]
-    right_half = material_dist[
-        building.position[0] : building.position[0] + building.dim[0],
-        building_center[1] : building.position[1] + building.dim[1],
-    ]
-    bottom_half = material_dist[
-        building.position[0] : building_center[0],
-        building.position[1] : building.position[1] + building.dim[1],
-    ]
-    top_half = material_dist[
-        building_center[0] : building.position[0] + building.dim[0],
-        building.position[1] : building.position[1] + building.dim[1],
-    ]
-    dz = np.average(left_half) - np.average(right_half)
-    dx = np.average(bottom_half) - np.average(top_half)
+    left_half = get_side(building.position[0], building.position[0] + building_dim[0],
+                         building.position[1], building_center[1])
+    right_half = get_side(building.position[0], building.position[0] + building_dim[0],
+                          building_center[1], building.position[1] + building_dim[1])
+    bottom_half = get_side(building.position[0], building_center[0],
+                           building.position[1], building.position[1] + building_dim[1])
+    top_half = get_side(building_center[0], building.position[0] + building_dim[0],
+                        building.position[1], building.position[1] + building_dim[1])
+
+    dz, dx = 0, 0
+    if left_half.size != 0 and right_half.size != 0:
+        dz = np.average(left_half) - np.average(right_half)
+    if bottom_half.size != 0 and top_half.size != 0:
+        dx = np.average(bottom_half) - np.average(top_half)
     return np.array([dz, dx])
