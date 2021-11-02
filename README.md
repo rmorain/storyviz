@@ -37,3 +37,8 @@ sudo apt-get install xclip
 For information about MCEdit and how to run MCEdit filters, [VISIT THE WIKI PAGE](http://github.com/mcgreentn/MCAI/wiki)
 
 *You only need to select a single block to run the Storyviz filter, but make sure you select a block towards the bottom of the map (e.g. below water level).*
+
+If you generate a new level, there may be seeds that add extra chunks to the level, for example:
+![Extra Chunks Level](images/remove_extra_chuncks.png "Level with extra chunks")
+
+You will need to delete the extra chunks
